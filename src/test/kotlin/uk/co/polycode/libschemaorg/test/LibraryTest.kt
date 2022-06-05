@@ -1,8 +1,11 @@
 package uk.co.polycode.libschemaorg.test
 
-import mu.KotlinLogging
+//import mu.KotlinLogging
+import uk.co.polycode.libschemaorg.Viewer
+import kotlin.test.Test
+import kotlin.test.assertNotNull
 
-private val logger = KotlinLogging.logger {}
+//private val logger = KotlinLogging.logger {}
 
 /**
  * libschemaorg is a Java library built from the Schema.org OWL file.
@@ -19,4 +22,18 @@ private val logger = KotlinLogging.logger {}
  */
 internal class LibraryTest {
 
+    @Test
+    fun testViewer() {
+
+        // Expected results
+        //val expectedClass = "Place"
+
+        // Setup
+
+        // Execution
+        val viewer = Viewer()
+
+        // Validation
+        assertNotNull(viewer)
+    }
 }

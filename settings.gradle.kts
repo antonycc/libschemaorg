@@ -1,4 +1,4 @@
-// libschemaorg is a Java library representing the Schema.org OWL file.
+// libschemaorg is a Java library built from the Schema.org OWL file.
 // Copyright (C) 2022  Antony Cartwright, Polycode Limited
 //
 // This Source Code Form is subject to the terms of the Mozilla Public

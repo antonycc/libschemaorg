@@ -1,11 +1,11 @@
 package uk.co.polycode.libschemaorg.test
 
-import mu.KotlinLogging
+//import mu.KotlinLogging
 import uk.co.polycode.libschemaorg.Viewer
 import kotlin.test.Test
 import kotlin.test.assertNotNull
 
-private val logger = KotlinLogging.logger {}
+//private val logger = KotlinLogging.logger {}
 
 /**
  * libschemaorg is a Java library built from the Schema.org OWL file.
@@ -26,7 +26,7 @@ internal class GradleTaskTest {
     fun testViewer() {
 
         // Expected results
-        val expectedClass = "Place"
+        //val expectedClass = "Place"
 
         // Setup
 

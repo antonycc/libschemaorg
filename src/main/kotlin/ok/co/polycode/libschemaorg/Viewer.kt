@@ -1,9 +1,9 @@
 package uk.co.polycode.libschemaorg
 
-import mu.KotlinLogging
+//import mu.KotlinLogging
 
 
-private val logger = KotlinLogging.logger {}
+//private val logger = KotlinLogging.logger {}
 
 /**
  * libschemaorg is a Java library built from the Schema.org OWL file.
@@ -20,4 +20,5 @@ private val logger = KotlinLogging.logger {}
  */
  class Viewer {
 
+  override fun toString() = "Not implemented."
  }

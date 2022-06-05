@@ -20,7 +20,7 @@ import kotlin.test.assertNotNull
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
  * Mozilla Public License, v. 2.0 for more details.
  */
-internal class GradleTaskTest {
+internal class ViewerTest {
 
     @Test
     fun testViewer() {

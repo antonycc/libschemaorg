@@ -59,6 +59,7 @@ java {
 
 repositories {
     mavenCentral()
+    mavenLocal()
 }
 
 // Check: gradle -q dependencies --configuration compileClasspath
@@ -72,8 +73,8 @@ dependencies {
     }
 
     // OWL to Java
-    //implementation("co.uk.polycode:owl-to-java:0.0.1-SNAPSHOT")
-
+    implementation("co.uk.polycode:owl-to-java:0.0.1-SNAPSHOT")
+                    //co/uk/polycode/owl-to-java/0.0.1-SNAPSHOT/owl-to-java-0.0.1-SNAPSHOT
     // Testing
     testImplementation(kotlin("test"))
 

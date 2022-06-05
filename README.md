@@ -42,8 +42,11 @@ OWL to Java currently:
 
 TODO: Build with tests which generate Java Sources and walk object graph:
 ```shell
- % gradle clean test
- % 
+ % git clone <owl-to-java>
+ % cd <owl-to-java>
+ % gradle build publishToMavenLocal  
+ % cd ../libchemaorg
+ % gradle build
 ```
 
 The first 20 lines of Person Java object generated from a Parsed Schema.org OWL Schema describing humanity:

@@ -13,7 +13,6 @@ OWL to Java currently:
 
 # TODO
 
-* Generate source from OWL to Java gradle task
 * Build with Java 18 and Kotlin 1.7.x
 * Generate Java 8 compatible source and Java 8 compatible library
 * Run tests in Java 8
@@ -47,6 +46,15 @@ TODO: Build with tests which generate Java Sources and walk object graph:
  % gradle build publishToMavenLocal  
  % cd ../libchemaorg
  % gradle build
+```
+
+Debugging an empty class list by examining OWL to Java's logging at debug level:
+```shell
+ % gradle clean build regenerate --info --debug | grep 'classMap'
+2022-06-06T18:17:28.482+0100 [DEBUG] [uk.co.polycode.owltojava.OwlParser] Initial classMap has 0 classes
+2022-06-06T18:17:28.482+0100 [DEBUG] [uk.co.polycode.owltojava.OwlParser] Classes in classMap after adding classed for fields: 0
+2022-06-06T18:17:28.482+0100 [DEBUG] [uk.co.polycode.owltojava.OwlParser] Classes in classMap after translating OwlClassRefs to OwlClasses: 0
+ % 
 ```
 
 The first 20 lines of Person Java object generated from a Parsed Schema.org OWL Schema describing humanity:

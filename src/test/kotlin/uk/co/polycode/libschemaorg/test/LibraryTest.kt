@@ -1,7 +1,7 @@
 package uk.co.polycode.libschemaorg.test
 
 //import mu.KotlinLogging
-import uk.co.polycode.libschemaorg.Viewer
+import uk.co.polycode.ontology.lib.org.schema.Person
 import kotlin.test.Test
 import kotlin.test.assertNotNull
 
@@ -31,9 +31,9 @@ internal class LibraryTest {
         // Setup
 
         // Execution
-        val viewer = Viewer()
+        val person = Person()
 
         // Validation
-        assertNotNull(viewer)
+        assertNotNull(person)
     }
 }

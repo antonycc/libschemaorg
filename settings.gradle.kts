@@ -15,3 +15,5 @@ pluginManagement {
         gradlePluginPortal()
     }
 }
+
+includeBuild("regenerate-lib")

@@ -28,6 +28,7 @@ OWL to Java currently:
 * **Publish: Release 1.0.0 to GitHub packages**
 * Java Docs for output
 * Automate library updates
+* Automate OWL file updates
 * Contributor guidelines
 * **Library Launch: Release to Maven Central**
 
@@ -48,14 +49,37 @@ TODO: Build with tests which generate Java Sources and walk object graph:
  % gradle build
 ```
 
-Debugging an empty class list by examining OWL to Java's logging at debug level:
+Regenerate sources then  build
 ```shell
- % gradle clean build regenerate --info --debug | grep 'classMap'
-2022-06-06T18:17:28.482+0100 [DEBUG] [uk.co.polycode.owltojava.OwlParser] Initial classMap has 0 classes
-2022-06-06T18:17:28.482+0100 [DEBUG] [uk.co.polycode.owltojava.OwlParser] Classes in classMap after adding classed for fields: 0
-2022-06-06T18:17:28.482+0100 [DEBUG] [uk.co.polycode.owltojava.OwlParser] Classes in classMap after translating OwlClassRefs to OwlClasses: 0
- % 
+ % gradle clean
+ % rm -f ./src/main/java/uk/co/polycode/ontology/lib/org/schema/Person.java
+ % find . -name 'Person.*'
+ % gradle regenerate
+ ...truncated...
+ % find . -name 'Person.*'
+ ./src/main/java/uk/co/polycode/ontology/lib/org/schema/Person.java
+ % gradle build
+ ...truncated...
+ % find . -name 'Person.*'
+./build/classes/java/main/uk/co/polycode/ontology/lib/org/schema/Person.class
+./src/main/java/uk/co/polycode/ontology/lib/org/schema/Person.java
+ %
+ ```
+
+ Debugging an empty class list by examining OWL to Java's logging at debug level:
+```shell
+ gradle regenerate --info --debug | grep 'classMap'
+2022-06-14T00:22:25.727+0200 [DEBUG] [uk.co.polycode.owltojava.OwlParser] Initial classMap has 10 classes
+2022-06-14T00:22:26.569+0200 [DEBUG] [uk.co.polycode.owltojava.OwlParser] Classes in classMap after adding classes for fields: 81
+...truncated...
+2022-06-14T00:22:27.111+0200 [DEBUG] [uk.co.polycode.owltojava.OwlParser] Classes in classMap after adding classes for fields: 220
+2022-06-14T00:22:27.114+0200 [DEBUG] [uk.co.polycode.owltojava.OwlParser] Classes in classMap after translating OwlClassRefs to OwlClasses: 220
+2022-06-14T00:22:27.136+0200 [DEBUG] [uk.co.polycode.owltojava.RegenerateOntologyTaskDelegate] There are 220 classes in the classMap with primitives
+2022-06-14T00:22:27.136+0200 [DEBUG] [uk.co.polycode.owltojava.RegenerateOntologyTaskDelegate] There are 211 classes in the classMap (after primitives were filtered)
+
+ % gradle clean build
 ```
+
 
 The first 20 lines of Person Java object generated from a Parsed Schema.org OWL Schema describing humanity:
 ```shell

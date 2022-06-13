@@ -1,7 +1,4 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
-import java.net.URL
-import java.nio.file.Paths
-import java.time.ZonedDateTime
 
 // libschemaorg is a Java library built from the Schema.org OWL file.
 // Copyright (C) 2022  Antony Cartwright, Polycode Limited
@@ -79,8 +76,14 @@ dependencies {
     implementation("io.gitlab.arturbosch.detekt:detekt-gradle-plugin:1.20.0")
 }
 
+// Override default library Task with: gradle regenerate -PuseIncludedBuild=regenerate-with-defaults
 tasks.register("regenerate") {
-    dependsOn(gradle.includedBuild("regenerate-lib").task(":regenerate"))
+    val useIncludedBuildProperty = project.properties["useIncludedBuild"]
+    val useIncludedBuild = if ( useIncludedBuildProperty is String ) useIncludedBuildProperty else null
+    if ( useIncludedBuild.isNullOrBlank() )
+        dependsOn(gradle.includedBuild("regenerate-lib").task(":regenerate"))
+    else
+        dependsOn(gradle.includedBuild(useIncludedBuild).task(":regenerate"))
 }
 
 tasks.test {

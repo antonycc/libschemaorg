@@ -1,4 +1,3 @@
-import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 import java.net.URL
 import java.nio.file.Paths
 import java.time.ZonedDateTime
@@ -28,8 +27,11 @@ plugins {
     `kotlin-dsl`
 }
 
-tasks {
+repositories {
+    mavenCentral()
+}
 
+tasks {
     // Regenerate Java classes for schema.org using the OWL schema
     val regenerate by registering(uk.co.polycode.owltojava.RegenerateOntologyTask::class) {
         outputs.upToDateWhen { false }
@@ -37,7 +39,6 @@ tasks {
         val sourceFileName = "schemaorg.owl"
         lang = "en"
         src = Paths.get("${srcMain}/resources/${sourceFileName}").toFile().absolutePath
-        //dest = Paths.get("${buildDir}/generated-src").toFile().absolutePath
         dest = Paths.get("${srcMain}/java").toFile().absolutePath
         javaBasePackage = "uk.co.polycode.ontology.lib"
         licenceText = """
@@ -65,7 +66,7 @@ tasks {
             "https://schema.org/Integer"  to BigInteger::class.java.name,
             "https://schema.org/Float"    to BigDecimal::class.java.name,
             "https://schema.org/Number"   to BigDecimal::class.java.name,
-            "https://schema.org/Boolean"  to "java.lang.Boolean", // Boolean::class.java.name, unboxes to boolean.
+            "https://schema.org/Boolean"  to "java.lang.Boolean" // Boolean::class.java.name, unboxes to boolean.
         )
         ignoredPropertyTypes = listOf(
             "https://schema.org/Role"
@@ -78,5 +79,5 @@ tasks {
             "https://www.w3.org/2000/01/rdf-schema#Class"
         )
     }
-    logger.debug("Created OWL to Java's Gradle Task \"regenerate\" ${regenerate}")
+    logger.debug("regenerate task created: ${regenerate}")
 }

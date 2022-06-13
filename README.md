@@ -53,14 +53,14 @@ Regenerate sources then  build
 ```shell
  % gradle clean
  % rm -f ./src/main/java/uk/co/polycode/ontology/lib/org/schema/Person.java
- % find . -name 'Person.*'
+ % find ./src -name 'Person.*'
  % gradle regenerate
  ...truncated...
- % find . -name 'Person.*'
+ % find ./src -name 'Person.*'
  ./src/main/java/uk/co/polycode/ontology/lib/org/schema/Person.java
  % gradle build
  ...truncated...
- % find . -name 'Person.*'
+ % find ./build -name 'Person.*'
 ./build/classes/java/main/uk/co/polycode/ontology/lib/org/schema/Person.class
 ./src/main/java/uk/co/polycode/ontology/lib/org/schema/Person.java
  %

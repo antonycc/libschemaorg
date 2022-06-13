@@ -17,3 +17,4 @@ pluginManagement {
 }
 
 includeBuild("regenerate-lib")
+includeBuild("regenerate-with-defaults")

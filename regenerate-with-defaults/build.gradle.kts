@@ -30,7 +30,7 @@ repositories {
 }
 
 tasks {
-    // Regenerate Java classes for schema.org using the OWL schema and default options to a non-source folder
+    // Regenerate Java classes for schema.org using the OWL schema and default options to a non-source folder.
     val regenerate by registering(uk.co.polycode.owltojava.RegenerateOntologyTask::class) {
         outputs.upToDateWhen { false }
         val srcMain: String = Paths.get("${projectDir}/../src/main").toFile().absolutePath

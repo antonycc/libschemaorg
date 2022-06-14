@@ -86,6 +86,12 @@ tasks.register("regenerate") {
         dependsOn(gradle.includedBuild(useIncludedBuild).task(":regenerate"))
 }
 
+tasks {
+    compileJava {
+        dependsOn("regenerate")  // (1)
+    }
+}
+
 tasks.test {
     useJUnitPlatform()
 }

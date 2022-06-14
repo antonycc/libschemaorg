@@ -49,7 +49,7 @@ TODO: Build with tests which generate Java Sources and walk object graph:
  % gradle build
 ```
 
-Regenerate sources then  build
+Regenerate sources then build
 ```shell
  % gradle clean
  % rm -f ./src/main/java/uk/co/polycode/ontology/lib/org/schema/Person.java

@@ -17,4 +17,5 @@ pluginManagement {
 }
 
 includeBuild("regenerate-lib")
+includeBuild("regenerate-lib-with-groovy")
 includeBuild("regenerate-with-defaults")

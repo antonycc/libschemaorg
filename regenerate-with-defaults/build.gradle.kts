@@ -29,6 +29,8 @@ repositories {
     mavenCentral()
 }
 
+// Override default library Task with:
+//    ./gradlew regenerate -PuseIncludedBuild=regenerate-with-defaults
 tasks {
     // Regenerate Java classes for schema.org using the OWL schema and default options to a non-source folder.
     val regenerate by registering(uk.co.polycode.owltojava.RegenerateOntologyTask::class) {

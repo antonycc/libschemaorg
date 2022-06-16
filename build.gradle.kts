@@ -76,7 +76,9 @@ dependencies {
     implementation("io.gitlab.arturbosch.detekt:detekt-gradle-plugin:1.20.0")
 }
 
-// Override default library Task with: gradle regenerate -PuseIncludedBuild=regenerate-with-defaults
+// Override default library Task with:
+//    ./gradlew regenerate -PuseIncludedBuild=regenerate-with-defaults
+//    ./gradlew regenerate -PuseIncludedBuild=regenerate-lib-with-groovy
 tasks.register("regenerate") {
     val useIncludedBuildProperty = project.properties["useIncludedBuild"]
     val useIncludedBuild = if ( useIncludedBuildProperty is String ) useIncludedBuildProperty else null

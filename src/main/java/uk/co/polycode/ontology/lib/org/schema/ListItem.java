@@ -17,11 +17,6 @@ import java.math.BigInteger;
  */
 public class ListItem extends Intangible {
   /**
-   * Where to find the definition of the OWL Class used to generate this Java class.
-   */
-  public String isDefinedBy = "https://schema.org/ListItem";
-
-  /**
    * An entity represented by an entry in a list or data feed (e.g. an 'artist' in a list of 'artists')’.
    */
   public Thing item;
@@ -40,5 +35,10 @@ public class ListItem extends Intangible {
    * A link to the ListItem that preceeds the current one.
    */
   public ListItem previousItem;
+
+  /**
+   * Where to find the definition of the OWL Class used to generate this Java class.
+   */
+  public String isDefinedBy = "https://schema.org/ListItem";
 }
 

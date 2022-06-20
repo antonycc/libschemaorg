@@ -16,13 +16,13 @@ import java.lang.String;
  */
 public class MedicalRiskFactor extends MedicalEntity {
   /**
-   * Where to find the definition of the OWL Class used to generate this Java class.
-   */
-  public String isDefinedBy = "https://health-lifesci.schema.org/MedicalRiskFactor";
-
-  /**
    * The condition, complication, etc. influenced by this factor.
    */
   public MedicalEntity increasesRiskOf;
+
+  /**
+   * Where to find the definition of the OWL Class used to generate this Java class.
+   */
+  public String isDefinedBy = "https://health-lifesci.schema.org/MedicalRiskFactor";
 }
 

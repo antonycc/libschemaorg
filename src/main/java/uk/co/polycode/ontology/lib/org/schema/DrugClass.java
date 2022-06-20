@@ -16,13 +16,13 @@ import java.lang.String;
  */
 public class DrugClass extends MedicalEntity {
   /**
-   * Where to find the definition of the OWL Class used to generate this Java class.
-   */
-  public String isDefinedBy = "https://health-lifesci.schema.org/DrugClass";
-
-  /**
    * Specifying a drug or medicine used in a medication procedure.
    */
   public Drug drug;
+
+  /**
+   * Where to find the definition of the OWL Class used to generate this Java class.
+   */
+  public String isDefinedBy = "https://health-lifesci.schema.org/DrugClass";
 }
 

@@ -20,11 +20,6 @@ import java.time.ZonedDateTime;
  */
 public class MerchantReturnPolicy extends Intangible {
   /**
-   * Where to find the definition of the OWL Class used to generate this Java class.
-   */
-  public String isDefinedBy = "https://pending.schema.org/MerchantReturnPolicy";
-
-  /**
    * A property-value pair representing an additional characteristics of the entitity, e.g. a product feature or another characteristic for which there is no matching property in schema.org.<br/><br/>
    *
    * Note: Publishers should be aware that applications designed to use specific schema.org properties (e.g. https://schema.org/width, https://schema.org/color, https://schema.org/gtin13, ...) will typically expect such data to be provided using those properties, rather than using the generic property/value mechanism.
@@ -84,12 +79,12 @@ public class MerchantReturnPolicy extends Intangible {
   /**
    * Use <a class="localLink" href="https://schema.org/MonetaryAmount">MonetaryAmount</a> to specify a fixed restocking fee for product returns, or use <a class="localLink" href="https://schema.org/Number">Number</a> to specify a percentage of the product price paid by the customer.
    */
-  public MonetaryAmount restockingFee;
+  public BigDecimal restockingFeeBigDecimal;
 
   /**
    * Use <a class="localLink" href="https://schema.org/MonetaryAmount">MonetaryAmount</a> to specify a fixed restocking fee for product returns, or use <a class="localLink" href="https://schema.org/Number">Number</a> to specify a percentage of the product price paid by the customer.
    */
-  public BigDecimal restockingFeeBigDecimal;
+  public MonetaryAmount restockingFee;
 
   /**
    * The type of return fees for purchased products (for any return reason)
@@ -134,16 +129,21 @@ public class MerchantReturnPolicy extends Intangible {
   /**
    * Specifies either a fixed return date or the number of days (from the delivery date) that a product can be returned. Used when the <a class="localLink" href="https://schema.org/returnPolicyCategory">returnPolicyCategory</a> property is specified as <a class="localLink" href="https://schema.org/MerchantReturnFiniteReturnWindow">MerchantReturnFiniteReturnWindow</a>.
    */
-  public ZonedDateTime merchantReturnDays;
-
-  /**
-   * Specifies either a fixed return date or the number of days (from the delivery date) that a product can be returned. Used when the <a class="localLink" href="https://schema.org/returnPolicyCategory">returnPolicyCategory</a> property is specified as <a class="localLink" href="https://schema.org/MerchantReturnFiniteReturnWindow">MerchantReturnFiniteReturnWindow</a>.
-   */
   public ZonedDateTime merchantReturnDaysZonedDateTime;
 
   /**
    * Specifies either a fixed return date or the number of days (from the delivery date) that a product can be returned. Used when the <a class="localLink" href="https://schema.org/returnPolicyCategory">returnPolicyCategory</a> property is specified as <a class="localLink" href="https://schema.org/MerchantReturnFiniteReturnWindow">MerchantReturnFiniteReturnWindow</a>.
    */
   public BigInteger merchantReturnDaysBigInteger;
+
+  /**
+   * Specifies either a fixed return date or the number of days (from the delivery date) that a product can be returned. Used when the <a class="localLink" href="https://schema.org/returnPolicyCategory">returnPolicyCategory</a> property is specified as <a class="localLink" href="https://schema.org/MerchantReturnFiniteReturnWindow">MerchantReturnFiniteReturnWindow</a>.
+   */
+  public ZonedDateTime merchantReturnDays;
+
+  /**
+   * Where to find the definition of the OWL Class used to generate this Java class.
+   */
+  public String isDefinedBy = "https://pending.schema.org/MerchantReturnPolicy";
 }
 

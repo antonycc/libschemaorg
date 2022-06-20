@@ -17,11 +17,6 @@ import java.math.BigDecimal;
  */
 public class MedicalConditionStage extends MedicalIntangible {
   /**
-   * Where to find the definition of the OWL Class used to generate this Java class.
-   */
-  public String isDefinedBy = "https://health-lifesci.schema.org/MedicalConditionStage";
-
-  /**
    * The substage, e.g. 'a' for Stage IIIa.
    */
   public String subStageSuffix;
@@ -30,5 +25,10 @@ public class MedicalConditionStage extends MedicalIntangible {
    * The stage represented as a number, e.g. 3.
    */
   public BigDecimal stageAsNumber;
+
+  /**
+   * Where to find the definition of the OWL Class used to generate this Java class.
+   */
+  public String isDefinedBy = "https://health-lifesci.schema.org/MedicalConditionStage";
 }
 

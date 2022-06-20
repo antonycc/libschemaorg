@@ -16,11 +16,6 @@ import java.lang.String;
  */
 public class WarrantyPromise extends StructuredValue {
   /**
-   * Where to find the definition of the OWL Class used to generate this Java class.
-   */
-  public String isDefinedBy = "https://schema.org/WarrantyPromise";
-
-  /**
    * The duration of the warranty promise. Common unitCode values are ANN for year, MON for months, or DAY for days.
    */
   public QuantitativeValue durationOfWarranty;
@@ -29,5 +24,10 @@ public class WarrantyPromise extends StructuredValue {
    * The scope of the warranty promise.
    */
   public WarrantyScope warrantyScope;
+
+  /**
+   * Where to find the definition of the OWL Class used to generate this Java class.
+   */
+  public String isDefinedBy = "https://schema.org/WarrantyPromise";
 }
 

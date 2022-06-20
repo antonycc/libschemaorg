@@ -16,11 +16,6 @@ import java.lang.String;
  */
 public class SpeakableSpecification extends Intangible {
   /**
-   * Where to find the definition of the OWL Class used to generate this Java class.
-   */
-  public String isDefinedBy = "https://schema.org/SpeakableSpecification";
-
-  /**
    * A CSS selector, e.g. of a <a class="localLink" href="https://schema.org/SpeakableSpecification">SpeakableSpecification</a> or <a class="localLink" href="https://schema.org/WebPageElement">WebPageElement</a>. In the latter case, multiple matches within a page can constitute a single conceptual "Web page element".
    */
   public CssSelectorType cssSelector;
@@ -29,5 +24,10 @@ public class SpeakableSpecification extends Intangible {
    * An XPath, e.g. of a <a class="localLink" href="https://schema.org/SpeakableSpecification">SpeakableSpecification</a> or <a class="localLink" href="https://schema.org/WebPageElement">WebPageElement</a>. In the latter case, multiple matches within a page can constitute a single conceptual "Web page element".
    */
   public XPathType xpath;
+
+  /**
+   * Where to find the definition of the OWL Class used to generate this Java class.
+   */
+  public String isDefinedBy = "https://schema.org/SpeakableSpecification";
 }
 

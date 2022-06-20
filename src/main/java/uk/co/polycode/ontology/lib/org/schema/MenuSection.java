@@ -16,11 +16,6 @@ import java.lang.String;
  */
 public class MenuSection extends CreativeWork {
   /**
-   * Where to find the definition of the OWL Class used to generate this Java class.
-   */
-  public String isDefinedBy = "https://schema.org/MenuSection";
-
-  /**
    * A food or drink item contained in a menu or menu section.
    */
   public MenuItem hasMenuItem;
@@ -29,5 +24,10 @@ public class MenuSection extends CreativeWork {
    * A subgrouping of the menu (by dishes, course, serving time period, etc.).
    */
   public MenuSection hasMenuSection;
+
+  /**
+   * Where to find the definition of the OWL Class used to generate this Java class.
+   */
+  public String isDefinedBy = "https://schema.org/MenuSection";
 }
 

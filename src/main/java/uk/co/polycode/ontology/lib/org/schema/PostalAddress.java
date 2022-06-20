@@ -16,11 +16,6 @@ import java.lang.String;
  */
 public class PostalAddress extends ContactPoint {
   /**
-   * Where to find the definition of the OWL Class used to generate this Java class.
-   */
-  public String isDefinedBy = "https://schema.org/PostalAddress";
-
-  /**
    * The country. For example, USA. You can also provide the two-letter <a href="http://en.wikipedia.org/wiki/ISO_3166-1">ISO 3166-1 alpha-2 country code</a>.
    */
   public Country addressCountry;
@@ -49,5 +44,10 @@ public class PostalAddress extends ContactPoint {
    * The street address. For example, 1600 Amphitheatre Pkwy.
    */
   public String streetAddress;
+
+  /**
+   * Where to find the definition of the OWL Class used to generate this Java class.
+   */
+  public String isDefinedBy = "https://schema.org/PostalAddress";
 }
 

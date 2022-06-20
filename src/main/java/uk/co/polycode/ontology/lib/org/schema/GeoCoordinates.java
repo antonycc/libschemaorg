@@ -17,11 +17,6 @@ import java.math.BigDecimal;
  */
 public class GeoCoordinates extends StructuredValue {
   /**
-   * Where to find the definition of the OWL Class used to generate this Java class.
-   */
-  public String isDefinedBy = "https://schema.org/GeoCoordinates";
-
-  /**
    * Physical address of the item.
    */
   public PostalAddress address;
@@ -50,5 +45,10 @@ public class GeoCoordinates extends StructuredValue {
    * The postal code. For example, 94043.
    */
   public String postalCode;
+
+  /**
+   * Where to find the definition of the OWL Class used to generate this Java class.
+   */
+  public String isDefinedBy = "https://schema.org/GeoCoordinates";
 }
 

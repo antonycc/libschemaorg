@@ -16,16 +16,6 @@ import java.lang.String;
  */
 public class MedicalCondition extends MedicalEntity {
   /**
-   * Where to find the definition of the OWL Class used to generate this Java class.
-   */
-  public String isDefinedBy = "https://health-lifesci.schema.org/MedicalCondition";
-
-  /**
-   * The anatomy of the underlying organ system or structures associated with this entity.
-   */
-  public SuperficialAnatomy associatedAnatomy;
-
-  /**
    * The anatomy of the underlying organ system or structures associated with this entity.
    */
   public AnatomicalSystem associatedAnatomyAnatomicalSystem;
@@ -34,6 +24,11 @@ public class MedicalCondition extends MedicalEntity {
    * The anatomy of the underlying organ system or structures associated with this entity.
    */
   public AnatomicalStructure associatedAnatomyAnatomicalStructure;
+
+  /**
+   * The anatomy of the underlying organ system or structures associated with this entity.
+   */
+  public SuperficialAnatomy associatedAnatomy;
 
   /**
    * One of a set of differential diagnoses for the condition. Specifically, a closely-related or competing diagnosis typically considered later in the cognitive process whereby this medical condition is distinguished from others most likely responsible for a similar collection of signs and symptoms to reach the most parsimonious diagnosis or diagnoses in a patient.
@@ -103,16 +98,21 @@ public class MedicalCondition extends MedicalEntity {
   /**
    * The status of the study (enumerated).
    */
-  public MedicalStudyStatus status;
+  public EventStatusType statusEventStatusType;
 
   /**
    * The status of the study (enumerated).
    */
-  public EventStatusType statusEventStatusType;
+  public MedicalStudyStatus status;
 
   /**
    * A medical test typically performed given this condition.
    */
   public MedicalTest typicalTest;
+
+  /**
+   * Where to find the definition of the OWL Class used to generate this Java class.
+   */
+  public String isDefinedBy = "https://health-lifesci.schema.org/MedicalCondition";
 }
 

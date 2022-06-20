@@ -19,11 +19,6 @@ import java.net.URL;
  */
 public class AlignmentObject extends Intangible {
   /**
-   * Where to find the definition of the OWL Class used to generate this Java class.
-   */
-  public String isDefinedBy = "https://schema.org/AlignmentObject";
-
-  /**
    * A category of alignment between the learning resource and the framework node. Recommended values include: 'requires', 'textComplexity', 'readingLevel', and 'educationalSubject'.
    */
   public String alignmentType;
@@ -47,5 +42,10 @@ public class AlignmentObject extends Intangible {
    * The URL of a node in an established educational framework.
    */
   public URL targetUrl;
+
+  /**
+   * Where to find the definition of the OWL Class used to generate this Java class.
+   */
+  public String isDefinedBy = "https://schema.org/AlignmentObject";
 }
 

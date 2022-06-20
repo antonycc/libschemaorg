@@ -17,11 +17,6 @@ import java.net.URL;
  */
 public class HealthInsurancePlan extends Intangible {
   /**
-   * Where to find the definition of the OWL Class used to generate this Java class.
-   */
-  public String isDefinedBy = "https://pending.schema.org/HealthInsurancePlan";
-
-  /**
    * The URL that goes directly to the summary of benefits and coverage for the specific standard plan or plan variation.
    */
   public URL benefitsSummaryUrl;
@@ -65,5 +60,10 @@ public class HealthInsurancePlan extends Intangible {
    * The standard for interpreting thePlan ID. The preferred is "HIOS". See the Centers for Medicare &amp; Medicaid Services for more details.
    */
   public String usesHealthPlanIdStandard;
+
+  /**
+   * Where to find the definition of the OWL Class used to generate this Java class.
+   */
+  public String isDefinedBy = "https://pending.schema.org/HealthInsurancePlan";
 }
 

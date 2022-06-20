@@ -17,11 +17,6 @@ import java.math.BigDecimal;
  */
 public class ProgramMembership extends Intangible {
   /**
-   * Where to find the definition of the OWL Class used to generate this Java class.
-   */
-  public String isDefinedBy = "https://schema.org/ProgramMembership";
-
-  /**
    * The organization (airline, travelers' club, etc.) the membership is made with.
    */
   public Organization hostingOrganization;
@@ -29,12 +24,12 @@ public class ProgramMembership extends Intangible {
   /**
    * A member of an Organization or a ProgramMembership. Organizations can be members of organizations; ProgramMembership is typically for individuals.
    */
-  public Person member;
+  public Organization memberOrganization;
 
   /**
    * A member of an Organization or a ProgramMembership. Organizations can be members of organizations; ProgramMembership is typically for individuals.
    */
-  public Organization memberOrganization;
+  public Person member;
 
   /**
    * A unique identifier for the membership.
@@ -44,16 +39,21 @@ public class ProgramMembership extends Intangible {
   /**
    * The number of membership points earned by the member. If necessary, the unitText can be used to express the units the points are issued in. (e.g. stars, miles, etc.)
    */
-  public BigDecimal membershipPointsEarned;
+  public QuantitativeValue membershipPointsEarnedQuantitativeValue;
 
   /**
    * The number of membership points earned by the member. If necessary, the unitText can be used to express the units the points are issued in. (e.g. stars, miles, etc.)
    */
-  public QuantitativeValue membershipPointsEarnedQuantitativeValue;
+  public BigDecimal membershipPointsEarned;
 
   /**
    * The program providing the membership.
    */
   public String programName;
+
+  /**
+   * Where to find the definition of the OWL Class used to generate this Java class.
+   */
+  public String isDefinedBy = "https://schema.org/ProgramMembership";
 }
 

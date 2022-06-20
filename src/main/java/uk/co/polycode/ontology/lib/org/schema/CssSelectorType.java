@@ -16,11 +16,6 @@ import java.lang.String;
  */
 public class CssSelectorType {
   /**
-   * The value of what would have been a primitive supertype.
-   */
-  public String value;
-
-  /**
    * Where to find the definition of the OWL Class used to generate this Java class.
    */
   public String isDefinedBy = "https://pending.schema.org/CssSelectorType";

@@ -17,11 +17,6 @@ import java.time.ZonedDateTime;
  */
 public class Organization extends Thing {
   /**
-   * Where to find the definition of the OWL Class used to generate this Java class.
-   */
-  public String isDefinedBy = "https://schema.org/Organization";
-
-  /**
    * For a <a class="localLink" href="https://schema.org/NewsMediaOrganization">NewsMediaOrganization</a> or other news-related <a class="localLink" href="https://schema.org/Organization">Organization</a>, a statement about public engagement activities (for news media, the newsroom’s), including involving the public - digitally or otherwise -- in coverage decisions, reporting and activities after publication.
    */
   public CreativeWork actionableFeedbackPolicy;
@@ -44,17 +39,17 @@ public class Organization extends Thing {
   /**
    * The geographic area where a service or offered item is provided.
    */
-  public AdministrativeArea areaServed;
-
-  /**
-   * The geographic area where a service or offered item is provided.
-   */
   public GeoShape areaServedGeoShape;
 
   /**
    * The geographic area where a service or offered item is provided.
    */
   public Place areaServedPlace;
+
+  /**
+   * The geographic area where a service or offered item is provided.
+   */
+  public AdministrativeArea areaServed;
 
   /**
    * An award won by or for this item.
@@ -64,12 +59,12 @@ public class Organization extends Thing {
   /**
    * The brand(s) associated with a product or service, or the brand(s) maintained by an organization or business person.
    */
-  public Organization brand;
+  public Brand brandBrand;
 
   /**
    * The brand(s) associated with a product or service, or the brand(s) maintained by an organization or business person.
    */
-  public Brand brandBrand;
+  public Organization brand;
 
   /**
    * A contact point for a person or organization.
@@ -139,12 +134,12 @@ public class Organization extends Thing {
   /**
    * A person or organization that supports (sponsors) something through some kind of financial contribution.
    */
-  public Person funder;
+  public Organization funderOrganization;
 
   /**
    * A person or organization that supports (sponsors) something through some kind of financial contribution.
    */
-  public Organization funderOrganization;
+  public Person funder;
 
   /**
    * A <a class="localLink" href="https://schema.org/Grant">Grant</a> that directly or indirectly provide funding or sponsorship for this item. See also <a class="localLink" href="https://schema.org/ownershipFundingInfo">ownershipFundingInfo</a>.
@@ -219,17 +214,17 @@ public class Organization extends Thing {
   /**
    * The location of, for example, where an event is happening, where an organization is located, or where an action takes place.
    */
-  public PostalAddress location;
-
-  /**
-   * The location of, for example, where an event is happening, where an organization is located, or where an action takes place.
-   */
   public Place locationPlace;
 
   /**
    * The location of, for example, where an event is happening, where an organization is located, or where an action takes place.
    */
   public VirtualLocation locationVirtualLocation;
+
+  /**
+   * The location of, for example, where an event is happening, where an organization is located, or where an action takes place.
+   */
+  public PostalAddress location;
 
   /**
    * An associated logo.
@@ -244,22 +239,22 @@ public class Organization extends Thing {
   /**
    * A member of an Organization or a ProgramMembership. Organizations can be members of organizations; ProgramMembership is typically for individuals.
    */
-  public Person member;
+  public Organization memberOrganization;
 
   /**
    * A member of an Organization or a ProgramMembership. Organizations can be members of organizations; ProgramMembership is typically for individuals.
    */
-  public Organization memberOrganization;
-
-  /**
-   * An Organization (or ProgramMembership) to which this Person or Organization belongs.
-   */
-  public ProgramMembership memberOf;
+  public Person member;
 
   /**
    * An Organization (or ProgramMembership) to which this Person or Organization belongs.
    */
   public Organization memberOfOrganization;
+
+  /**
+   * An Organization (or ProgramMembership) to which this Person or Organization belongs.
+   */
+  public ProgramMembership memberOf;
 
   /**
    * The North American Industry Classification System (NAICS) code for a particular organization or business person.
@@ -279,22 +274,22 @@ public class Organization extends Thing {
   /**
    * For an <a class="localLink" href="https://schema.org/Organization">Organization</a> (often but not necessarily a <a class="localLink" href="https://schema.org/NewsMediaOrganization">NewsMediaOrganization</a>), a description of organizational ownership structure; funding and grants. In a news/media setting, this is with particular reference to editorial independence.   Note that the <a class="localLink" href="https://schema.org/funder">funder</a> is also available and can be used to make basic funder information machine-readable.
    */
-  public AboutPage ownershipFundingInfo;
+  public CreativeWork ownershipFundingInfoCreativeWork;
 
   /**
    * For an <a class="localLink" href="https://schema.org/Organization">Organization</a> (often but not necessarily a <a class="localLink" href="https://schema.org/NewsMediaOrganization">NewsMediaOrganization</a>), a description of organizational ownership structure; funding and grants. In a news/media setting, this is with particular reference to editorial independence.   Note that the <a class="localLink" href="https://schema.org/funder">funder</a> is also available and can be used to make basic funder information machine-readable.
    */
-  public CreativeWork ownershipFundingInfoCreativeWork;
-
-  /**
-   * Products owned by the organization or person.
-   */
-  public Product owns;
+  public AboutPage ownershipFundingInfo;
 
   /**
    * Products owned by the organization or person.
    */
   public OwnershipInfo ownsOwnershipInfo;
+
+  /**
+   * Products owned by the organization or person.
+   */
+  public Product owns;
 
   /**
    * The larger organization that this organization is a <a class="localLink" href="https://schema.org/subOrganization">subOrganization</a> of, if any.
@@ -326,12 +321,12 @@ public class Organization extends Thing {
   /**
    * A person or organization that supports a thing through a pledge, promise, or financial contribution. e.g. a sponsor of a Medical Study or a corporate sponsor of an event.
    */
-  public Person sponsor;
+  public Organization sponsorOrganization;
 
   /**
    * A person or organization that supports a thing through a pledge, promise, or financial contribution. e.g. a sponsor of a Medical Study or a corporate sponsor of an event.
    */
-  public Organization sponsorOrganization;
+  public Person sponsor;
 
   /**
    * A relationship between two organizations where the first includes the second, e.g., as a subsidiary. See also: the more specific 'department' property.
@@ -367,5 +362,10 @@ public class Organization extends Thing {
    * The date that this organization was founded.
    */
   public ZonedDateTime foundingDate;
+
+  /**
+   * Where to find the definition of the OWL Class used to generate this Java class.
+   */
+  public String isDefinedBy = "https://schema.org/Organization";
 }
 

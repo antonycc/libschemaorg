@@ -18,11 +18,6 @@ import java.math.BigInteger;
  */
 public class Book extends CreativeWork {
   /**
-   * Where to find the definition of the OWL Class used to generate this Java class.
-   */
-  public String isDefinedBy = "https://schema.org/Book";
-
-  /**
    * The edition of the book.
    */
   public String bookEdition;
@@ -51,5 +46,10 @@ public class Book extends CreativeWork {
    * The number of pages in the book.
    */
   public BigInteger numberOfPages;
+
+  /**
+   * Where to find the definition of the OWL Class used to generate this Java class.
+   */
+  public String isDefinedBy = "https://schema.org/Book";
 }
 

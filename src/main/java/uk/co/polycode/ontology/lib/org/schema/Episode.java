@@ -17,11 +17,6 @@ import java.math.BigInteger;
  */
 public class Episode extends CreativeWork {
   /**
-   * Where to find the definition of the OWL Class used to generate this Java class.
-   */
-  public String isDefinedBy = "https://schema.org/Episode";
-
-  /**
    * An actor, e.g. in tv, radio, movie, video games etc., or in an event. Actors can be associated with individual items or with a series, episode, clip.
    */
   public Person actor;
@@ -44,12 +39,12 @@ public class Episode extends CreativeWork {
   /**
    * The composer of the soundtrack.
    */
-  public Person musicBy;
+  public MusicGroup musicByMusicGroup;
 
   /**
    * The composer of the soundtrack.
    */
-  public MusicGroup musicByMusicGroup;
+  public Person musicBy;
 
   /**
    * The season to which this episode belongs.
@@ -70,5 +65,10 @@ public class Episode extends CreativeWork {
    * The trailer of a movie or tv/radio series, season, episode, etc.
    */
   public VideoObject trailer;
+
+  /**
+   * Where to find the definition of the OWL Class used to generate this Java class.
+   */
+  public String isDefinedBy = "https://schema.org/Episode";
 }
 

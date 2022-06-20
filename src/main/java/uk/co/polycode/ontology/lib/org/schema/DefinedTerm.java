@@ -16,11 +16,6 @@ import java.lang.String;
  */
 public class DefinedTerm extends Intangible {
   /**
-   * Where to find the definition of the OWL Class used to generate this Java class.
-   */
-  public String isDefinedBy = "https://pending.schema.org/DefinedTerm";
-
-  /**
    * A <a class="localLink" href="https://schema.org/DefinedTermSet">DefinedTermSet</a> that contains this term.
    */
   public DefinedTermSet inDefinedTermSet;
@@ -29,5 +24,10 @@ public class DefinedTerm extends Intangible {
    * A code that identifies this <a class="localLink" href="https://schema.org/DefinedTerm">DefinedTerm</a> within a <a class="localLink" href="https://schema.org/DefinedTermSet">DefinedTermSet</a>
    */
   public String termCode;
+
+  /**
+   * Where to find the definition of the OWL Class used to generate this Java class.
+   */
+  public String isDefinedBy = "https://pending.schema.org/DefinedTerm";
 }
 

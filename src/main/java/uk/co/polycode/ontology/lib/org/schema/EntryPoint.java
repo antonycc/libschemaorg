@@ -16,11 +16,6 @@ import java.lang.String;
  */
 public class EntryPoint extends Intangible {
   /**
-   * Where to find the definition of the OWL Class used to generate this Java class.
-   */
-  public String isDefinedBy = "https://schema.org/EntryPoint";
-
-  /**
    * An application that can complete the request.
    */
   public SoftwareApplication actionApplication;
@@ -49,5 +44,10 @@ public class EntryPoint extends Intangible {
    * An url template (RFC6570) that will be used to construct the target of the execution of the action.
    */
   public String urlTemplate;
+
+  /**
+   * Where to find the definition of the OWL Class used to generate this Java class.
+   */
+  public String isDefinedBy = "https://schema.org/EntryPoint";
 }
 

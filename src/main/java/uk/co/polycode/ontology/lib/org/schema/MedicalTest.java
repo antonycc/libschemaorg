@@ -16,11 +16,6 @@ import java.lang.String;
  */
 public class MedicalTest extends MedicalEntity {
   /**
-   * Where to find the definition of the OWL Class used to generate this Java class.
-   */
-  public String isDefinedBy = "https://health-lifesci.schema.org/MedicalTest";
-
-  /**
    * Drugs that affect the test's results.
    */
   public Drug affectedBy;
@@ -44,5 +39,10 @@ public class MedicalTest extends MedicalEntity {
    * Device used to perform the test.
    */
   public MedicalDevice usesDevice;
+
+  /**
+   * Where to find the definition of the OWL Class used to generate this Java class.
+   */
+  public String isDefinedBy = "https://health-lifesci.schema.org/MedicalTest";
 }
 

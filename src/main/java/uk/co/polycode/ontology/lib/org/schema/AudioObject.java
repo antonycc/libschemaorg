@@ -16,11 +16,6 @@ import java.lang.String;
  */
 public class AudioObject extends MediaObject {
   /**
-   * Where to find the definition of the OWL Class used to generate this Java class.
-   */
-  public String isDefinedBy = "https://schema.org/AudioObject";
-
-  /**
    * The caption for this object. For downloadable machine formats (closed caption, subtitles etc.) use MediaObject and indicate the <a class="localLink" href="https://schema.org/encodingFormat">encodingFormat</a>.
    */
   public MediaObject caption;
@@ -34,5 +29,10 @@ public class AudioObject extends MediaObject {
    * If this MediaObject is an AudioObject or VideoObject, the transcript of that object.
    */
   public String transcript;
+
+  /**
+   * Where to find the definition of the OWL Class used to generate this Java class.
+   */
+  public String isDefinedBy = "https://schema.org/AudioObject";
 }
 

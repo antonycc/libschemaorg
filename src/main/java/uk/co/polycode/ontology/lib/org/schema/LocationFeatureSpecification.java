@@ -17,11 +17,6 @@ import java.time.ZonedDateTime;
  */
 public class LocationFeatureSpecification extends PropertyValue {
   /**
-   * Where to find the definition of the OWL Class used to generate this Java class.
-   */
-  public String isDefinedBy = "https://schema.org/LocationFeatureSpecification";
-
-  /**
    * The hours during which this service or contact is available.
    */
   public OpeningHoursSpecification hoursAvailable;
@@ -29,12 +24,17 @@ public class LocationFeatureSpecification extends PropertyValue {
   /**
    * The date when the item becomes valid.
    */
-  public ZonedDateTime validFrom;
+  public ZonedDateTime validFromZonedDateTime;
 
   /**
    * The date when the item becomes valid.
    */
-  public ZonedDateTime validFromZonedDateTime;
+  public ZonedDateTime validFrom;
+
+  /**
+   * The date after when the item is not valid. For example the end of an offer, salary period, or a period of opening hours.
+   */
+  public ZonedDateTime validThroughZonedDateTime;
 
   /**
    * The date after when the item is not valid. For example the end of an offer, salary period, or a period of opening hours.
@@ -42,8 +42,8 @@ public class LocationFeatureSpecification extends PropertyValue {
   public ZonedDateTime validThrough;
 
   /**
-   * The date after when the item is not valid. For example the end of an offer, salary period, or a period of opening hours.
+   * Where to find the definition of the OWL Class used to generate this Java class.
    */
-  public ZonedDateTime validThroughZonedDateTime;
+  public String isDefinedBy = "https://schema.org/LocationFeatureSpecification";
 }
 

@@ -19,11 +19,6 @@ import java.time.ZonedDateTime;
  */
 public class MediaObject extends CreativeWork {
   /**
-   * Where to find the definition of the OWL Class used to generate this Java class.
-   */
-  public String isDefinedBy = "https://schema.org/MediaObject";
-
-  /**
    * A NewsArticle associated with the Media Object.
    */
   public NewsArticle associatedArticle;
@@ -70,19 +65,12 @@ public class MediaObject extends CreativeWork {
   /**
    * The height of the item.
    */
-  public Distance height;
+  public QuantitativeValue heightQuantitativeValue;
 
   /**
    * The height of the item.
    */
-  public QuantitativeValue heightQuantitativeValue;
-
-  /**
-   * The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is not valid, e.g. a region where the transaction is not allowed.<br/><br/>
-   *
-   * See also <a class="localLink" href="https://schema.org/eligibleRegion">eligibleRegion</a>.
-   */
-  public Place ineligibleRegion;
+  public Distance height;
 
   /**
    * The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is not valid, e.g. a region where the transaction is not allowed.<br/><br/>
@@ -90,6 +78,13 @@ public class MediaObject extends CreativeWork {
    * See also <a class="localLink" href="https://schema.org/eligibleRegion">eligibleRegion</a>.
    */
   public GeoShape ineligibleRegionGeoShape;
+
+  /**
+   * The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is not valid, e.g. a region where the transaction is not allowed.<br/><br/>
+   *
+   * See also <a class="localLink" href="https://schema.org/eligibleRegion">eligibleRegion</a>.
+   */
+  public Place ineligibleRegion;
 
   /**
    * Used to indicate a specific claim contained, implied, translated or refined from the content of a <a class="localLink" href="https://schema.org/MediaObject">MediaObject</a> or other <a class="localLink" href="https://schema.org/CreativeWork">CreativeWork</a>. The interpreting party can be indicated using <a class="localLink" href="https://schema.org/claimInterpreter">claimInterpreter</a>.
@@ -114,12 +109,12 @@ public class MediaObject extends CreativeWork {
   /**
    * Indicates if use of the media require a subscription  (either paid or free). Allowed values are <code>true</code> or <code>false</code> (note that an earlier version had 'yes', 'no').
    */
-  public MediaSubscription requiresSubscription;
+  public Boolean requiresSubscriptionBoolean;
 
   /**
    * Indicates if use of the media require a subscription  (either paid or free). Allowed values are <code>true</code> or <code>false</code> (note that an earlier version had 'yes', 'no').
    */
-  public Boolean requiresSubscriptionBoolean;
+  public MediaSubscription requiresSubscription;
 
   /**
    * The <a href="https://en.wikipedia.org/wiki/SHA-2">SHA-2</a> SHA256 hash of the content of the item. For example, a zero-length input has value 'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855'
@@ -129,19 +124,12 @@ public class MediaObject extends CreativeWork {
   /**
    * The width of the item.
    */
-  public QuantitativeValue width;
+  public Distance widthDistance;
 
   /**
    * The width of the item.
    */
-  public Distance widthDistance;
-
-  /**
-   * The endTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to end. For actions that span a period of time, when the action was performed. e.g. John wrote a book from January to <em>December</em>. For media, including audio and video, it's the time offset of the end of a clip within a larger file.<br/><br/>
-   *
-   * Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
-   */
-  public ZonedDateTime endTime;
+  public QuantitativeValue width;
 
   /**
    * The endTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to end. For actions that span a period of time, when the action was performed. e.g. John wrote a book from January to <em>December</em>. For media, including audio and video, it's the time offset of the end of a clip within a larger file.<br/><br/>
@@ -151,11 +139,11 @@ public class MediaObject extends CreativeWork {
   public ZonedDateTime endTimeZonedDateTime;
 
   /**
-   * The startTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to start. For actions that span a period of time, when the action was performed. e.g. John wrote a book from <em>January</em> to December. For media, including audio and video, it's the time offset of the start of a clip within a larger file.<br/><br/>
+   * The endTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to end. For actions that span a period of time, when the action was performed. e.g. John wrote a book from January to <em>December</em>. For media, including audio and video, it's the time offset of the end of a clip within a larger file.<br/><br/>
    *
    * Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
    */
-  public ZonedDateTime startTime;
+  public ZonedDateTime endTime;
 
   /**
    * The startTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to start. For actions that span a period of time, when the action was performed. e.g. John wrote a book from <em>January</em> to December. For media, including audio and video, it's the time offset of the start of a clip within a larger file.<br/><br/>
@@ -165,8 +153,20 @@ public class MediaObject extends CreativeWork {
   public ZonedDateTime startTimeZonedDateTime;
 
   /**
+   * The startTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to start. For actions that span a period of time, when the action was performed. e.g. John wrote a book from <em>January</em> to December. For media, including audio and video, it's the time offset of the start of a clip within a larger file.<br/><br/>
+   *
+   * Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
+   */
+  public ZonedDateTime startTime;
+
+  /**
    * Date when this media object was uploaded to this site.
    */
   public ZonedDateTime uploadDate;
+
+  /**
+   * Where to find the definition of the OWL Class used to generate this Java class.
+   */
+  public String isDefinedBy = "https://schema.org/MediaObject";
 }
 

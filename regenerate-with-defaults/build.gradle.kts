@@ -15,9 +15,15 @@ import java.nio.file.Paths
 buildscript {
     repositories {
         mavenLocal() // OWL to Java Task would be in local
+        maven("https://maven.pkg.github.com/antonycc/owl-to-java") {
+            credentials {
+                username = System.getenv("GITHUB_ACTOR")
+                password = System.getenv("GITHUB_TOKEN")
+            }
+        }
     }
     dependencies {
-        classpath("co.uk.polycode:owl-to-java:0.0.1-SNAPSHOT")
+        classpath("co.uk.polycode:owl-to-java:0.0.9-SNAPSHOT")
     }
 }
 
@@ -38,8 +44,8 @@ tasks {
         val srcMain: String = Paths.get("${projectDir}/../src/main").toFile().absolutePath
         val sourceFileName = "schemaorg.owl"
         lang = "en"
-        src = Paths.get("${srcMain}/resources/${sourceFileName}").toFile().absolutePath
-        dest = Paths.get("${buildDir}/generated-src-with-defaults").toFile().absolutePath
+        src = Paths.get("${srcMain}/resources/${sourceFileName}").toFile()
+        dest = Paths.get("${buildDir}/generated-src-with-defaults").toFile()
         javaBasePackage = "uk.co.polycode.ontology.with-defaults"
     }
     logger.debug("regenerate task created: ${regenerate}")

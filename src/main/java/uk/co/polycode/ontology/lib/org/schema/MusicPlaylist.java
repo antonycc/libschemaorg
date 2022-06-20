@@ -17,9 +17,9 @@ import java.math.BigInteger;
  */
 public class MusicPlaylist extends CreativeWork {
   /**
-   * Where to find the definition of the OWL Class used to generate this Java class.
+   * A music recording (track)&#x2014;usually a single song. If an ItemList is given, the list should contain items of type MusicRecording.
    */
-  public String isDefinedBy = "https://schema.org/MusicPlaylist";
+  public MusicRecording trackMusicRecording;
 
   /**
    * A music recording (track)&#x2014;usually a single song. If an ItemList is given, the list should contain items of type MusicRecording.
@@ -27,13 +27,13 @@ public class MusicPlaylist extends CreativeWork {
   public ItemList track;
 
   /**
-   * A music recording (track)&#x2014;usually a single song. If an ItemList is given, the list should contain items of type MusicRecording.
-   */
-  public MusicRecording trackMusicRecording;
-
-  /**
    * The number of tracks in this album or playlist.
    */
   public BigInteger numTracks;
+
+  /**
+   * Where to find the definition of the OWL Class used to generate this Java class.
+   */
+  public String isDefinedBy = "https://schema.org/MusicPlaylist";
 }
 

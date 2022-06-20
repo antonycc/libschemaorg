@@ -16,16 +16,6 @@ import java.lang.String;
  */
 public class ContactPoint extends StructuredValue {
   /**
-   * Where to find the definition of the OWL Class used to generate this Java class.
-   */
-  public String isDefinedBy = "https://schema.org/ContactPoint";
-
-  /**
-   * The geographic area where a service or offered item is provided.
-   */
-  public AdministrativeArea areaServed;
-
-  /**
    * The geographic area where a service or offered item is provided.
    */
   public GeoShape areaServedGeoShape;
@@ -34,6 +24,11 @@ public class ContactPoint extends StructuredValue {
    * The geographic area where a service or offered item is provided.
    */
   public Place areaServedPlace;
+
+  /**
+   * The geographic area where a service or offered item is provided.
+   */
+  public AdministrativeArea areaServed;
 
   /**
    * A language someone may use with or at the item, service or place. Please use one of the language codes from the <a href="http://tools.ietf.org/html/bcp47">IETF BCP 47 standard</a>. See also <a class="localLink" href="https://schema.org/inLanguage">inLanguage</a>
@@ -74,5 +69,10 @@ public class ContactPoint extends StructuredValue {
    * The telephone number.
    */
   public String telephone;
+
+  /**
+   * Where to find the definition of the OWL Class used to generate this Java class.
+   */
+  public String isDefinedBy = "https://schema.org/ContactPoint";
 }
 

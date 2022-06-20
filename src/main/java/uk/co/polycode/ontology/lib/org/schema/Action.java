@@ -19,11 +19,6 @@ import java.time.ZonedDateTime;
  */
 public class Action extends Thing {
   /**
-   * Where to find the definition of the OWL Class used to generate this Java class.
-   */
-  public String isDefinedBy = "https://schema.org/Action";
-
-  /**
    * Indicates the current disposition of the Action.
    */
   public ActionStatusType actionStatus;
@@ -31,12 +26,12 @@ public class Action extends Thing {
   /**
    * The direct performer or driver of the action (animate or inanimate). e.g. <em>John</em> wrote a book.
    */
-  public Person agent;
+  public Organization agentOrganization;
 
   /**
    * The direct performer or driver of the action (animate or inanimate). e.g. <em>John</em> wrote a book.
    */
-  public Organization agentOrganization;
+  public Person agent;
 
   /**
    * For failed actions, more information on the cause of the failure.
@@ -51,17 +46,17 @@ public class Action extends Thing {
   /**
    * The location of, for example, where an event is happening, where an organization is located, or where an action takes place.
    */
-  public PostalAddress location;
-
-  /**
-   * The location of, for example, where an event is happening, where an organization is located, or where an action takes place.
-   */
   public Place locationPlace;
 
   /**
    * The location of, for example, where an event is happening, where an organization is located, or where an action takes place.
    */
   public VirtualLocation locationVirtualLocation;
+
+  /**
+   * The location of, for example, where an event is happening, where an organization is located, or where an action takes place.
+   */
+  public PostalAddress location;
 
   /**
    * The object upon which the action is carried out, whose state is kept intact or changed. Also known as the semantic roles patient, affected or undergoer (which change their state) or theme (which doesn't). e.g. John read <em>a book</em>.
@@ -71,22 +66,22 @@ public class Action extends Thing {
   /**
    * Other co-agents that participated in the action indirectly. e.g. John wrote a book with <em>Steve</em>.
    */
-  public Person participant;
+  public Organization participantOrganization;
 
   /**
    * Other co-agents that participated in the action indirectly. e.g. John wrote a book with <em>Steve</em>.
    */
-  public Organization participantOrganization;
-
-  /**
-   * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
-   */
-  public Person provider;
+  public Person participant;
 
   /**
    * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
    */
   public Organization providerOrganization;
+
+  /**
+   * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
+   */
+  public Person provider;
 
   /**
    * The result produced in the action. e.g. John wrote <em>a book</em>.
@@ -103,14 +98,21 @@ public class Action extends Thing {
    *
    * Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
    */
-  public ZonedDateTime endTime;
+  public ZonedDateTime endTimeZonedDateTime;
 
   /**
    * The endTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to end. For actions that span a period of time, when the action was performed. e.g. John wrote a book from January to <em>December</em>. For media, including audio and video, it's the time offset of the end of a clip within a larger file.<br/><br/>
    *
    * Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
    */
-  public ZonedDateTime endTimeZonedDateTime;
+  public ZonedDateTime endTime;
+
+  /**
+   * The startTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to start. For actions that span a period of time, when the action was performed. e.g. John wrote a book from <em>January</em> to December. For media, including audio and video, it's the time offset of the start of a clip within a larger file.<br/><br/>
+   *
+   * Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
+   */
+  public ZonedDateTime startTimeZonedDateTime;
 
   /**
    * The startTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to start. For actions that span a period of time, when the action was performed. e.g. John wrote a book from <em>January</em> to December. For media, including audio and video, it's the time offset of the start of a clip within a larger file.<br/><br/>
@@ -120,10 +122,8 @@ public class Action extends Thing {
   public ZonedDateTime startTime;
 
   /**
-   * The startTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to start. For actions that span a period of time, when the action was performed. e.g. John wrote a book from <em>January</em> to December. For media, including audio and video, it's the time offset of the start of a clip within a larger file.<br/><br/>
-   *
-   * Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
+   * Where to find the definition of the OWL Class used to generate this Java class.
    */
-  public ZonedDateTime startTimeZonedDateTime;
+  public String isDefinedBy = "https://schema.org/Action";
 }
 

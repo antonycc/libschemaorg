@@ -17,11 +17,6 @@ import java.math.BigInteger;
  */
 public class AggregateRating extends Rating {
   /**
-   * Where to find the definition of the OWL Class used to generate this Java class.
-   */
-  public String isDefinedBy = "https://schema.org/AggregateRating";
-
-  /**
    * The item that is being reviewed/rated.
    */
   public Thing itemReviewed;
@@ -35,5 +30,10 @@ public class AggregateRating extends Rating {
    * The count of total number of reviews.
    */
   public BigInteger reviewCount;
+
+  /**
+   * Where to find the definition of the OWL Class used to generate this Java class.
+   */
+  public String isDefinedBy = "https://schema.org/AggregateRating";
 }
 

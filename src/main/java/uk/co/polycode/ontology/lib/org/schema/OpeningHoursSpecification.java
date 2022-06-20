@@ -21,11 +21,6 @@ import java.time.ZonedDateTime;
  */
 public class OpeningHoursSpecification extends StructuredValue {
   /**
-   * Where to find the definition of the OWL Class used to generate this Java class.
-   */
-  public String isDefinedBy = "https://schema.org/OpeningHoursSpecification";
-
-  /**
    * The day of the week for which these opening hours are valid.
    */
   public DayOfWeek dayOfWeek;
@@ -43,12 +38,17 @@ public class OpeningHoursSpecification extends StructuredValue {
   /**
    * The date when the item becomes valid.
    */
-  public ZonedDateTime validFrom;
+  public ZonedDateTime validFromZonedDateTime;
 
   /**
    * The date when the item becomes valid.
    */
-  public ZonedDateTime validFromZonedDateTime;
+  public ZonedDateTime validFrom;
+
+  /**
+   * The date after when the item is not valid. For example the end of an offer, salary period, or a period of opening hours.
+   */
+  public ZonedDateTime validThroughZonedDateTime;
 
   /**
    * The date after when the item is not valid. For example the end of an offer, salary period, or a period of opening hours.
@@ -56,8 +56,8 @@ public class OpeningHoursSpecification extends StructuredValue {
   public ZonedDateTime validThrough;
 
   /**
-   * The date after when the item is not valid. For example the end of an offer, salary period, or a period of opening hours.
+   * Where to find the definition of the OWL Class used to generate this Java class.
    */
-  public ZonedDateTime validThroughZonedDateTime;
+  public String isDefinedBy = "https://schema.org/OpeningHoursSpecification";
 }
 

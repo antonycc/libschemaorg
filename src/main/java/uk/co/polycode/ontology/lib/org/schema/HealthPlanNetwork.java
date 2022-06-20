@@ -17,11 +17,6 @@ import java.lang.String;
  */
 public class HealthPlanNetwork extends Intangible {
   /**
-   * Where to find the definition of the OWL Class used to generate this Java class.
-   */
-  public String isDefinedBy = "https://pending.schema.org/HealthPlanNetwork";
-
-  /**
    * Name or unique ID of network. (Networks are often reused across different insurance plans).
    */
   public String healthPlanNetworkId;
@@ -35,5 +30,10 @@ public class HealthPlanNetwork extends Intangible {
    * Whether The costs to the patient for services under this network or formulary.
    */
   public Boolean healthPlanCostSharing;
+
+  /**
+   * Where to find the definition of the OWL Class used to generate this Java class.
+   */
+  public String isDefinedBy = "https://pending.schema.org/HealthPlanNetwork";
 }
 

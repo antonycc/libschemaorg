@@ -16,11 +16,6 @@ import java.lang.String;
  */
 public class SuperficialAnatomy extends MedicalEntity {
   /**
-   * Where to find the definition of the OWL Class used to generate this Java class.
-   */
-  public String isDefinedBy = "https://health-lifesci.schema.org/SuperficialAnatomy";
-
-  /**
    * If applicable, a description of the pathophysiology associated with the anatomical system, including potential abnormal changes in the mechanical, physical, and biochemical functions of the system.
    */
   public String associatedPathophysiology;
@@ -28,12 +23,12 @@ public class SuperficialAnatomy extends MedicalEntity {
   /**
    * Anatomical systems or structures that relate to the superficial anatomy.
    */
-  public AnatomicalStructure relatedAnatomy;
+  public AnatomicalSystem relatedAnatomyAnatomicalSystem;
 
   /**
    * Anatomical systems or structures that relate to the superficial anatomy.
    */
-  public AnatomicalSystem relatedAnatomyAnatomicalSystem;
+  public AnatomicalStructure relatedAnatomy;
 
   /**
    * A medical condition associated with this anatomy.
@@ -49,5 +44,10 @@ public class SuperficialAnatomy extends MedicalEntity {
    * The significance associated with the superficial anatomy; as an example, how characteristics of the superficial anatomy can suggest underlying medical conditions or courses of treatment.
    */
   public String significance;
+
+  /**
+   * Where to find the definition of the OWL Class used to generate this Java class.
+   */
+  public String isDefinedBy = "https://health-lifesci.schema.org/SuperficialAnatomy";
 }
 

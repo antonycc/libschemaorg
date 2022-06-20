@@ -16,11 +16,6 @@ import java.lang.String;
  */
 public class MedicalProcedure extends MedicalEntity {
   /**
-   * Where to find the definition of the OWL Class used to generate this Java class.
-   */
-  public String isDefinedBy = "https://health-lifesci.schema.org/MedicalProcedure";
-
-  /**
    * Location in the body of the anatomical structure.
    */
   public String bodyLocation;
@@ -48,11 +43,16 @@ public class MedicalProcedure extends MedicalEntity {
   /**
    * The status of the study (enumerated).
    */
-  public MedicalStudyStatus status;
+  public EventStatusType statusEventStatusType;
 
   /**
    * The status of the study (enumerated).
    */
-  public EventStatusType statusEventStatusType;
+  public MedicalStudyStatus status;
+
+  /**
+   * Where to find the definition of the OWL Class used to generate this Java class.
+   */
+  public String isDefinedBy = "https://health-lifesci.schema.org/MedicalProcedure";
 }
 

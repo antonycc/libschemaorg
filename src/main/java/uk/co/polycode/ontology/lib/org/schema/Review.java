@@ -16,11 +16,6 @@ import java.lang.String;
  */
 public class Review extends CreativeWork {
   /**
-   * Where to find the definition of the OWL Class used to generate this Java class.
-   */
-  public String isDefinedBy = "https://schema.org/Review";
-
-  /**
    * An associated <a class="localLink" href="https://schema.org/ClaimReview">ClaimReview</a>, related by specific common content, topic or claim. The expectation is that this property would be most typically used in cases where a single activity is conducting both claim reviews and media reviews, in which case <a class="localLink" href="https://schema.org/relatedMediaReview">relatedMediaReview</a> would commonly be used on a <a class="localLink" href="https://schema.org/ClaimReview">ClaimReview</a>, while <a class="localLink" href="https://schema.org/relatedClaimReview">relatedClaimReview</a> would be used on <a class="localLink" href="https://schema.org/MediaReview">MediaReview</a>.
    */
   public Review associatedClaimReview;
@@ -43,11 +38,6 @@ public class Review extends CreativeWork {
   /**
    * Indicates, in the context of a <a class="localLink" href="https://schema.org/Review">Review</a> (e.g. framed as 'pro' vs 'con' considerations), negative considerations - either as unstructured text, or a list.
    */
-  public ItemList negativeNotes;
-
-  /**
-   * Indicates, in the context of a <a class="localLink" href="https://schema.org/Review">Review</a> (e.g. framed as 'pro' vs 'con' considerations), negative considerations - either as unstructured text, or a list.
-   */
   public ListItem negativeNotesListItem;
 
   /**
@@ -56,9 +46,9 @@ public class Review extends CreativeWork {
   public WebContent negativeNotesWebContent;
 
   /**
-   * Indicates, in the context of a <a class="localLink" href="https://schema.org/Review">Review</a> (e.g. framed as 'pro' vs 'con' considerations), positive considerations - either as unstructured text, or a list.
+   * Indicates, in the context of a <a class="localLink" href="https://schema.org/Review">Review</a> (e.g. framed as 'pro' vs 'con' considerations), negative considerations - either as unstructured text, or a list.
    */
-  public ItemList positiveNotes;
+  public ItemList negativeNotes;
 
   /**
    * Indicates, in the context of a <a class="localLink" href="https://schema.org/Review">Review</a> (e.g. framed as 'pro' vs 'con' considerations), positive considerations - either as unstructured text, or a list.
@@ -69,6 +59,11 @@ public class Review extends CreativeWork {
    * Indicates, in the context of a <a class="localLink" href="https://schema.org/Review">Review</a> (e.g. framed as 'pro' vs 'con' considerations), positive considerations - either as unstructured text, or a list.
    */
   public WebContent positiveNotesWebContent;
+
+  /**
+   * Indicates, in the context of a <a class="localLink" href="https://schema.org/Review">Review</a> (e.g. framed as 'pro' vs 'con' considerations), positive considerations - either as unstructured text, or a list.
+   */
+  public ItemList positiveNotes;
 
   /**
    * This Review or Rating is relevant to this part or facet of the itemReviewed.
@@ -84,5 +79,10 @@ public class Review extends CreativeWork {
    * The rating given in this review. Note that reviews can themselves be rated. The <code>reviewRating</code> applies to rating given by the review. The <a class="localLink" href="https://schema.org/aggregateRating">aggregateRating</a> property applies to the review itself, as a creative work.
    */
   public Rating reviewRating;
+
+  /**
+   * Where to find the definition of the OWL Class used to generate this Java class.
+   */
+  public String isDefinedBy = "https://schema.org/Review";
 }
 

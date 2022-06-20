@@ -16,11 +16,6 @@ import java.lang.String;
  */
 public class QualitativeValue extends Enumeration {
   /**
-   * Where to find the definition of the OWL Class used to generate this Java class.
-   */
-  public String isDefinedBy = "https://schema.org/QualitativeValue";
-
-  /**
    * A property-value pair representing an additional characteristics of the entitity, e.g. a product feature or another characteristic for which there is no matching property in schema.org.<br/><br/>
    *
    * Note: Publishers should be aware that applications designed to use specific schema.org properties (e.g. https://schema.org/width, https://schema.org/color, https://schema.org/gtin13, ...) will typically expect such data to be provided using those properties, rather than using the generic property/value mechanism.
@@ -60,11 +55,6 @@ public class QualitativeValue extends Enumeration {
   /**
    * A secondary value that provides additional information on the original value, e.g. a reference temperature or a type of measurement.
    */
-  public Enumeration valueReference;
-
-  /**
-   * A secondary value that provides additional information on the original value, e.g. a reference temperature or a type of measurement.
-   */
   public QualitativeValue valueReferenceQualitativeValue;
 
   /**
@@ -91,5 +81,15 @@ public class QualitativeValue extends Enumeration {
    * A secondary value that provides additional information on the original value, e.g. a reference temperature or a type of measurement.
    */
   public DefinedTerm valueReferenceDefinedTerm;
+
+  /**
+   * A secondary value that provides additional information on the original value, e.g. a reference temperature or a type of measurement.
+   */
+  public Enumeration valueReference;
+
+  /**
+   * Where to find the definition of the OWL Class used to generate this Java class.
+   */
+  public String isDefinedBy = "https://schema.org/QualitativeValue";
 }
 

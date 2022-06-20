@@ -17,11 +17,6 @@ import java.time.ZonedDateTime;
  */
 public class Person extends Thing {
   /**
-   * Where to find the definition of the OWL Class used to generate this Java class.
-   */
-  public String isDefinedBy = "https://schema.org/Person";
-
-  /**
    * An additional name for a Person, can be used for a middle name.
    */
   public String additionalName;
@@ -39,12 +34,12 @@ public class Person extends Thing {
   /**
    * An organization that the person is an alumni of.
    */
-  public EducationalOrganization alumniOf;
+  public Organization alumniOfOrganization;
 
   /**
    * An organization that the person is an alumni of.
    */
-  public Organization alumniOfOrganization;
+  public EducationalOrganization alumniOf;
 
   /**
    * An award won by or for this item.
@@ -59,12 +54,12 @@ public class Person extends Thing {
   /**
    * The brand(s) associated with a product or service, or the brand(s) maintained by an organization or business person.
    */
-  public Organization brand;
+  public Brand brandBrand;
 
   /**
    * The brand(s) associated with a product or service, or the brand(s) maintained by an organization or business person.
    */
-  public Brand brandBrand;
+  public Organization brand;
 
   /**
    * A <a href="https://en.wikipedia.org/wiki/Call_sign">callsign</a>, as used in broadcasting and radio communications to identify people, radio and TV stations, or vehicles.
@@ -119,12 +114,12 @@ public class Person extends Thing {
   /**
    * A person or organization that supports (sponsors) something through some kind of financial contribution.
    */
-  public Person funder;
+  public Organization funderOrganization;
 
   /**
    * A person or organization that supports (sponsors) something through some kind of financial contribution.
    */
-  public Organization funderOrganization;
+  public Person funder;
 
   /**
    * A <a class="localLink" href="https://schema.org/Grant">Grant</a> that directly or indirectly provide funding or sponsorship for this item. See also <a class="localLink" href="https://schema.org/ownershipFundingInfo">ownershipFundingInfo</a>.
@@ -169,22 +164,22 @@ public class Person extends Thing {
   /**
    * The height of the item.
    */
-  public Distance height;
+  public QuantitativeValue heightQuantitativeValue;
 
   /**
    * The height of the item.
    */
-  public QuantitativeValue heightQuantitativeValue;
-
-  /**
-   * A contact location for a person's residence.
-   */
-  public Place homeLocation;
+  public Distance height;
 
   /**
    * A contact location for a person's residence.
    */
   public ContactPoint homeLocationContactPoint;
+
+  /**
+   * A contact location for a person's residence.
+   */
+  public Place homeLocation;
 
   /**
    * An honorific prefix preceding a Person's name such as Dr/Mrs/Mr.
@@ -234,12 +229,12 @@ public class Person extends Thing {
   /**
    * An Organization (or ProgramMembership) to which this Person or Organization belongs.
    */
-  public ProgramMembership memberOf;
+  public Organization memberOfOrganization;
 
   /**
    * An Organization (or ProgramMembership) to which this Person or Organization belongs.
    */
-  public Organization memberOfOrganization;
+  public ProgramMembership memberOf;
 
   /**
    * The North American Industry Classification System (NAICS) code for a particular organization or business person.
@@ -254,22 +249,22 @@ public class Person extends Thing {
   /**
    * The total financial value of the person as calculated by subtracting assets from liabilities.
    */
-  public MonetaryAmount netWorth;
+  public PriceSpecification netWorthPriceSpecification;
 
   /**
    * The total financial value of the person as calculated by subtracting assets from liabilities.
    */
-  public PriceSpecification netWorthPriceSpecification;
-
-  /**
-   * Products owned by the organization or person.
-   */
-  public Product owns;
+  public MonetaryAmount netWorth;
 
   /**
    * Products owned by the organization or person.
    */
   public OwnershipInfo ownsOwnershipInfo;
+
+  /**
+   * Products owned by the organization or person.
+   */
+  public Product owns;
 
   /**
    * A parent of this person.
@@ -306,12 +301,12 @@ public class Person extends Thing {
   /**
    * A person or organization that supports a thing through a pledge, promise, or financial contribution. e.g. a sponsor of a Medical Study or a corporate sponsor of an event.
    */
-  public Person sponsor;
+  public Organization sponsorOrganization;
 
   /**
    * A person or organization that supports a thing through a pledge, promise, or financial contribution. e.g. a sponsor of a Medical Study or a corporate sponsor of an event.
    */
-  public Organization sponsorOrganization;
+  public Person sponsor;
 
   /**
    * The person's spouse.
@@ -341,12 +336,12 @@ public class Person extends Thing {
   /**
    * A contact location for a person's place of work.
    */
-  public Place workLocation;
+  public ContactPoint workLocationContactPoint;
 
   /**
    * A contact location for a person's place of work.
    */
-  public ContactPoint workLocationContactPoint;
+  public Place workLocation;
 
   /**
    * Organizations that the person works for.
@@ -362,5 +357,10 @@ public class Person extends Thing {
    * Date of death.
    */
   public ZonedDateTime deathDate;
+
+  /**
+   * Where to find the definition of the OWL Class used to generate this Java class.
+   */
+  public String isDefinedBy = "https://schema.org/Person";
 }
 

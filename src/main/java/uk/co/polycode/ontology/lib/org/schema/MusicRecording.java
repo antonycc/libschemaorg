@@ -16,19 +16,14 @@ import java.lang.String;
  */
 public class MusicRecording extends CreativeWork {
   /**
-   * Where to find the definition of the OWL Class used to generate this Java class.
+   * The artist that performed this album or recording.
    */
-  public String isDefinedBy = "https://schema.org/MusicRecording";
+  public MusicGroup byArtistMusicGroup;
 
   /**
    * The artist that performed this album or recording.
    */
   public Person byArtist;
-
-  /**
-   * The artist that performed this album or recording.
-   */
-  public MusicGroup byArtistMusicGroup;
 
   /**
    * The duration of the item (movie, audio recording, event, etc.) in <a href="http://en.wikipedia.org/wiki/ISO_8601">ISO 8601 date format</a>.
@@ -54,5 +49,10 @@ public class MusicRecording extends CreativeWork {
    * The composition this track is a recording of.
    */
   public MusicComposition recordingOf;
+
+  /**
+   * Where to find the definition of the OWL Class used to generate this Java class.
+   */
+  public String isDefinedBy = "https://schema.org/MusicRecording";
 }
 

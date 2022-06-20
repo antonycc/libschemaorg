@@ -16,13 +16,13 @@ import java.lang.String;
  */
 public class Map extends CreativeWork {
   /**
-   * Where to find the definition of the OWL Class used to generate this Java class.
-   */
-  public String isDefinedBy = "https://schema.org/Map";
-
-  /**
    * Indicates the kind of Map, from the MapCategoryType Enumeration.
    */
   public MapCategoryType mapType;
+
+  /**
+   * Where to find the definition of the OWL Class used to generate this Java class.
+   */
+  public String isDefinedBy = "https://schema.org/Map";
 }
 

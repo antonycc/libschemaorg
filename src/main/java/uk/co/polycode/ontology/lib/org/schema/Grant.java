@@ -21,16 +21,6 @@ import java.lang.String;
  */
 public class Grant extends Intangible {
   /**
-   * Where to find the definition of the OWL Class used to generate this Java class.
-   */
-  public String isDefinedBy = "https://pending.schema.org/Grant";
-
-  /**
-   * Indicates something directly or indirectly funded or sponsored through a <a class="localLink" href="https://schema.org/Grant">Grant</a>. See also <a class="localLink" href="https://schema.org/ownershipFundingInfo">ownershipFundingInfo</a>.
-   */
-  public Person fundedItem;
-
-  /**
    * Indicates something directly or indirectly funded or sponsored through a <a class="localLink" href="https://schema.org/Grant">Grant</a>. See also <a class="localLink" href="https://schema.org/ownershipFundingInfo">ownershipFundingInfo</a>.
    */
   public Product fundedItemProduct;
@@ -61,9 +51,9 @@ public class Grant extends Intangible {
   public BioChemEntity fundedItemBioChemEntity;
 
   /**
-   * A person or organization that supports (sponsors) something through some kind of financial contribution.
+   * Indicates something directly or indirectly funded or sponsored through a <a class="localLink" href="https://schema.org/Grant">Grant</a>. See also <a class="localLink" href="https://schema.org/ownershipFundingInfo">ownershipFundingInfo</a>.
    */
-  public Person funder;
+  public Person fundedItem;
 
   /**
    * A person or organization that supports (sponsors) something through some kind of financial contribution.
@@ -71,13 +61,23 @@ public class Grant extends Intangible {
   public Organization funderOrganization;
 
   /**
-   * A person or organization that supports a thing through a pledge, promise, or financial contribution. e.g. a sponsor of a Medical Study or a corporate sponsor of an event.
+   * A person or organization that supports (sponsors) something through some kind of financial contribution.
    */
-  public Person sponsor;
+  public Person funder;
 
   /**
    * A person or organization that supports a thing through a pledge, promise, or financial contribution. e.g. a sponsor of a Medical Study or a corporate sponsor of an event.
    */
   public Organization sponsorOrganization;
+
+  /**
+   * A person or organization that supports a thing through a pledge, promise, or financial contribution. e.g. a sponsor of a Medical Study or a corporate sponsor of an event.
+   */
+  public Person sponsor;
+
+  /**
+   * Where to find the definition of the OWL Class used to generate this Java class.
+   */
+  public String isDefinedBy = "https://pending.schema.org/Grant";
 }
 

@@ -16,11 +16,6 @@ import java.lang.String;
  */
 public class MediaSubscription extends Intangible {
   /**
-   * Where to find the definition of the OWL Class used to generate this Java class.
-   */
-  public String isDefinedBy = "https://schema.org/MediaSubscription";
-
-  /**
    * The Organization responsible for authenticating the user's subscription. For example, many media apps require a cable/satellite provider to authenticate your subscription before playing media.
    */
   public Organization authenticator;
@@ -29,5 +24,10 @@ public class MediaSubscription extends Intangible {
    * An Offer which must be accepted before the user can perform the Action. For example, the user may need to buy a movie before being able to watch it.
    */
   public Offer expectsAcceptanceOf;
+
+  /**
+   * Where to find the definition of the OWL Class used to generate this Java class.
+   */
+  public String isDefinedBy = "https://schema.org/MediaSubscription";
 }
 

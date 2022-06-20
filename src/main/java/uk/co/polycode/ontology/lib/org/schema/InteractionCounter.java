@@ -18,9 +18,9 @@ import java.time.ZonedDateTime;
  */
 public class InteractionCounter extends StructuredValue {
   /**
-   * Where to find the definition of the OWL Class used to generate this Java class.
+   * The WebSite or SoftwareApplication where the interactions took place.
    */
-  public String isDefinedBy = "https://schema.org/InteractionCounter";
+  public WebSite interactionServiceWebSite;
 
   /**
    * The WebSite or SoftwareApplication where the interactions took place.
@@ -28,19 +28,9 @@ public class InteractionCounter extends StructuredValue {
   public SoftwareApplication interactionService;
 
   /**
-   * The WebSite or SoftwareApplication where the interactions took place.
-   */
-  public WebSite interactionServiceWebSite;
-
-  /**
    * The Action representing the type of interaction. For up votes, +1s, etc. use <a class="localLink" href="https://schema.org/LikeAction">LikeAction</a>. For down votes use <a class="localLink" href="https://schema.org/DislikeAction">DislikeAction</a>. Otherwise, use the most specific Action.
    */
   public Action interactionType;
-
-  /**
-   * The location of, for example, where an event is happening, where an organization is located, or where an action takes place.
-   */
-  public PostalAddress location;
 
   /**
    * The location of, for example, where an event is happening, where an organization is located, or where an action takes place.
@@ -53,11 +43,9 @@ public class InteractionCounter extends StructuredValue {
   public VirtualLocation locationVirtualLocation;
 
   /**
-   * The endTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to end. For actions that span a period of time, when the action was performed. e.g. John wrote a book from January to <em>December</em>. For media, including audio and video, it's the time offset of the end of a clip within a larger file.<br/><br/>
-   *
-   * Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
+   * The location of, for example, where an event is happening, where an organization is located, or where an action takes place.
    */
-  public ZonedDateTime endTime;
+  public PostalAddress location;
 
   /**
    * The endTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to end. For actions that span a period of time, when the action was performed. e.g. John wrote a book from January to <em>December</em>. For media, including audio and video, it's the time offset of the end of a clip within a larger file.<br/><br/>
@@ -67,11 +55,11 @@ public class InteractionCounter extends StructuredValue {
   public ZonedDateTime endTimeZonedDateTime;
 
   /**
-   * The startTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to start. For actions that span a period of time, when the action was performed. e.g. John wrote a book from <em>January</em> to December. For media, including audio and video, it's the time offset of the start of a clip within a larger file.<br/><br/>
+   * The endTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to end. For actions that span a period of time, when the action was performed. e.g. John wrote a book from January to <em>December</em>. For media, including audio and video, it's the time offset of the end of a clip within a larger file.<br/><br/>
    *
    * Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
    */
-  public ZonedDateTime startTime;
+  public ZonedDateTime endTime;
 
   /**
    * The startTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to start. For actions that span a period of time, when the action was performed. e.g. John wrote a book from <em>January</em> to December. For media, including audio and video, it's the time offset of the start of a clip within a larger file.<br/><br/>
@@ -81,8 +69,20 @@ public class InteractionCounter extends StructuredValue {
   public ZonedDateTime startTimeZonedDateTime;
 
   /**
+   * The startTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to start. For actions that span a period of time, when the action was performed. e.g. John wrote a book from <em>January</em> to December. For media, including audio and video, it's the time offset of the start of a clip within a larger file.<br/><br/>
+   *
+   * Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
+   */
+  public ZonedDateTime startTime;
+
+  /**
    * The number of interactions for the CreativeWork using the WebSite or SoftwareApplication.
    */
   public BigInteger userInteractionCount;
+
+  /**
+   * Where to find the definition of the OWL Class used to generate this Java class.
+   */
+  public String isDefinedBy = "https://schema.org/InteractionCounter";
 }
 

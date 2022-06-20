@@ -16,11 +16,6 @@ import java.lang.String;
  */
 public class BroadcastService extends Service {
   /**
-   * Where to find the definition of the OWL Class used to generate this Java class.
-   */
-  public String isDefinedBy = "https://schema.org/BroadcastService";
-
-  /**
    * The media network(s) whose content is broadcast on this station.
    */
   public Organization broadcastAffiliateOf;
@@ -69,5 +64,10 @@ public class BroadcastService extends Service {
    * The type of screening or video broadcast used (e.g. IMAX, 3D, SD, HD, etc.).
    */
   public String videoFormat;
+
+  /**
+   * Where to find the definition of the OWL Class used to generate this Java class.
+   */
+  public String isDefinedBy = "https://schema.org/BroadcastService";
 }
 

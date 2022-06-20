@@ -16,19 +16,9 @@ import java.lang.String;
  */
 public class Service extends Intangible {
   /**
-   * Where to find the definition of the OWL Class used to generate this Java class.
-   */
-  public String isDefinedBy = "https://schema.org/Service";
-
-  /**
    * The overall rating, based on a collection of reviews or ratings, of the item.
    */
   public AggregateRating aggregateRating;
-
-  /**
-   * The geographic area where a service or offered item is provided.
-   */
-  public AdministrativeArea areaServed;
 
   /**
    * The geographic area where a service or offered item is provided.
@@ -39,6 +29,11 @@ public class Service extends Intangible {
    * The geographic area where a service or offered item is provided.
    */
   public Place areaServedPlace;
+
+  /**
+   * The geographic area where a service or offered item is provided.
+   */
+  public AdministrativeArea areaServed;
 
   /**
    * An intended audience, i.e. a group for whom something was created.
@@ -58,17 +53,12 @@ public class Service extends Intangible {
   /**
    * The brand(s) associated with a product or service, or the brand(s) maintained by an organization or business person.
    */
-  public Organization brand;
+  public Brand brandBrand;
 
   /**
    * The brand(s) associated with a product or service, or the brand(s) maintained by an organization or business person.
    */
-  public Brand brandBrand;
-
-  /**
-   * An entity that arranges for an exchange between a buyer and a seller.  In most cases a broker never acquires or releases ownership of a product or service involved in an exchange.  If it is not clear whether an entity is a broker, seller, or buyer, the latter two terms are preferred.
-   */
-  public Person broker;
+  public Organization brand;
 
   /**
    * An entity that arranges for an exchange between a buyer and a seller.  In most cases a broker never acquires or releases ownership of a product or service involved in an exchange.  If it is not clear whether an entity is a broker, seller, or buyer, the latter two terms are preferred.
@@ -76,9 +66,9 @@ public class Service extends Intangible {
   public Organization brokerOrganization;
 
   /**
-   * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
+   * An entity that arranges for an exchange between a buyer and a seller.  In most cases a broker never acquires or releases ownership of a product or service involved in an exchange.  If it is not clear whether an entity is a broker, seller, or buyer, the latter two terms are preferred.
    */
-  public Thing category;
+  public Person broker;
 
   /**
    * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
@@ -89,6 +79,11 @@ public class Service extends Intangible {
    * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
    */
   public CategoryCode categoryCategoryCode;
+
+  /**
+   * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
+   */
+  public Thing category;
 
   /**
    * Indicates an OfferCatalog listing for this Organization, Person, or Service.
@@ -103,22 +98,22 @@ public class Service extends Intangible {
   /**
    * A pointer to another, somehow related product (or multiple products).
    */
-  public Service isRelatedTo;
+  public Product isRelatedToProduct;
 
   /**
    * A pointer to another, somehow related product (or multiple products).
    */
-  public Product isRelatedToProduct;
-
-  /**
-   * A pointer to another, functionally similar product (or multiple products).
-   */
-  public Service isSimilarTo;
+  public Service isRelatedTo;
 
   /**
    * A pointer to another, functionally similar product (or multiple products).
    */
   public Product isSimilarToProduct;
+
+  /**
+   * A pointer to another, functionally similar product (or multiple products).
+   */
+  public Service isSimilarTo;
 
   /**
    * An associated logo.
@@ -128,22 +123,22 @@ public class Service extends Intangible {
   /**
    * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use <a class="localLink" href="https://schema.org/businessFunction">businessFunction</a> to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a <a class="localLink" href="https://schema.org/Demand">Demand</a>. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
    */
-  public Offer offers;
+  public Demand offersDemand;
 
   /**
    * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use <a class="localLink" href="https://schema.org/businessFunction">businessFunction</a> to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a <a class="localLink" href="https://schema.org/Demand">Demand</a>. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
    */
-  public Demand offersDemand;
-
-  /**
-   * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
-   */
-  public Person provider;
+  public Offer offers;
 
   /**
    * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
    */
   public Organization providerOrganization;
+
+  /**
+   * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
+   */
+  public Person provider;
 
   /**
    * Indicates the mobility of a provided service (e.g. 'static', 'dynamic').
@@ -174,5 +169,10 @@ public class Service extends Intangible {
    * Human-readable terms of service documentation.
    */
   public String termsOfService;
+
+  /**
+   * Where to find the definition of the OWL Class used to generate this Java class.
+   */
+  public String isDefinedBy = "https://schema.org/Service";
 }
 

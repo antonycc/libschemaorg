@@ -16,11 +16,6 @@ import java.lang.String;
  */
 public class Dataset extends CreativeWork {
   /**
-   * Where to find the definition of the OWL Class used to generate this Java class.
-   */
-  public String isDefinedBy = "https://schema.org/Dataset";
-
-  /**
    * A downloadable form of this dataset, at a specific location, in a specific format.
    */
   public DataDownload distribution;
@@ -56,5 +51,10 @@ public class Dataset extends CreativeWork {
    * Originally named <a class="localLink" href="https://schema.org/variablesMeasured">variablesMeasured</a>, The <a class="localLink" href="https://schema.org/variableMeasured">variableMeasured</a> property can indicate (repeated as necessary) the  variables that are measured in some dataset, either described as text or as pairs of identifier and description using PropertyValue.
    */
   public PropertyValue variablesMeasured;
+
+  /**
+   * Where to find the definition of the OWL Class used to generate this Java class.
+   */
+  public String isDefinedBy = "https://schema.org/Dataset";
 }
 

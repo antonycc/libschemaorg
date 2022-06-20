@@ -16,19 +16,14 @@ import java.lang.String;
  */
 public class MusicComposition extends CreativeWork {
   /**
-   * Where to find the definition of the OWL Class used to generate this Java class.
+   * The person or organization who wrote a composition, or who is the composer of a work performed at some event.
    */
-  public String isDefinedBy = "https://schema.org/MusicComposition";
+  public Organization composerOrganization;
 
   /**
    * The person or organization who wrote a composition, or who is the composer of a work performed at some event.
    */
   public Person composer;
-
-  /**
-   * The person or organization who wrote a composition, or who is the composer of a work performed at some event.
-   */
-  public Organization composerOrganization;
 
   /**
    * The date and place the work was first performed.
@@ -74,5 +69,10 @@ public class MusicComposition extends CreativeWork {
    * An audio recording of the work.
    */
   public MusicRecording recordedAs;
+
+  /**
+   * Where to find the definition of the OWL Class used to generate this Java class.
+   */
+  public String isDefinedBy = "https://schema.org/MusicComposition";
 }
 

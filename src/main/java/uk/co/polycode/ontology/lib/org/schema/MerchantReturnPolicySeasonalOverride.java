@@ -18,11 +18,6 @@ import java.time.ZonedDateTime;
  */
 public class MerchantReturnPolicySeasonalOverride extends Intangible {
   /**
-   * Where to find the definition of the OWL Class used to generate this Java class.
-   */
-  public String isDefinedBy = "https://pending.schema.org/MerchantReturnPolicySeasonalOverride";
-
-  /**
    * Specifies an applicable return policy (from an enumeration).
    */
   public MerchantReturnEnumeration returnPolicyCategory;
@@ -30,17 +25,12 @@ public class MerchantReturnPolicySeasonalOverride extends Intangible {
   /**
    * The end date and time of the item (in <a href="http://en.wikipedia.org/wiki/ISO_8601">ISO 8601 date format</a>).
    */
-  public ZonedDateTime endDate;
+  public ZonedDateTime endDateZonedDateTime;
 
   /**
    * The end date and time of the item (in <a href="http://en.wikipedia.org/wiki/ISO_8601">ISO 8601 date format</a>).
    */
-  public ZonedDateTime endDateZonedDateTime;
-
-  /**
-   * Specifies either a fixed return date or the number of days (from the delivery date) that a product can be returned. Used when the <a class="localLink" href="https://schema.org/returnPolicyCategory">returnPolicyCategory</a> property is specified as <a class="localLink" href="https://schema.org/MerchantReturnFiniteReturnWindow">MerchantReturnFiniteReturnWindow</a>.
-   */
-  public ZonedDateTime merchantReturnDays;
+  public ZonedDateTime endDate;
 
   /**
    * Specifies either a fixed return date or the number of days (from the delivery date) that a product can be returned. Used when the <a class="localLink" href="https://schema.org/returnPolicyCategory">returnPolicyCategory</a> property is specified as <a class="localLink" href="https://schema.org/MerchantReturnFiniteReturnWindow">MerchantReturnFiniteReturnWindow</a>.
@@ -53,13 +43,23 @@ public class MerchantReturnPolicySeasonalOverride extends Intangible {
   public BigInteger merchantReturnDaysBigInteger;
 
   /**
-   * The start date and time of the item (in <a href="http://en.wikipedia.org/wiki/ISO_8601">ISO 8601 date format</a>).
+   * Specifies either a fixed return date or the number of days (from the delivery date) that a product can be returned. Used when the <a class="localLink" href="https://schema.org/returnPolicyCategory">returnPolicyCategory</a> property is specified as <a class="localLink" href="https://schema.org/MerchantReturnFiniteReturnWindow">MerchantReturnFiniteReturnWindow</a>.
    */
-  public ZonedDateTime startDate;
+  public ZonedDateTime merchantReturnDays;
 
   /**
    * The start date and time of the item (in <a href="http://en.wikipedia.org/wiki/ISO_8601">ISO 8601 date format</a>).
    */
   public ZonedDateTime startDateZonedDateTime;
+
+  /**
+   * The start date and time of the item (in <a href="http://en.wikipedia.org/wiki/ISO_8601">ISO 8601 date format</a>).
+   */
+  public ZonedDateTime startDate;
+
+  /**
+   * Where to find the definition of the OWL Class used to generate this Java class.
+   */
+  public String isDefinedBy = "https://pending.schema.org/MerchantReturnPolicySeasonalOverride";
 }
 

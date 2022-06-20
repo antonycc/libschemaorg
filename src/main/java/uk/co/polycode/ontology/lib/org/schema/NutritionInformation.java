@@ -16,11 +16,6 @@ import java.lang.String;
  */
 public class NutritionInformation extends StructuredValue {
   /**
-   * Where to find the definition of the OWL Class used to generate this Java class.
-   */
-  public String isDefinedBy = "https://schema.org/NutritionInformation";
-
-  /**
    * The number of calories.
    */
   public Energy calories;
@@ -79,5 +74,10 @@ public class NutritionInformation extends StructuredValue {
    * The number of grams of unsaturated fat.
    */
   public Mass unsaturatedFatContent;
+
+  /**
+   * Where to find the definition of the OWL Class used to generate this Java class.
+   */
+  public String isDefinedBy = "https://schema.org/NutritionInformation";
 }
 

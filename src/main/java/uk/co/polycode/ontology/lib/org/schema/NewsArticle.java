@@ -18,11 +18,6 @@ import java.lang.String;
  */
 public class NewsArticle extends Article {
   /**
-   * Where to find the definition of the OWL Class used to generate this Java class.
-   */
-  public String isDefinedBy = "https://schema.org/NewsArticle";
-
-  /**
    * A <a href="https://en.wikipedia.org/wiki/Dateline">dateline</a> is a brief piece of text included in news articles that describes where and when the story was written or filed though the date is often omitted. Sometimes only a placename is provided.<br/><br/>
    *
    * Structured representations of dateline-related information can also be expressed more explicitly using <a class="localLink" href="https://schema.org/locationCreated">locationCreated</a> (which represents where a work was created e.g. where a news report was written).  For location depicted or described in the content, use <a class="localLink" href="https://schema.org/contentLocation">contentLocation</a>.<br/><br/>
@@ -50,5 +45,10 @@ public class NewsArticle extends Article {
    * If this NewsArticle appears in print, this field indicates the print section in which the article appeared.
    */
   public String printSection;
+
+  /**
+   * Where to find the definition of the OWL Class used to generate this Java class.
+   */
+  public String isDefinedBy = "https://schema.org/NewsArticle";
 }
 

@@ -17,11 +17,6 @@ import java.lang.String;
  */
 public class ImageObject extends MediaObject {
   /**
-   * Where to find the definition of the OWL Class used to generate this Java class.
-   */
-  public String isDefinedBy = "https://schema.org/ImageObject";
-
-  /**
    * The caption for this object. For downloadable machine formats (closed caption, subtitles etc.) use MediaObject and indicate the <a class="localLink" href="https://schema.org/encodingFormat">encodingFormat</a>.
    */
   public MediaObject caption;
@@ -45,5 +40,10 @@ public class ImageObject extends MediaObject {
    * Indicates whether this image is representative of the content of the page.
    */
   public Boolean representativeOfPage;
+
+  /**
+   * Where to find the definition of the OWL Class used to generate this Java class.
+   */
+  public String isDefinedBy = "https://schema.org/ImageObject";
 }
 

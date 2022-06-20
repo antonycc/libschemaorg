@@ -16,11 +16,6 @@ import java.lang.String;
  */
 public class TherapeuticProcedure extends MedicalProcedure {
   /**
-   * Where to find the definition of the OWL Class used to generate this Java class.
-   */
-  public String isDefinedBy = "https://health-lifesci.schema.org/TherapeuticProcedure";
-
-  /**
    * A possible complication and/or side effect of this therapy. If it is known that an adverse outcome is serious (resulting in death, disability, or permanent damage; requiring hospitalization; or is otherwise life-threatening or requires immediate medical attention), tag it as a seriouseAdverseOutcome instead.
    */
   public MedicalEntity adverseOutcome;
@@ -34,5 +29,10 @@ public class TherapeuticProcedure extends MedicalProcedure {
    * Specifying a drug or medicine used in a medication procedure.
    */
   public Drug drug;
+
+  /**
+   * Where to find the definition of the OWL Class used to generate this Java class.
+   */
+  public String isDefinedBy = "https://health-lifesci.schema.org/TherapeuticProcedure";
 }
 

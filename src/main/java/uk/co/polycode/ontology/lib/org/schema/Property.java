@@ -16,11 +16,6 @@ import java.lang.String;
  */
 public class Property extends Intangible {
   /**
-   * Where to find the definition of the OWL Class used to generate this Java class.
-   */
-  public String isDefinedBy = "https://meta.schema.org/Property";
-
-  /**
    * Relates a property to a class that is (one of) the type(s) the property is expected to be used on.
    */
   public Class domainIncludes;
@@ -38,16 +33,21 @@ public class Property extends Intangible {
   /**
    * Relates a term (i.e. a property, class or enumeration) to one that supersedes it.
    */
-  public Class supersededBy;
-
-  /**
-   * Relates a term (i.e. a property, class or enumeration) to one that supersedes it.
-   */
   public Enumeration supersededByEnumeration;
 
   /**
    * Relates a term (i.e. a property, class or enumeration) to one that supersedes it.
    */
   public Property supersededByProperty;
+
+  /**
+   * Relates a term (i.e. a property, class or enumeration) to one that supersedes it.
+   */
+  public Class supersededBy;
+
+  /**
+   * Where to find the definition of the OWL Class used to generate this Java class.
+   */
+  public String isDefinedBy = "https://meta.schema.org/Property";
 }
 

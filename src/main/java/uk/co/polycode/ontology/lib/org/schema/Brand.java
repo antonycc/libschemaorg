@@ -16,11 +16,6 @@ import java.lang.String;
  */
 public class Brand extends Intangible {
   /**
-   * Where to find the definition of the OWL Class used to generate this Java class.
-   */
-  public String isDefinedBy = "https://schema.org/Brand";
-
-  /**
    * The overall rating, based on a collection of reviews or ratings, of the item.
    */
   public AggregateRating aggregateRating;
@@ -39,5 +34,10 @@ public class Brand extends Intangible {
    * A slogan or motto associated with the item.
    */
   public String slogan;
+
+  /**
+   * Where to find the definition of the OWL Class used to generate this Java class.
+   */
+  public String isDefinedBy = "https://schema.org/Brand";
 }
 

@@ -16,19 +16,14 @@ import java.lang.String;
  */
 public class ProductModel extends Product {
   /**
-   * Where to find the definition of the OWL Class used to generate this Java class.
+   * Indicates the kind of product that this is a variant of. In the case of <a class="localLink" href="https://schema.org/ProductModel">ProductModel</a>, this is a pointer (from a ProductModel) to a base product from which this product is a variant. It is safe to infer that the variant inherits all product features from the base model, unless defined locally. This is not transitive. In the case of a <a class="localLink" href="https://schema.org/ProductGroup">ProductGroup</a>, the group description also serves as a template, representing a set of Products that vary on explicitly defined, specific dimensions only (so it defines both a set of variants, as well as which values distinguish amongst those variants). When used with <a class="localLink" href="https://schema.org/ProductGroup">ProductGroup</a>, this property can apply to any <a class="localLink" href="https://schema.org/Product">Product</a> included in the group.
    */
-  public String isDefinedBy = "https://schema.org/ProductModel";
+  public ProductGroup isVariantOfProductGroup;
 
   /**
    * Indicates the kind of product that this is a variant of. In the case of <a class="localLink" href="https://schema.org/ProductModel">ProductModel</a>, this is a pointer (from a ProductModel) to a base product from which this product is a variant. It is safe to infer that the variant inherits all product features from the base model, unless defined locally. This is not transitive. In the case of a <a class="localLink" href="https://schema.org/ProductGroup">ProductGroup</a>, the group description also serves as a template, representing a set of Products that vary on explicitly defined, specific dimensions only (so it defines both a set of variants, as well as which values distinguish amongst those variants). When used with <a class="localLink" href="https://schema.org/ProductGroup">ProductGroup</a>, this property can apply to any <a class="localLink" href="https://schema.org/Product">Product</a> included in the group.
    */
   public ProductModel isVariantOf;
-
-  /**
-   * Indicates the kind of product that this is a variant of. In the case of <a class="localLink" href="https://schema.org/ProductModel">ProductModel</a>, this is a pointer (from a ProductModel) to a base product from which this product is a variant. It is safe to infer that the variant inherits all product features from the base model, unless defined locally. This is not transitive. In the case of a <a class="localLink" href="https://schema.org/ProductGroup">ProductGroup</a>, the group description also serves as a template, representing a set of Products that vary on explicitly defined, specific dimensions only (so it defines both a set of variants, as well as which values distinguish amongst those variants). When used with <a class="localLink" href="https://schema.org/ProductGroup">ProductGroup</a>, this property can apply to any <a class="localLink" href="https://schema.org/Product">Product</a> included in the group.
-   */
-  public ProductGroup isVariantOfProductGroup;
 
   /**
    * A pointer from a previous, often discontinued variant of the product to its newer variant.
@@ -39,5 +34,10 @@ public class ProductModel extends Product {
    * A pointer from a newer variant of a product  to its previous, often discontinued predecessor.
    */
   public ProductModel successorOf;
+
+  /**
+   * Where to find the definition of the OWL Class used to generate this Java class.
+   */
+  public String isDefinedBy = "https://schema.org/ProductModel";
 }
 

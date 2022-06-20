@@ -20,11 +20,6 @@ import java.math.BigDecimal;
  */
 public class PropertyValue extends StructuredValue {
   /**
-   * Where to find the definition of the OWL Class used to generate this Java class.
-   */
-  public String isDefinedBy = "https://schema.org/PropertyValue";
-
-  /**
    * A technique or technology used in a <a class="localLink" href="https://schema.org/Dataset">Dataset</a> (or <a class="localLink" href="https://schema.org/DataDownload">DataDownload</a>, <a class="localLink" href="https://schema.org/DataCatalog">DataCatalog</a>),
    * corresponding to the method used for measuring the corresponding variable(s) (described using <a class="localLink" href="https://schema.org/variableMeasured">variableMeasured</a>). This is oriented towards scientific and scholarly dataset publication but may have broader applicability; it is not intended as a full representation of measurement, but rather as a high level summary for dataset discovery.<br/><br/>
    *
@@ -65,18 +60,6 @@ public class PropertyValue extends StructuredValue {
    * <li>Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.</li>
    * </ul>
    */
-  public BigDecimal value;
-
-  /**
-   * The value of the quantitative value or property value node.<br/><br/>
-   *
-   * <ul>
-   * <li>For <a class="localLink" href="https://schema.org/QuantitativeValue">QuantitativeValue</a> and <a class="localLink" href="https://schema.org/MonetaryAmount">MonetaryAmount</a>, the recommended type for values is 'Number'.</li>
-   * <li>For <a class="localLink" href="https://schema.org/PropertyValue">PropertyValue</a>, it can be 'Text;', 'Number', 'Boolean', or 'StructuredValue'.</li>
-   * <li>Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.</li>
-   * <li>Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.</li>
-   * </ul>
-   */
   public StructuredValue valueStructuredValue;
 
   /**
@@ -92,9 +75,16 @@ public class PropertyValue extends StructuredValue {
   public Boolean valueBoolean;
 
   /**
-   * A secondary value that provides additional information on the original value, e.g. a reference temperature or a type of measurement.
+   * The value of the quantitative value or property value node.<br/><br/>
+   *
+   * <ul>
+   * <li>For <a class="localLink" href="https://schema.org/QuantitativeValue">QuantitativeValue</a> and <a class="localLink" href="https://schema.org/MonetaryAmount">MonetaryAmount</a>, the recommended type for values is 'Number'.</li>
+   * <li>For <a class="localLink" href="https://schema.org/PropertyValue">PropertyValue</a>, it can be 'Text;', 'Number', 'Boolean', or 'StructuredValue'.</li>
+   * <li>Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.</li>
+   * <li>Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.</li>
+   * </ul>
    */
-  public Enumeration valueReference;
+  public BigDecimal value;
 
   /**
    * A secondary value that provides additional information on the original value, e.g. a reference temperature or a type of measurement.
@@ -127,6 +117,11 @@ public class PropertyValue extends StructuredValue {
   public DefinedTerm valueReferenceDefinedTerm;
 
   /**
+   * A secondary value that provides additional information on the original value, e.g. a reference temperature or a type of measurement.
+   */
+  public Enumeration valueReference;
+
+  /**
    * The upper value of some characteristic or property.
    */
   public BigDecimal maxValue;
@@ -135,5 +130,10 @@ public class PropertyValue extends StructuredValue {
    * The lower value of some characteristic or property.
    */
   public BigDecimal minValue;
+
+  /**
+   * Where to find the definition of the OWL Class used to generate this Java class.
+   */
+  public String isDefinedBy = "https://schema.org/PropertyValue";
 }
 

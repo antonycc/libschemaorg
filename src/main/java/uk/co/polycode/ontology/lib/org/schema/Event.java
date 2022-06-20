@@ -19,11 +19,6 @@ import java.time.ZonedDateTime;
  */
 public class Event extends Thing {
   /**
-   * Where to find the definition of the OWL Class used to generate this Java class.
-   */
-  public String isDefinedBy = "https://schema.org/Event";
-
-  /**
    * The subject matter of the content.
    */
   public Thing about;
@@ -41,12 +36,12 @@ public class Event extends Thing {
   /**
    * A person or organization attending the event.
    */
-  public Person attendee;
+  public Organization attendeeOrganization;
 
   /**
    * A person or organization attending the event.
    */
-  public Organization attendeeOrganization;
+  public Person attendee;
 
   /**
    * An intended audience, i.e. a group for whom something was created.
@@ -56,22 +51,22 @@ public class Event extends Thing {
   /**
    * The person or organization who wrote a composition, or who is the composer of a work performed at some event.
    */
-  public Person composer;
+  public Organization composerOrganization;
 
   /**
    * The person or organization who wrote a composition, or who is the composer of a work performed at some event.
    */
-  public Organization composerOrganization;
-
-  /**
-   * A secondary contributor to the CreativeWork or Event.
-   */
-  public Person contributor;
+  public Person composer;
 
   /**
    * A secondary contributor to the CreativeWork or Event.
    */
   public Organization contributorOrganization;
+
+  /**
+   * A secondary contributor to the CreativeWork or Event.
+   */
+  public Person contributor;
 
   /**
    * A director of e.g. tv, radio, movie, video gaming etc. content, or of an event. Directors can be associated with individual items or with a series, episode, clip.
@@ -106,12 +101,12 @@ public class Event extends Thing {
   /**
    * A person or organization that supports (sponsors) something through some kind of financial contribution.
    */
-  public Person funder;
+  public Organization funderOrganization;
 
   /**
    * A person or organization that supports (sponsors) something through some kind of financial contribution.
    */
-  public Organization funderOrganization;
+  public Person funder;
 
   /**
    * A <a class="localLink" href="https://schema.org/Grant">Grant</a> that directly or indirectly provide funding or sponsorship for this item. See also <a class="localLink" href="https://schema.org/ownershipFundingInfo">ownershipFundingInfo</a>.
@@ -131,11 +126,6 @@ public class Event extends Thing {
   /**
    * The location of, for example, where an event is happening, where an organization is located, or where an action takes place.
    */
-  public PostalAddress location;
-
-  /**
-   * The location of, for example, where an event is happening, where an organization is located, or where an action takes place.
-   */
   public Place locationPlace;
 
   /**
@@ -144,9 +134,9 @@ public class Event extends Thing {
   public VirtualLocation locationVirtualLocation;
 
   /**
-   * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use <a class="localLink" href="https://schema.org/businessFunction">businessFunction</a> to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a <a class="localLink" href="https://schema.org/Demand">Demand</a>. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+   * The location of, for example, where an event is happening, where an organization is located, or where an action takes place.
    */
-  public Offer offers;
+  public PostalAddress location;
 
   /**
    * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use <a class="localLink" href="https://schema.org/businessFunction">businessFunction</a> to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a <a class="localLink" href="https://schema.org/Demand">Demand</a>. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
@@ -154,9 +144,9 @@ public class Event extends Thing {
   public Demand offersDemand;
 
   /**
-   * An organizer of an Event.
+   * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use <a class="localLink" href="https://schema.org/businessFunction">businessFunction</a> to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a <a class="localLink" href="https://schema.org/Demand">Demand</a>. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
    */
-  public Person organizer;
+  public Offer offers;
 
   /**
    * An organizer of an Event.
@@ -164,14 +154,19 @@ public class Event extends Thing {
   public Organization organizerOrganization;
 
   /**
-   * A performer at the event&#x2014;for example, a presenter, musician, musical group or actor.
+   * An organizer of an Event.
    */
-  public Person performer;
+  public Person organizer;
 
   /**
    * A performer at the event&#x2014;for example, a presenter, musician, musical group or actor.
    */
   public Organization performerOrganization;
+
+  /**
+   * A performer at the event&#x2014;for example, a presenter, musician, musical group or actor.
+   */
+  public Person performer;
 
   /**
    * The CreativeWork that captured all or part of this Event.
@@ -186,12 +181,12 @@ public class Event extends Thing {
   /**
    * A person or organization that supports a thing through a pledge, promise, or financial contribution. e.g. a sponsor of a Medical Study or a corporate sponsor of an event.
    */
-  public Person sponsor;
+  public Organization sponsorOrganization;
 
   /**
    * A person or organization that supports a thing through a pledge, promise, or financial contribution. e.g. a sponsor of a Medical Study or a corporate sponsor of an event.
    */
-  public Organization sponsorOrganization;
+  public Person sponsor;
 
   /**
    * An Event that is part of this event. For example, a conference event includes many presentations, each of which is a subEvent of the conference.
@@ -206,12 +201,12 @@ public class Event extends Thing {
   /**
    * Organization or person who adapts a creative work to different languages, regional differences and technical requirements of a target market, or that translates during some event.
    */
-  public Person translator;
+  public Organization translatorOrganization;
 
   /**
    * Organization or person who adapts a creative work to different languages, regional differences and technical requirements of a target market, or that translates during some event.
    */
-  public Organization translatorOrganization;
+  public Person translator;
 
   /**
    * The typical expected age range, e.g. '7-9', '11-'.
@@ -232,22 +227,22 @@ public class Event extends Thing {
   /**
    * The time admission will commence.
    */
-  public ZonedDateTime doorTime;
+  public ZonedDateTime doorTimeZonedDateTime;
 
   /**
    * The time admission will commence.
    */
-  public ZonedDateTime doorTimeZonedDateTime;
-
-  /**
-   * The end date and time of the item (in <a href="http://en.wikipedia.org/wiki/ISO_8601">ISO 8601 date format</a>).
-   */
-  public ZonedDateTime endDate;
+  public ZonedDateTime doorTime;
 
   /**
    * The end date and time of the item (in <a href="http://en.wikipedia.org/wiki/ISO_8601">ISO 8601 date format</a>).
    */
   public ZonedDateTime endDateZonedDateTime;
+
+  /**
+   * The end date and time of the item (in <a href="http://en.wikipedia.org/wiki/ISO_8601">ISO 8601 date format</a>).
+   */
+  public ZonedDateTime endDate;
 
   /**
    * A flag to signal that the item, event, or place is accessible for free.
@@ -282,11 +277,16 @@ public class Event extends Thing {
   /**
    * The start date and time of the item (in <a href="http://en.wikipedia.org/wiki/ISO_8601">ISO 8601 date format</a>).
    */
-  public ZonedDateTime startDate;
+  public ZonedDateTime startDateZonedDateTime;
 
   /**
    * The start date and time of the item (in <a href="http://en.wikipedia.org/wiki/ISO_8601">ISO 8601 date format</a>).
    */
-  public ZonedDateTime startDateZonedDateTime;
+  public ZonedDateTime startDate;
+
+  /**
+   * Where to find the definition of the OWL Class used to generate this Java class.
+   */
+  public String isDefinedBy = "https://schema.org/Event";
 }
 

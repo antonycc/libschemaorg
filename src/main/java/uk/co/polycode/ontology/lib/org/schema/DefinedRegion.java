@@ -28,11 +28,6 @@ import java.lang.String;
  */
 public class DefinedRegion extends StructuredValue {
   /**
-   * Where to find the definition of the OWL Class used to generate this Java class.
-   */
-  public String isDefinedBy = "https://pending.schema.org/DefinedRegion";
-
-  /**
    * The country. For example, USA. You can also provide the two-letter <a href="http://en.wikipedia.org/wiki/ISO_3166-1">ISO 3166-1 alpha-2 country code</a>.
    */
   public Country addressCountry;
@@ -56,5 +51,10 @@ public class DefinedRegion extends StructuredValue {
    * A defined range of postal codes.
    */
   public PostalCodeRangeSpecification postalCodeRange;
+
+  /**
+   * Where to find the definition of the OWL Class used to generate this Java class.
+   */
+  public String isDefinedBy = "https://pending.schema.org/DefinedRegion";
 }
 

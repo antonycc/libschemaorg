@@ -16,11 +16,6 @@ import java.lang.String;
  */
 public class MedicalSign extends MedicalSignOrSymptom {
   /**
-   * Where to find the definition of the OWL Class used to generate this Java class.
-   */
-  public String isDefinedBy = "https://health-lifesci.schema.org/MedicalSign";
-
-  /**
    * A physical examination that can identify this sign.
    */
   public PhysicalExam identifyingExam;
@@ -29,5 +24,10 @@ public class MedicalSign extends MedicalSignOrSymptom {
    * A diagnostic test that can identify this sign.
    */
   public MedicalTest identifyingTest;
+
+  /**
+   * Where to find the definition of the OWL Class used to generate this Java class.
+   */
+  public String isDefinedBy = "https://health-lifesci.schema.org/MedicalSign";
 }
 

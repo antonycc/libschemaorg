@@ -16,11 +16,6 @@ import java.lang.String;
  */
 public class SizeSpecification extends QualitativeValue {
   /**
-   * Where to find the definition of the OWL Class used to generate this Java class.
-   */
-  public String isDefinedBy = "https://pending.schema.org/SizeSpecification";
-
-  /**
    * A product measurement, for example the inseam of pants, the wheel size of a bicycle, or the gauge of a screw. Usually an exact measurement, but can also be a range of measurements for adjustable products, for example belts and ski bindings.
    */
   public QuantitativeValue hasMeasurement;
@@ -49,5 +44,10 @@ public class SizeSpecification extends QualitativeValue {
    * A suggested range of body measurements for the intended audience or person, for example inseam between 32 and 34 inches or height between 170 and 190 cm. Typically found on a size chart for wearable products.
    */
   public QuantitativeValue suggestedMeasurement;
+
+  /**
+   * Where to find the definition of the OWL Class used to generate this Java class.
+   */
+  public String isDefinedBy = "https://pending.schema.org/SizeSpecification";
 }
 

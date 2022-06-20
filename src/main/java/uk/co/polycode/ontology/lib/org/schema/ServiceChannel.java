@@ -17,11 +17,6 @@ import java.net.URL;
  */
 public class ServiceChannel extends Intangible {
   /**
-   * Where to find the definition of the OWL Class used to generate this Java class.
-   */
-  public String isDefinedBy = "https://schema.org/ServiceChannel";
-
-  /**
    * A language someone may use with or at the item, service or place. Please use one of the language codes from the <a href="http://tools.ietf.org/html/bcp47">IETF BCP 47 standard</a>. See also <a class="localLink" href="https://schema.org/inLanguage">inLanguage</a>
    */
   public Language availableLanguage;
@@ -60,5 +55,10 @@ public class ServiceChannel extends Intangible {
    * The website to access the service.
    */
   public URL serviceUrl;
+
+  /**
+   * Where to find the definition of the OWL Class used to generate this Java class.
+   */
+  public String isDefinedBy = "https://schema.org/ServiceChannel";
 }
 

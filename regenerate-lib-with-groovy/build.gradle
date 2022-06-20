@@ -16,9 +16,16 @@ buildscript {
     repositories {
         mavenLocal() // OWL to Java Task would be in local
         mavenCentral()
+        maven {
+            url = "https://maven.pkg.github.com/antonycc/owl-to-java"
+            credentials {
+                username = System.getenv("GITHUB_ACTOR")
+                password = System.getenv("GITHUB_TOKEN")
+            }
+        }
     }
     dependencies {
-        classpath 'co.uk.polycode:owl-to-java:0.0.1-SNAPSHOT'
+        classpath 'co.uk.polycode:owl-to-java:0.0.9-SNAPSHOT'
     }
 }
 
@@ -34,7 +41,7 @@ tasks.register("regenerate", uk.co.polycode.owltojava.RegenerateOntologyTask) { 
     def srcMain = Paths.get(projectDir.absolutePath + "/../src/main").toFile().absolutePath
     def sourceFileName = "schemaorg.owl"
     regenerate.lang = "en"
-    regenerate.src = Paths.get(srcMain + "/resources/" + sourceFileName).toFile().absolutePath
-    regenerate.dest = Paths.get(projectDir.absolutePath + "/../build/generated-src-with-groovy").toFile().absolutePath
+    regenerate.src = Paths.get(srcMain + "/resources/" + sourceFileName).toFile()
+    regenerate.dest = Paths.get(projectDir.absolutePath + "/../build/generated-src-with-groovy").toFile()
     regenerate.javaBasePackage = "uk.co.polycode.ontology.with-groovy"
 }

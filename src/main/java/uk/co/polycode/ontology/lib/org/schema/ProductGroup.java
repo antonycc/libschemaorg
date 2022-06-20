@@ -18,11 +18,6 @@ import java.lang.String;
  */
 public class ProductGroup extends Product {
   /**
-   * Where to find the definition of the OWL Class used to generate this Java class.
-   */
-  public String isDefinedBy = "https://pending.schema.org/ProductGroup";
-
-  /**
    * Indicates a <a class="localLink" href="https://schema.org/Product">Product</a> that is a member of this <a class="localLink" href="https://schema.org/ProductGroup">ProductGroup</a> (or <a class="localLink" href="https://schema.org/ProductModel">ProductModel</a>).
    */
   public Product hasVariant;
@@ -36,5 +31,10 @@ public class ProductGroup extends Product {
    * Indicates the property or properties by which the variants in a <a class="localLink" href="https://schema.org/ProductGroup">ProductGroup</a> vary, e.g. their size, color etc. Schema.org properties can be referenced by their short name e.g. "color"; terms defined elsewhere can be referenced with their URIs.
    */
   public DefinedTerm variesBy;
+
+  /**
+   * Where to find the definition of the OWL Class used to generate this Java class.
+   */
+  public String isDefinedBy = "https://pending.schema.org/ProductGroup";
 }
 

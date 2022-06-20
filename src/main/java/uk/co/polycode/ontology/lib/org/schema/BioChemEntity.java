@@ -16,19 +16,14 @@ import java.lang.String;
  */
 public class BioChemEntity extends Thing {
   /**
-   * Where to find the definition of the OWL Class used to generate this Java class.
+   * Disease associated to this BioChemEntity. Such disease can be a MedicalCondition or a URL. If you want to add an evidence supporting the association, please use PropertyValue.
    */
-  public String isDefinedBy = "https://pending.schema.org/BioChemEntity";
+  public PropertyValue associatedDiseasePropertyValue;
 
   /**
    * Disease associated to this BioChemEntity. Such disease can be a MedicalCondition or a URL. If you want to add an evidence supporting the association, please use PropertyValue.
    */
   public MedicalCondition associatedDisease;
-
-  /**
-   * Disease associated to this BioChemEntity. Such disease can be a MedicalCondition or a URL. If you want to add an evidence supporting the association, please use PropertyValue.
-   */
-  public PropertyValue associatedDiseasePropertyValue;
 
   /**
    * A BioChemEntity that is known to interact with this item.
@@ -58,12 +53,12 @@ public class BioChemEntity extends Thing {
   /**
    * Molecular function performed by this BioChemEntity; please use PropertyValue if you want to include any evidence.
    */
-  public PropertyValue hasMolecularFunction;
+  public DefinedTerm hasMolecularFunctionDefinedTerm;
 
   /**
    * Molecular function performed by this BioChemEntity; please use PropertyValue if you want to include any evidence.
    */
-  public DefinedTerm hasMolecularFunctionDefinedTerm;
+  public PropertyValue hasMolecularFunction;
 
   /**
    * A common representation such as a protein sequence or chemical structure for this entity. For images use schema.org/image.
@@ -78,22 +73,22 @@ public class BioChemEntity extends Thing {
   /**
    * Biological process this BioChemEntity is involved in; please use PropertyValue if you want to include any evidence.
    */
-  public DefinedTerm isInvolvedInBiologicalProcess;
+  public PropertyValue isInvolvedInBiologicalProcessPropertyValue;
 
   /**
    * Biological process this BioChemEntity is involved in; please use PropertyValue if you want to include any evidence.
    */
-  public PropertyValue isInvolvedInBiologicalProcessPropertyValue;
-
-  /**
-   * Subcellular location where this BioChemEntity is located; please use PropertyValue if you want to include any evidence.
-   */
-  public PropertyValue isLocatedInSubcellularLocation;
+  public DefinedTerm isInvolvedInBiologicalProcess;
 
   /**
    * Subcellular location where this BioChemEntity is located; please use PropertyValue if you want to include any evidence.
    */
   public DefinedTerm isLocatedInSubcellularLocationDefinedTerm;
+
+  /**
+   * Subcellular location where this BioChemEntity is located; please use PropertyValue if you want to include any evidence.
+   */
+  public PropertyValue isLocatedInSubcellularLocation;
 
   /**
    * Indicates a BioChemEntity that is (in some sense) a part of this BioChemEntity.
@@ -103,11 +98,16 @@ public class BioChemEntity extends Thing {
   /**
    * The taxonomic grouping of the organism that expresses, encodes, or in someway related to the BioChemEntity.
    */
-  public Taxon taxonomicRange;
+  public DefinedTerm taxonomicRangeDefinedTerm;
 
   /**
    * The taxonomic grouping of the organism that expresses, encodes, or in someway related to the BioChemEntity.
    */
-  public DefinedTerm taxonomicRangeDefinedTerm;
+  public Taxon taxonomicRange;
+
+  /**
+   * Where to find the definition of the OWL Class used to generate this Java class.
+   */
+  public String isDefinedBy = "https://pending.schema.org/BioChemEntity";
 }
 

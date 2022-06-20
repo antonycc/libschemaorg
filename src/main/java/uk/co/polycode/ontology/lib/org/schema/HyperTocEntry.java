@@ -16,11 +16,6 @@ import java.lang.String;
  */
 public class HyperTocEntry extends CreativeWork {
   /**
-   * Where to find the definition of the OWL Class used to generate this Java class.
-   */
-  public String isDefinedBy = "https://pending.schema.org/HyperTocEntry";
-
-  /**
    * A media object that encodes this CreativeWork. This property is a synonym for encoding.
    */
   public MediaObject associatedMedia;
@@ -34,5 +29,10 @@ public class HyperTocEntry extends CreativeWork {
    * Text of an utterances (spoken words, lyrics etc.) that occurs at a certain section of a media object, represented as a <a class="localLink" href="https://schema.org/HyperTocEntry">HyperTocEntry</a>.
    */
   public String utterances;
+
+  /**
+   * Where to find the definition of the OWL Class used to generate this Java class.
+   */
+  public String isDefinedBy = "https://pending.schema.org/HyperTocEntry";
 }
 

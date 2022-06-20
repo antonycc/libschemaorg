@@ -16,11 +16,6 @@ import java.lang.String;
  */
 public class AnatomicalSystem extends MedicalEntity {
   /**
-   * Where to find the definition of the OWL Class used to generate this Java class.
-   */
-  public String isDefinedBy = "https://health-lifesci.schema.org/AnatomicalSystem";
-
-  /**
    * If applicable, a description of the pathophysiology associated with the anatomical system, including potential abnormal changes in the mechanical, physical, and biochemical functions of the system.
    */
   public String associatedPathophysiology;
@@ -28,12 +23,12 @@ public class AnatomicalSystem extends MedicalEntity {
   /**
    * Specifying something physically contained by something else. Typically used here for the underlying anatomical structures, such as organs, that comprise the anatomical system.
    */
-  public AnatomicalStructure comprisedOf;
+  public AnatomicalSystem comprisedOfAnatomicalSystem;
 
   /**
    * Specifying something physically contained by something else. Typically used here for the underlying anatomical structures, such as organs, that comprise the anatomical system.
    */
-  public AnatomicalSystem comprisedOfAnatomicalSystem;
+  public AnatomicalStructure comprisedOf;
 
   /**
    * A medical condition associated with this anatomy.
@@ -49,5 +44,10 @@ public class AnatomicalSystem extends MedicalEntity {
    * A medical therapy related to this anatomy.
    */
   public MedicalTherapy relatedTherapy;
+
+  /**
+   * Where to find the definition of the OWL Class used to generate this Java class.
+   */
+  public String isDefinedBy = "https://health-lifesci.schema.org/AnatomicalSystem";
 }
 

@@ -17,11 +17,6 @@ import java.math.BigDecimal;
  */
 public class DrugStrength extends MedicalIntangible {
   /**
-   * Where to find the definition of the OWL Class used to generate this Java class.
-   */
-  public String isDefinedBy = "https://health-lifesci.schema.org/DrugStrength";
-
-  /**
    * An active ingredient, typically chemical compounds and/or biologic substances.
    */
   public String activeIngredient;
@@ -45,5 +40,10 @@ public class DrugStrength extends MedicalIntangible {
    * The value of an active ingredient's strength, e.g. 325.
    */
   public BigDecimal strengthValue;
+
+  /**
+   * Where to find the definition of the OWL Class used to generate this Java class.
+   */
+  public String isDefinedBy = "https://health-lifesci.schema.org/DrugStrength";
 }
 

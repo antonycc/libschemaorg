@@ -17,11 +17,6 @@ import java.time.ZonedDateTime;
  */
 public class WebPage extends CreativeWork {
   /**
-   * Where to find the definition of the OWL Class used to generate this Java class.
-   */
-  public String isDefinedBy = "https://schema.org/WebPage";
-
-  /**
    * A set of links that can help a user understand and navigate a website hierarchy.
    */
   public BreadcrumbList breadcrumb;
@@ -44,12 +39,12 @@ public class WebPage extends CreativeWork {
   /**
    * People or organizations that have reviewed the content on this web page for accuracy and/or completeness.
    */
-  public Person reviewedBy;
+  public Organization reviewedByOrganization;
 
   /**
    * People or organizations that have reviewed the content on this web page for accuracy and/or completeness.
    */
-  public Organization reviewedByOrganization;
+  public Person reviewedBy;
 
   /**
    * One of the more significant URLs on the page. Typically, these are the non-navigation links that are clicked on the most.
@@ -81,5 +76,10 @@ public class WebPage extends CreativeWork {
    * Date on which the content on this web page was last reviewed for accuracy and/or completeness.
    */
   public ZonedDateTime lastReviewed;
+
+  /**
+   * Where to find the definition of the OWL Class used to generate this Java class.
+   */
+  public String isDefinedBy = "https://schema.org/WebPage";
 }
 

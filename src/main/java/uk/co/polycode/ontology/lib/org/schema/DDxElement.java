@@ -16,11 +16,6 @@ import java.lang.String;
  */
 public class DDxElement extends MedicalIntangible {
   /**
-   * Where to find the definition of the OWL Class used to generate this Java class.
-   */
-  public String isDefinedBy = "https://health-lifesci.schema.org/DDxElement";
-
-  /**
    * One or more alternative conditions considered in the differential diagnosis process as output of a diagnosis process.
    */
   public MedicalCondition diagnosis;
@@ -29,5 +24,10 @@ public class DDxElement extends MedicalIntangible {
    * One of a set of signs and symptoms that can be used to distinguish this diagnosis from others in the differential diagnosis.
    */
   public MedicalSignOrSymptom distinguishingSign;
+
+  /**
+   * Where to find the definition of the OWL Class used to generate this Java class.
+   */
+  public String isDefinedBy = "https://health-lifesci.schema.org/DDxElement";
 }
 

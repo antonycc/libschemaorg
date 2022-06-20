@@ -16,11 +16,6 @@ import java.lang.String;
  */
 public class MusicGroup extends PerformingGroup {
   /**
-   * Where to find the definition of the OWL Class used to generate this Java class.
-   */
-  public String isDefinedBy = "https://schema.org/MusicGroup";
-
-  /**
    * A music album.
    */
   public MusicAlbum album;
@@ -33,11 +28,16 @@ public class MusicGroup extends PerformingGroup {
   /**
    * A music recording (track)&#x2014;usually a single song. If an ItemList is given, the list should contain items of type MusicRecording.
    */
-  public ItemList track;
+  public MusicRecording trackMusicRecording;
 
   /**
    * A music recording (track)&#x2014;usually a single song. If an ItemList is given, the list should contain items of type MusicRecording.
    */
-  public MusicRecording trackMusicRecording;
+  public ItemList track;
+
+  /**
+   * Where to find the definition of the OWL Class used to generate this Java class.
+   */
+  public String isDefinedBy = "https://schema.org/MusicGroup";
 }
 

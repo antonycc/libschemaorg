@@ -17,11 +17,6 @@ import java.lang.String;
  */
 public class Drug extends Substance {
   /**
-   * Where to find the definition of the OWL Class used to generate this Java class.
-   */
-  public String isDefinedBy = "https://health-lifesci.schema.org/Drug";
-
-  /**
    * An active ingredient, typically chemical compounds and/or biologic substances.
    */
   public String activeIngredient;
@@ -94,12 +89,12 @@ public class Drug extends Substance {
   /**
    * The drug or supplement's legal status, including any controlled substance schedules that apply.
    */
-  public DrugLegalStatus legalStatus;
+  public MedicalEnumeration legalStatusMedicalEnumeration;
 
   /**
    * The drug or supplement's legal status, including any controlled substance schedules that apply.
    */
-  public MedicalEnumeration legalStatusMedicalEnumeration;
+  public DrugLegalStatus legalStatus;
 
   /**
    * The manufacturer of the product.
@@ -175,5 +170,10 @@ public class Drug extends Substance {
    * True if this item's name is a proprietary/brand name (vs. generic name).
    */
   public Boolean isProprietary;
+
+  /**
+   * Where to find the definition of the OWL Class used to generate this Java class.
+   */
+  public String isDefinedBy = "https://health-lifesci.schema.org/Drug";
 }
 

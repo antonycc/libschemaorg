@@ -18,11 +18,6 @@ import java.time.ZonedDateTime;
  */
 public class Product extends Thing {
   /**
-   * Where to find the definition of the OWL Class used to generate this Java class.
-   */
-  public String isDefinedBy = "https://schema.org/Product";
-
-  /**
    * A property-value pair representing an additional characteristics of the entitity, e.g. a product feature or another characteristic for which there is no matching property in schema.org.<br/><br/>
    *
    * Note: Publishers should be aware that applications designed to use specific schema.org properties (e.g. https://schema.org/width, https://schema.org/color, https://schema.org/gtin13, ...) will typically expect such data to be provided using those properties, rather than using the generic property/value mechanism.
@@ -47,17 +42,12 @@ public class Product extends Thing {
   /**
    * The brand(s) associated with a product or service, or the brand(s) maintained by an organization or business person.
    */
-  public Organization brand;
+  public Brand brandBrand;
 
   /**
    * The brand(s) associated with a product or service, or the brand(s) maintained by an organization or business person.
    */
-  public Brand brandBrand;
-
-  /**
-   * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
-   */
-  public Thing category;
+  public Organization brand;
 
   /**
    * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
@@ -68,6 +58,11 @@ public class Product extends Thing {
    * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
    */
   public CategoryCode categoryCategoryCode;
+
+  /**
+   * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
+   */
+  public Thing category;
 
   /**
    * The color of the product.
@@ -96,12 +91,12 @@ public class Product extends Thing {
   /**
    * The depth of the item.
    */
-  public Distance depth;
+  public QuantitativeValue depthQuantitativeValue;
 
   /**
    * The depth of the item.
    */
-  public QuantitativeValue depthQuantitativeValue;
+  public Distance depth;
 
   /**
    * A <a class="localLink" href="https://schema.org/Grant">Grant</a> that directly or indirectly provide funding or sponsorship for this item. See also <a class="localLink" href="https://schema.org/ownershipFundingInfo">ownershipFundingInfo</a>.
@@ -156,12 +151,12 @@ public class Product extends Thing {
   /**
    * The height of the item.
    */
-  public Distance height;
+  public QuantitativeValue heightQuantitativeValue;
 
   /**
    * The height of the item.
    */
-  public QuantitativeValue heightQuantitativeValue;
+  public Distance height;
 
   /**
    * Indicates the <a class="localLink" href="https://schema.org/productGroupID">productGroupID</a> for a <a class="localLink" href="https://schema.org/ProductGroup">ProductGroup</a> that this product <a class="localLink" href="https://schema.org/isVariantOf">isVariantOf</a>.
@@ -181,17 +176,12 @@ public class Product extends Thing {
   /**
    * A pointer to another, somehow related product (or multiple products).
    */
-  public Service isRelatedTo;
+  public Product isRelatedToProduct;
 
   /**
    * A pointer to another, somehow related product (or multiple products).
    */
-  public Product isRelatedToProduct;
-
-  /**
-   * A pointer to another, functionally similar product (or multiple products).
-   */
-  public Service isSimilarTo;
+  public Service isRelatedTo;
 
   /**
    * A pointer to another, functionally similar product (or multiple products).
@@ -199,14 +189,19 @@ public class Product extends Thing {
   public Product isSimilarToProduct;
 
   /**
-   * Indicates the kind of product that this is a variant of. In the case of <a class="localLink" href="https://schema.org/ProductModel">ProductModel</a>, this is a pointer (from a ProductModel) to a base product from which this product is a variant. It is safe to infer that the variant inherits all product features from the base model, unless defined locally. This is not transitive. In the case of a <a class="localLink" href="https://schema.org/ProductGroup">ProductGroup</a>, the group description also serves as a template, representing a set of Products that vary on explicitly defined, specific dimensions only (so it defines both a set of variants, as well as which values distinguish amongst those variants). When used with <a class="localLink" href="https://schema.org/ProductGroup">ProductGroup</a>, this property can apply to any <a class="localLink" href="https://schema.org/Product">Product</a> included in the group.
+   * A pointer to another, functionally similar product (or multiple products).
    */
-  public ProductModel isVariantOf;
+  public Service isSimilarTo;
 
   /**
    * Indicates the kind of product that this is a variant of. In the case of <a class="localLink" href="https://schema.org/ProductModel">ProductModel</a>, this is a pointer (from a ProductModel) to a base product from which this product is a variant. It is safe to infer that the variant inherits all product features from the base model, unless defined locally. This is not transitive. In the case of a <a class="localLink" href="https://schema.org/ProductGroup">ProductGroup</a>, the group description also serves as a template, representing a set of Products that vary on explicitly defined, specific dimensions only (so it defines both a set of variants, as well as which values distinguish amongst those variants). When used with <a class="localLink" href="https://schema.org/ProductGroup">ProductGroup</a>, this property can apply to any <a class="localLink" href="https://schema.org/Product">Product</a> included in the group.
    */
   public ProductGroup isVariantOfProductGroup;
+
+  /**
+   * Indicates the kind of product that this is a variant of. In the case of <a class="localLink" href="https://schema.org/ProductModel">ProductModel</a>, this is a pointer (from a ProductModel) to a base product from which this product is a variant. It is safe to infer that the variant inherits all product features from the base model, unless defined locally. This is not transitive. In the case of a <a class="localLink" href="https://schema.org/ProductGroup">ProductGroup</a>, the group description also serves as a template, representing a set of Products that vary on explicitly defined, specific dimensions only (so it defines both a set of variants, as well as which values distinguish amongst those variants). When used with <a class="localLink" href="https://schema.org/ProductGroup">ProductGroup</a>, this property can apply to any <a class="localLink" href="https://schema.org/Product">Product</a> included in the group.
+   */
+  public ProductModel isVariantOf;
 
   /**
    * A predefined value from OfferItemCondition specifying the condition of the product or service, or the products or services included in the offer. Also used for product return policies to specify the condition of products accepted for returns.
@@ -251,12 +246,12 @@ public class Product extends Thing {
   /**
    * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use <a class="localLink" href="https://schema.org/businessFunction">businessFunction</a> to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a <a class="localLink" href="https://schema.org/Demand">Demand</a>. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
    */
-  public Offer offers;
+  public Demand offersDemand;
 
   /**
    * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use <a class="localLink" href="https://schema.org/businessFunction">businessFunction</a> to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a <a class="localLink" href="https://schema.org/Demand">Demand</a>. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
    */
-  public Demand offersDemand;
+  public Offer offers;
 
   /**
    * A pattern that something has, for example 'polka dot', 'striped', 'Canadian flag'. Values are typically expressed as text, although links to controlled value schemes are also supported.
@@ -276,17 +271,17 @@ public class Product extends Thing {
   /**
    * A standardized size of a product or creative work, specified either through a simple textual string (for example 'XL', '32Wx34L'), a  QuantitativeValue with a unitCode, or a comprehensive and structured <a class="localLink" href="https://schema.org/SizeSpecification">SizeSpecification</a>; in other cases, the <a class="localLink" href="https://schema.org/width">width</a>, <a class="localLink" href="https://schema.org/height">height</a>, <a class="localLink" href="https://schema.org/depth">depth</a> and <a class="localLink" href="https://schema.org/weight">weight</a> properties may be more applicable.
    */
-  public SizeSpecification size;
-
-  /**
-   * A standardized size of a product or creative work, specified either through a simple textual string (for example 'XL', '32Wx34L'), a  QuantitativeValue with a unitCode, or a comprehensive and structured <a class="localLink" href="https://schema.org/SizeSpecification">SizeSpecification</a>; in other cases, the <a class="localLink" href="https://schema.org/width">width</a>, <a class="localLink" href="https://schema.org/height">height</a>, <a class="localLink" href="https://schema.org/depth">depth</a> and <a class="localLink" href="https://schema.org/weight">weight</a> properties may be more applicable.
-   */
   public QuantitativeValue sizeQuantitativeValue;
 
   /**
    * A standardized size of a product or creative work, specified either through a simple textual string (for example 'XL', '32Wx34L'), a  QuantitativeValue with a unitCode, or a comprehensive and structured <a class="localLink" href="https://schema.org/SizeSpecification">SizeSpecification</a>; in other cases, the <a class="localLink" href="https://schema.org/width">width</a>, <a class="localLink" href="https://schema.org/height">height</a>, <a class="localLink" href="https://schema.org/depth">depth</a> and <a class="localLink" href="https://schema.org/weight">weight</a> properties may be more applicable.
    */
   public DefinedTerm sizeDefinedTerm;
+
+  /**
+   * A standardized size of a product or creative work, specified either through a simple textual string (for example 'XL', '32Wx34L'), a  QuantitativeValue with a unitCode, or a comprehensive and structured <a class="localLink" href="https://schema.org/SizeSpecification">SizeSpecification</a>; in other cases, the <a class="localLink" href="https://schema.org/width">width</a>, <a class="localLink" href="https://schema.org/height">height</a>, <a class="localLink" href="https://schema.org/depth">depth</a> and <a class="localLink" href="https://schema.org/weight">weight</a> properties may be more applicable.
+   */
+  public SizeSpecification size;
 
   /**
    * The Stock Keeping Unit (SKU), i.e. a merchant-specific identifier for a product or service, or the product to which the offer refers.
@@ -306,12 +301,12 @@ public class Product extends Thing {
   /**
    * The width of the item.
    */
-  public QuantitativeValue width;
+  public Distance widthDistance;
 
   /**
    * The width of the item.
    */
-  public Distance widthDistance;
+  public QuantitativeValue width;
 
   /**
    * Indicates whether this content is family friendly.
@@ -332,5 +327,10 @@ public class Product extends Thing {
    * The release date of a product or product model. This can be used to distinguish the exact variant of a product.
    */
   public ZonedDateTime releaseDate;
+
+  /**
+   * Where to find the definition of the OWL Class used to generate this Java class.
+   */
+  public String isDefinedBy = "https://schema.org/Product";
 }
 

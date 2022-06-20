@@ -17,11 +17,6 @@ import java.net.URL;
  */
 public class SoftwareApplication extends CreativeWork {
   /**
-   * Where to find the definition of the OWL Class used to generate this Java class.
-   */
-  public String isDefinedBy = "https://schema.org/SoftwareApplication";
-
-  /**
    * Type of software application, e.g. 'Game, Multimedia'.
    */
   public String applicationCategory;
@@ -130,5 +125,10 @@ public class SoftwareApplication extends CreativeWork {
    * Supporting data for a SoftwareApplication.
    */
   public DataFeed supportingData;
+
+  /**
+   * Where to find the definition of the OWL Class used to generate this Java class.
+   */
+  public String isDefinedBy = "https://schema.org/SoftwareApplication";
 }
 

@@ -17,11 +17,6 @@ import java.math.BigDecimal;
  */
 public class DoseSchedule extends MedicalIntangible {
   /**
-   * Where to find the definition of the OWL Class used to generate this Java class.
-   */
-  public String isDefinedBy = "https://health-lifesci.schema.org/DoseSchedule";
-
-  /**
    * The unit of the dose, e.g. 'mg'.
    */
   public String doseUnit;
@@ -29,12 +24,12 @@ public class DoseSchedule extends MedicalIntangible {
   /**
    * The value of the dose, e.g. 500.
    */
-  public QualitativeValue doseValue;
+  public BigDecimal doseValueBigDecimal;
 
   /**
    * The value of the dose, e.g. 500.
    */
-  public BigDecimal doseValueBigDecimal;
+  public QualitativeValue doseValue;
 
   /**
    * How often the dose is taken, e.g. 'daily'.
@@ -45,5 +40,10 @@ public class DoseSchedule extends MedicalIntangible {
    * Characteristics of the population for which this is intended, or which typically uses it, e.g. 'adults'.
    */
   public String targetPopulation;
+
+  /**
+   * Where to find the definition of the OWL Class used to generate this Java class.
+   */
+  public String isDefinedBy = "https://health-lifesci.schema.org/DoseSchedule";
 }
 

@@ -23,19 +23,14 @@ import java.time.ZonedDateTime;
  */
 public class Offer extends Intangible {
   /**
-   * Where to find the definition of the OWL Class used to generate this Java class.
+   * The payment method(s) accepted by seller for this offer.
    */
-  public String isDefinedBy = "https://schema.org/Offer";
+  public PaymentMethod acceptedPaymentMethodPaymentMethod;
 
   /**
    * The payment method(s) accepted by seller for this offer.
    */
   public LoanOrCredit acceptedPaymentMethod;
-
-  /**
-   * The payment method(s) accepted by seller for this offer.
-   */
-  public PaymentMethod acceptedPaymentMethodPaymentMethod;
 
   /**
    * An additional offer that can only be obtained in combination with the first base offer (e.g. supplements and extensions that are available for a surcharge).
@@ -55,17 +50,17 @@ public class Offer extends Intangible {
   /**
    * The geographic area where a service or offered item is provided.
    */
-  public AdministrativeArea areaServed;
-
-  /**
-   * The geographic area where a service or offered item is provided.
-   */
   public GeoShape areaServedGeoShape;
 
   /**
    * The geographic area where a service or offered item is provided.
    */
   public Place areaServedPlace;
+
+  /**
+   * The geographic area where a service or offered item is provided.
+   */
+  public AdministrativeArea areaServed;
 
   /**
    * The availability of this item&#x2014;for example In stock, Out of stock, Pre-order, etc.
@@ -90,17 +85,17 @@ public class Offer extends Intangible {
   /**
    * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
    */
-  public Thing category;
-
-  /**
-   * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
-   */
   public PhysicalActivityCategory categoryPhysicalActivityCategory;
 
   /**
    * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
    */
   public CategoryCode categoryCategoryCode;
+
+  /**
+   * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
+   */
+  public Thing category;
 
   /**
    * The typical delay between the receipt of the order and the goods either leaving the warehouse or being prepared for pickup, in case the delivery method is on site pickup.
@@ -127,14 +122,14 @@ public class Offer extends Intangible {
    *
    * See also <a class="localLink" href="https://schema.org/ineligibleRegion">ineligibleRegion</a>.
    */
-  public GeoShape eligibleRegion;
+  public Place eligibleRegionPlace;
 
   /**
    * The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is valid.<br/><br/>
    *
    * See also <a class="localLink" href="https://schema.org/ineligibleRegion">ineligibleRegion</a>.
    */
-  public Place eligibleRegionPlace;
+  public GeoShape eligibleRegion;
 
   /**
    * The transaction volume, in a monetary unit, for which the offer or price specification is valid, e.g. for indicating a minimal purchasing volume, to express free shipping above a certain order volume, or to limit the acceptance of credit cards to purchases to a certain minimal amount.
@@ -191,14 +186,14 @@ public class Offer extends Intangible {
    *
    * See also <a class="localLink" href="https://schema.org/eligibleRegion">eligibleRegion</a>.
    */
-  public Place ineligibleRegion;
+  public GeoShape ineligibleRegionGeoShape;
 
   /**
    * The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is not valid, e.g. a region where the transaction is not allowed.<br/><br/>
    *
    * See also <a class="localLink" href="https://schema.org/eligibleRegion">eligibleRegion</a>.
    */
-  public GeoShape ineligibleRegionGeoShape;
+  public Place ineligibleRegion;
 
   /**
    * The current approximate inventory level for the item or items.
@@ -209,11 +204,6 @@ public class Offer extends Intangible {
    * A predefined value from OfferItemCondition specifying the condition of the product or service, or the products or services included in the offer. Also used for product return policies to specify the condition of products accepted for returns.
    */
   public OfferItemCondition itemCondition;
-
-  /**
-   * An item being offered (or demanded). The transactional nature of the offer or demand is documented using <a class="localLink" href="https://schema.org/businessFunction">businessFunction</a>, e.g. sell, lease etc. While several common expected types are listed explicitly in this definition, others can be used. Using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
-   */
-  public Trip itemOffered;
 
   /**
    * An item being offered (or demanded). The transactional nature of the offer or demand is documented using <a class="localLink" href="https://schema.org/businessFunction">businessFunction</a>, e.g. sell, lease etc. While several common expected types are listed explicitly in this definition, others can be used. Using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
@@ -246,14 +236,19 @@ public class Offer extends Intangible {
   public Service itemOfferedService;
 
   /**
-   * Length of the lease for some <a class="localLink" href="https://schema.org/Accommodation">Accommodation</a>, either particular to some <a class="localLink" href="https://schema.org/Offer">Offer</a> or in some cases intrinsic to the property.
+   * An item being offered (or demanded). The transactional nature of the offer or demand is documented using <a class="localLink" href="https://schema.org/businessFunction">businessFunction</a>, e.g. sell, lease etc. While several common expected types are listed explicitly in this definition, others can be used. Using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
    */
-  public Duration leaseLength;
+  public Trip itemOffered;
 
   /**
    * Length of the lease for some <a class="localLink" href="https://schema.org/Accommodation">Accommodation</a>, either particular to some <a class="localLink" href="https://schema.org/Offer">Offer</a> or in some cases intrinsic to the property.
    */
   public QuantitativeValue leaseLengthQuantitativeValue;
+
+  /**
+   * Length of the lease for some <a class="localLink" href="https://schema.org/Accommodation">Accommodation</a>, either particular to some <a class="localLink" href="https://schema.org/Offer">Offer</a> or in some cases intrinsic to the property.
+   */
+  public Duration leaseLength;
 
   /**
    * The Manufacturer Part Number (MPN) of the product, or the product to which the offer refers.
@@ -263,12 +258,12 @@ public class Offer extends Intangible {
   /**
    * A pointer to the organization or person making the offer.
    */
-  public Person offeredBy;
+  public Organization offeredByOrganization;
 
   /**
    * A pointer to the organization or person making the offer.
    */
-  public Organization offeredByOrganization;
+  public Person offeredBy;
 
   /**
    * The offer price of a product, or of a price component when attached to PriceSpecification and its subtypes.<br/><br/>
@@ -276,7 +271,7 @@ public class Offer extends Intangible {
    * Usage guidelines:<br/><br/>
    *
    * <ul>
-   * <li>Use the <a class="localLink" href="https://schema.org/priceCurrency">priceCurrency</a> property (with standard formats: <a href="http://en.wikipedia.org/wiki/ISO_4217">ISO 4217 currency format</a> e.g. "USD"; <a href="https://en.wikipedia.org/wiki/List_of_cryptocurrencies">Ticker symbol</a> for cryptocurrencies e.g. "BTC"; well known names for <a href="https://en.wikipedia.org/wiki/Local_exchange_trading_system">Local Exchange Tradings Systems</a> (LETS) and other currency types e.g. "Ithaca HOUR") instead of including <a href="http://en.wikipedia.org/wiki/Dollar_sign#Currencies_that_use_the_dollar_or_peso_sign">ambiguous symbols</a> such as 'DOLLAR' in the value.</li>
+   * <li>Use the <a class="localLink" href="https://schema.org/priceCurrency">priceCurrency</a> property (with standard formats: <a href="http://en.wikipedia.org/wiki/ISO_4217">ISO 4217 currency format</a> e.g. "USD"; <a href="https://en.wikipedia.org/wiki/List_of_cryptocurrencies">Ticker symbol</a> for cryptocurrencies e.g. "BTC"; well known names for <a href="https://en.wikipedia.org/wiki/Local_exchange_trading_system">Local Exchange Tradings Systems</a> (LETS) and other currency types e.g. "Ithaca HOUR") instead of including <a href="http://en.wikipedia.org/wiki/Dollar_sign#Currencies_that_use_the_dollar_or_peso_sign">ambiguous symbols</a> such as 'USD' in the value.</li>
    * <li>Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.</li>
    * <li>Note that both <a href="http://www.w3.org/TR/xhtml-rdfa-primer/#using-the-content-attribute">RDFa</a> and Microdata syntax allow the use of a "content=" attribute for publishing simple machine-readable values alongside more human-friendly formatting.</li>
    * <li>Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.</li>
@@ -304,12 +299,12 @@ public class Offer extends Intangible {
   /**
    * An entity which offers (sells / leases / lends / loans) the services / goods.  A seller may also be a provider.
    */
-  public Person seller;
+  public Organization sellerOrganization;
 
   /**
    * An entity which offers (sells / leases / lends / loans) the services / goods.  A seller may also be a provider.
    */
-  public Organization sellerOrganization;
+  public Person seller;
 
   /**
    * The serial number or any alphanumeric identifier of a particular product. When attached to an offer, it is a shortcut for the serial number of the product included in the offer.
@@ -334,22 +329,22 @@ public class Offer extends Intangible {
   /**
    * The end of the availability of the product or service included in the offer.
    */
-  public ZonedDateTime availabilityEnds;
+  public ZonedDateTime availabilityEndsZonedDateTime;
 
   /**
    * The end of the availability of the product or service included in the offer.
    */
-  public ZonedDateTime availabilityEndsZonedDateTime;
-
-  /**
-   * The beginning of the availability of the product or service included in the offer.
-   */
-  public ZonedDateTime availabilityStarts;
+  public ZonedDateTime availabilityEnds;
 
   /**
    * The beginning of the availability of the product or service included in the offer.
    */
   public ZonedDateTime availabilityStartsZonedDateTime;
+
+  /**
+   * The beginning of the availability of the product or service included in the offer.
+   */
+  public ZonedDateTime availabilityStarts;
 
   /**
    * Indicates whether this content is family friendly.
@@ -364,12 +359,17 @@ public class Offer extends Intangible {
   /**
    * The date when the item becomes valid.
    */
-  public ZonedDateTime validFrom;
+  public ZonedDateTime validFromZonedDateTime;
 
   /**
    * The date when the item becomes valid.
    */
-  public ZonedDateTime validFromZonedDateTime;
+  public ZonedDateTime validFrom;
+
+  /**
+   * The date after when the item is not valid. For example the end of an offer, salary period, or a period of opening hours.
+   */
+  public ZonedDateTime validThroughZonedDateTime;
 
   /**
    * The date after when the item is not valid. For example the end of an offer, salary period, or a period of opening hours.
@@ -377,8 +377,8 @@ public class Offer extends Intangible {
   public ZonedDateTime validThrough;
 
   /**
-   * The date after when the item is not valid. For example the end of an offer, salary period, or a period of opening hours.
+   * Where to find the definition of the OWL Class used to generate this Java class.
    */
-  public ZonedDateTime validThroughZonedDateTime;
+  public String isDefinedBy = "https://schema.org/Offer";
 }
 

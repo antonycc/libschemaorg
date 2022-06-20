@@ -17,11 +17,6 @@ import java.math.BigDecimal;
  */
 public class QuantitativeValueDistribution extends StructuredValue {
   /**
-   * Where to find the definition of the OWL Class used to generate this Java class.
-   */
-  public String isDefinedBy = "https://schema.org/QuantitativeValueDistribution";
-
-  /**
    * The duration of the item (movie, audio recording, event, etc.) in <a href="http://en.wikipedia.org/wiki/ISO_8601">ISO 8601 date format</a>.
    */
   public Duration duration;
@@ -50,5 +45,10 @@ public class QuantitativeValueDistribution extends StructuredValue {
    * The 90th percentile value.
    */
   public BigDecimal percentile90;
+
+  /**
+   * Where to find the definition of the OWL Class used to generate this Java class.
+   */
+  public String isDefinedBy = "https://schema.org/QuantitativeValueDistribution";
 }
 

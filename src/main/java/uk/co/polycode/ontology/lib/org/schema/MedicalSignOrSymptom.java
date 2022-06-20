@@ -16,13 +16,13 @@ import java.lang.String;
  */
 public class MedicalSignOrSymptom extends MedicalCondition {
   /**
-   * Where to find the definition of the OWL Class used to generate this Java class.
-   */
-  public String isDefinedBy = "https://health-lifesci.schema.org/MedicalSignOrSymptom";
-
-  /**
    * A possible treatment to address this condition, sign or symptom.
    */
   public MedicalTherapy possibleTreatment;
+
+  /**
+   * Where to find the definition of the OWL Class used to generate this Java class.
+   */
+  public String isDefinedBy = "https://health-lifesci.schema.org/MedicalSignOrSymptom";
 }
 

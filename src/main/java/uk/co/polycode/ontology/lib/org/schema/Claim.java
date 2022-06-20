@@ -20,11 +20,6 @@ import java.lang.String;
  */
 public class Claim extends CreativeWork {
   /**
-   * Where to find the definition of the OWL Class used to generate this Java class.
-   */
-  public String isDefinedBy = "https://pending.schema.org/Claim";
-
-  /**
    * Indicates an occurence of a <a class="localLink" href="https://schema.org/Claim">Claim</a> in some <a class="localLink" href="https://schema.org/CreativeWork">CreativeWork</a>.
    */
   public CreativeWork appearance;
@@ -33,17 +28,22 @@ public class Claim extends CreativeWork {
    * For a <a class="localLink" href="https://schema.org/Claim">Claim</a> interpreted from <a class="localLink" href="https://schema.org/MediaObject">MediaObject</a> content
    *     sed to indicate a claim contained, implied or refined from the content of a <a class="localLink" href="https://schema.org/MediaObject">MediaObject</a>.
    */
-  public Person claimInterpreter;
+  public Organization claimInterpreterOrganization;
 
   /**
    * For a <a class="localLink" href="https://schema.org/Claim">Claim</a> interpreted from <a class="localLink" href="https://schema.org/MediaObject">MediaObject</a> content
    *     sed to indicate a claim contained, implied or refined from the content of a <a class="localLink" href="https://schema.org/MediaObject">MediaObject</a>.
    */
-  public Organization claimInterpreterOrganization;
+  public Person claimInterpreter;
 
   /**
    * Indicates the first known occurence of a <a class="localLink" href="https://schema.org/Claim">Claim</a> in some <a class="localLink" href="https://schema.org/CreativeWork">CreativeWork</a>.
    */
   public CreativeWork firstAppearance;
+
+  /**
+   * Where to find the definition of the OWL Class used to generate this Java class.
+   */
+  public String isDefinedBy = "https://pending.schema.org/Claim";
 }
 

@@ -20,13 +20,6 @@ import java.time.ZonedDateTime;
  *             
  */
 public class CreativeWorkSeries extends CreativeWork {
-  public Series series;
-
-  /**
-   * Where to find the definition of the OWL Class used to generate this Java class.
-   */
-  public String isDefinedBy = "https://schema.org/CreativeWorkSeries";
-
   /**
    * The International Standard Serial Number (ISSN) that identifies this serial publication. You can repeat this property to identify different formats of, or the linking ISSN (ISSN-L) for, this serial publication.
    */
@@ -35,12 +28,17 @@ public class CreativeWorkSeries extends CreativeWork {
   /**
    * The end date and time of the item (in <a href="http://en.wikipedia.org/wiki/ISO_8601">ISO 8601 date format</a>).
    */
-  public ZonedDateTime endDate;
+  public ZonedDateTime endDateZonedDateTime;
 
   /**
    * The end date and time of the item (in <a href="http://en.wikipedia.org/wiki/ISO_8601">ISO 8601 date format</a>).
    */
-  public ZonedDateTime endDateZonedDateTime;
+  public ZonedDateTime endDate;
+
+  /**
+   * The start date and time of the item (in <a href="http://en.wikipedia.org/wiki/ISO_8601">ISO 8601 date format</a>).
+   */
+  public ZonedDateTime startDateZonedDateTime;
 
   /**
    * The start date and time of the item (in <a href="http://en.wikipedia.org/wiki/ISO_8601">ISO 8601 date format</a>).
@@ -48,8 +46,10 @@ public class CreativeWorkSeries extends CreativeWork {
   public ZonedDateTime startDate;
 
   /**
-   * The start date and time of the item (in <a href="http://en.wikipedia.org/wiki/ISO_8601">ISO 8601 date format</a>).
+   * Where to find the definition of the OWL Class used to generate this Java class.
    */
-  public ZonedDateTime startDateZonedDateTime;
+  public String isDefinedBy = "https://schema.org/CreativeWorkSeries";
+
+  public Series series;
 }
 

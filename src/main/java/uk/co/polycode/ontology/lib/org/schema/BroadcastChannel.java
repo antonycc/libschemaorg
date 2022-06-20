@@ -16,11 +16,6 @@ import java.lang.String;
  */
 public class BroadcastChannel extends Intangible {
   /**
-   * Where to find the definition of the OWL Class used to generate this Java class.
-   */
-  public String isDefinedBy = "https://schema.org/BroadcastChannel";
-
-  /**
    * The unique address by which the BroadcastService can be identified in a provider lineup. In US, this is typically a number.
    */
   public String broadcastChannelId;
@@ -49,5 +44,10 @@ public class BroadcastChannel extends Intangible {
    * The BroadcastService offered on this channel.
    */
   public BroadcastService providesBroadcastService;
+
+  /**
+   * Where to find the definition of the OWL Class used to generate this Java class.
+   */
+  public String isDefinedBy = "https://schema.org/BroadcastChannel";
 }
 

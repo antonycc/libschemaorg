@@ -16,11 +16,6 @@ import java.lang.String;
  */
 public class MedicalEntity extends Thing {
   /**
-   * Where to find the definition of the OWL Class used to generate this Java class.
-   */
-  public String isDefinedBy = "https://health-lifesci.schema.org/MedicalEntity";
-
-  /**
    * A medical code for the entity, taken from a controlled vocabulary or ontology such as ICD-9, DiseasesDB, MeSH, SNOMED-CT, RxNorm, etc.
    */
   public MedicalCode code;
@@ -38,12 +33,12 @@ public class MedicalEntity extends Thing {
   /**
    * The drug or supplement's legal status, including any controlled substance schedules that apply.
    */
-  public DrugLegalStatus legalStatus;
+  public MedicalEnumeration legalStatusMedicalEnumeration;
 
   /**
    * The drug or supplement's legal status, including any controlled substance schedules that apply.
    */
-  public MedicalEnumeration legalStatusMedicalEnumeration;
+  public DrugLegalStatus legalStatus;
 
   /**
    * The system of medicine that includes this MedicalEntity, for example 'evidence-based', 'homeopathic', 'chiropractic', etc.
@@ -64,5 +59,10 @@ public class MedicalEntity extends Thing {
    * A medical study or trial related to this entity.
    */
   public MedicalStudy study;
+
+  /**
+   * Where to find the definition of the OWL Class used to generate this Java class.
+   */
+  public String isDefinedBy = "https://health-lifesci.schema.org/MedicalEntity";
 }
 

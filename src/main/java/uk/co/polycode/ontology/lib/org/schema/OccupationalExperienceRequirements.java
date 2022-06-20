@@ -17,13 +17,13 @@ import java.math.BigDecimal;
  */
 public class OccupationalExperienceRequirements extends Intangible {
   /**
-   * Where to find the definition of the OWL Class used to generate this Java class.
-   */
-  public String isDefinedBy = "https://pending.schema.org/OccupationalExperienceRequirements";
-
-  /**
    * Indicates the minimal number of months of experience required for a position.
    */
   public BigDecimal monthsOfExperience;
+
+  /**
+   * Where to find the definition of the OWL Class used to generate this Java class.
+   */
+  public String isDefinedBy = "https://pending.schema.org/OccupationalExperienceRequirements";
 }
 

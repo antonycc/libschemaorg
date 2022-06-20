@@ -16,11 +16,6 @@ import java.lang.String;
  */
 public class CategoryCode extends DefinedTerm {
   /**
-   * Where to find the definition of the OWL Class used to generate this Java class.
-   */
-  public String isDefinedBy = "https://pending.schema.org/CategoryCode";
-
-  /**
    * A short textual code that uniquely identifies the value.
    */
   public String codeValue;
@@ -29,5 +24,10 @@ public class CategoryCode extends DefinedTerm {
    * A <a class="localLink" href="https://schema.org/CategoryCodeSet">CategoryCodeSet</a> that contains this category code.
    */
   public CategoryCodeSet inCodeSet;
+
+  /**
+   * Where to find the definition of the OWL Class used to generate this Java class.
+   */
+  public String isDefinedBy = "https://pending.schema.org/CategoryCode";
 }
 

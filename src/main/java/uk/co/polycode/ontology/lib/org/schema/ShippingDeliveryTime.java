@@ -17,11 +17,6 @@ import java.time.ZonedDateTime;
  */
 public class ShippingDeliveryTime extends StructuredValue {
   /**
-   * Where to find the definition of the OWL Class used to generate this Java class.
-   */
-  public String isDefinedBy = "https://pending.schema.org/ShippingDeliveryTime";
-
-  /**
    * Days of the week when the merchant typically operates, indicated via opening hours markup.
    */
   public OpeningHoursSpecification businessDays;
@@ -40,5 +35,10 @@ public class ShippingDeliveryTime extends StructuredValue {
    * Order cutoff time allows merchants to describe the time after which they will no longer process orders received on that day. For orders processed after cutoff time, one day gets added to the delivery time estimate. This property is expected to be most typically used via the <a class="localLink" href="https://schema.org/ShippingRateSettings">ShippingRateSettings</a> publication pattern. The time is indicated using the ISO-8601 Time format, e.g. "23:30:00-05:00" would represent 6:30 pm Eastern Standard Time (EST) which is 5 hours behind Coordinated Universal Time (UTC).
    */
   public ZonedDateTime cutoffTime;
+
+  /**
+   * Where to find the definition of the OWL Class used to generate this Java class.
+   */
+  public String isDefinedBy = "https://pending.schema.org/ShippingDeliveryTime";
 }
 

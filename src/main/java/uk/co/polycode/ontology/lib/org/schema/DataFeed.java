@@ -16,9 +16,9 @@ import java.lang.String;
  */
 public class DataFeed extends Dataset {
   /**
-   * Where to find the definition of the OWL Class used to generate this Java class.
+   * An item within in a data feed. Data feeds may have many elements.
    */
-  public String isDefinedBy = "https://schema.org/DataFeed";
+  public DataFeedItem dataFeedElementDataFeedItem;
 
   /**
    * An item within in a data feed. Data feeds may have many elements.
@@ -26,8 +26,8 @@ public class DataFeed extends Dataset {
   public Thing dataFeedElement;
 
   /**
-   * An item within in a data feed. Data feeds may have many elements.
+   * Where to find the definition of the OWL Class used to generate this Java class.
    */
-  public DataFeedItem dataFeedElementDataFeedItem;
+  public String isDefinedBy = "https://schema.org/DataFeed";
 }
 

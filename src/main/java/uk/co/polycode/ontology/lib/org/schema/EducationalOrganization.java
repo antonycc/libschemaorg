@@ -15,16 +15,16 @@ import java.lang.String;
  *             
  */
 public class EducationalOrganization extends CivicStructure {
-  public Organization organization;
+  /**
+   * Alumni of an organization.
+   */
+  public Person alumni;
 
   /**
    * Where to find the definition of the OWL Class used to generate this Java class.
    */
   public String isDefinedBy = "https://schema.org/EducationalOrganization";
 
-  /**
-   * Alumni of an organization.
-   */
-  public Person alumni;
+  public Organization organization;
 }
 

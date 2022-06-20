@@ -16,11 +16,6 @@ import java.lang.String;
  */
 public class MusicAlbum extends MusicPlaylist {
   /**
-   * Where to find the definition of the OWL Class used to generate this Java class.
-   */
-  public String isDefinedBy = "https://schema.org/MusicAlbum";
-
-  /**
    * Classification of the album by it's type of content: soundtrack, live album, studio album, etc.
    */
   public MusicAlbumProductionType albumProductionType;
@@ -38,11 +33,16 @@ public class MusicAlbum extends MusicPlaylist {
   /**
    * The artist that performed this album or recording.
    */
-  public Person byArtist;
+  public MusicGroup byArtistMusicGroup;
 
   /**
    * The artist that performed this album or recording.
    */
-  public MusicGroup byArtistMusicGroup;
+  public Person byArtist;
+
+  /**
+   * Where to find the definition of the OWL Class used to generate this Java class.
+   */
+  public String isDefinedBy = "https://schema.org/MusicAlbum";
 }
 

@@ -18,11 +18,6 @@ import java.math.BigDecimal;
  */
 public class QuantitativeValue extends StructuredValue {
   /**
-   * Where to find the definition of the OWL Class used to generate this Java class.
-   */
-  public String isDefinedBy = "https://schema.org/QuantitativeValue";
-
-  /**
    * A property-value pair representing an additional characteristics of the entitity, e.g. a product feature or another characteristic for which there is no matching property in schema.org.<br/><br/>
    *
    * Note: Publishers should be aware that applications designed to use specific schema.org properties (e.g. https://schema.org/width, https://schema.org/color, https://schema.org/gtin13, ...) will typically expect such data to be provided using those properties, rather than using the generic property/value mechanism.
@@ -50,18 +45,6 @@ public class QuantitativeValue extends StructuredValue {
    * <li>Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.</li>
    * </ul>
    */
-  public BigDecimal value;
-
-  /**
-   * The value of the quantitative value or property value node.<br/><br/>
-   *
-   * <ul>
-   * <li>For <a class="localLink" href="https://schema.org/QuantitativeValue">QuantitativeValue</a> and <a class="localLink" href="https://schema.org/MonetaryAmount">MonetaryAmount</a>, the recommended type for values is 'Number'.</li>
-   * <li>For <a class="localLink" href="https://schema.org/PropertyValue">PropertyValue</a>, it can be 'Text;', 'Number', 'Boolean', or 'StructuredValue'.</li>
-   * <li>Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.</li>
-   * <li>Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.</li>
-   * </ul>
-   */
   public StructuredValue valueStructuredValue;
 
   /**
@@ -77,9 +60,16 @@ public class QuantitativeValue extends StructuredValue {
   public Boolean valueBoolean;
 
   /**
-   * A secondary value that provides additional information on the original value, e.g. a reference temperature or a type of measurement.
+   * The value of the quantitative value or property value node.<br/><br/>
+   *
+   * <ul>
+   * <li>For <a class="localLink" href="https://schema.org/QuantitativeValue">QuantitativeValue</a> and <a class="localLink" href="https://schema.org/MonetaryAmount">MonetaryAmount</a>, the recommended type for values is 'Number'.</li>
+   * <li>For <a class="localLink" href="https://schema.org/PropertyValue">PropertyValue</a>, it can be 'Text;', 'Number', 'Boolean', or 'StructuredValue'.</li>
+   * <li>Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.</li>
+   * <li>Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.</li>
+   * </ul>
    */
-  public Enumeration valueReference;
+  public BigDecimal value;
 
   /**
    * A secondary value that provides additional information on the original value, e.g. a reference temperature or a type of measurement.
@@ -112,6 +102,11 @@ public class QuantitativeValue extends StructuredValue {
   public DefinedTerm valueReferenceDefinedTerm;
 
   /**
+   * A secondary value that provides additional information on the original value, e.g. a reference temperature or a type of measurement.
+   */
+  public Enumeration valueReference;
+
+  /**
    * The upper value of some characteristic or property.
    */
   public BigDecimal maxValue;
@@ -120,5 +115,10 @@ public class QuantitativeValue extends StructuredValue {
    * The lower value of some characteristic or property.
    */
   public BigDecimal minValue;
+
+  /**
+   * Where to find the definition of the OWL Class used to generate this Java class.
+   */
+  public String isDefinedBy = "https://schema.org/QuantitativeValue";
 }
 

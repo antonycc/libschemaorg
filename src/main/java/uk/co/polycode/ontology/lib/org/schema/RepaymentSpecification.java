@@ -17,19 +17,14 @@ import java.math.BigDecimal;
  */
 public class RepaymentSpecification extends StructuredValue {
   /**
-   * Where to find the definition of the OWL Class used to generate this Java class.
+   * a type of payment made in cash during the onset of the purchase of an expensive good/service. The payment typically represents only a percentage of the full purchase price.
    */
-  public String isDefinedBy = "https://pending.schema.org/RepaymentSpecification";
+  public MonetaryAmount downPaymentMonetaryAmount;
 
   /**
    * a type of payment made in cash during the onset of the purchase of an expensive good/service. The payment typically represents only a percentage of the full purchase price.
    */
   public BigDecimal downPayment;
-
-  /**
-   * a type of payment made in cash during the onset of the purchase of an expensive good/service. The payment typically represents only a percentage of the full purchase price.
-   */
-  public MonetaryAmount downPaymentMonetaryAmount;
 
   /**
    * The amount to be paid as a penalty in the event of early payment of the loan.
@@ -50,5 +45,10 @@ public class RepaymentSpecification extends StructuredValue {
    * The number of payments contractually required at origination to repay the loan. For monthly paying loans this is the number of months from the contractual first payment date to the maturity date.
    */
   public BigDecimal numberOfLoanPayments;
+
+  /**
+   * Where to find the definition of the OWL Class used to generate this Java class.
+   */
+  public String isDefinedBy = "https://pending.schema.org/RepaymentSpecification";
 }
 

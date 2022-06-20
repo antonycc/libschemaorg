@@ -16,13 +16,13 @@ import java.lang.String;
  */
 public class CategoryCodeSet extends DefinedTermSet {
   /**
-   * Where to find the definition of the OWL Class used to generate this Java class.
-   */
-  public String isDefinedBy = "https://pending.schema.org/CategoryCodeSet";
-
-  /**
    * A Category code contained in this code set.
    */
   public CategoryCode hasCategoryCode;
+
+  /**
+   * Where to find the definition of the OWL Class used to generate this Java class.
+   */
+  public String isDefinedBy = "https://pending.schema.org/CategoryCodeSet";
 }
 

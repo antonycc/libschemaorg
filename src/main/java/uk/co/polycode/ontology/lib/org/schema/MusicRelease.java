@@ -16,11 +16,6 @@ import java.lang.String;
  */
 public class MusicRelease extends MusicPlaylist {
   /**
-   * Where to find the definition of the OWL Class used to generate this Java class.
-   */
-  public String isDefinedBy = "https://schema.org/MusicRelease";
-
-  /**
    * The catalog number for the release.
    */
   public String catalogNumber;
@@ -28,12 +23,12 @@ public class MusicRelease extends MusicPlaylist {
   /**
    * The group the release is credited to if different than the byArtist. For example, Red and Blue is credited to "Stefani Germanotta Band", but by Lady Gaga.
    */
-  public Person creditedTo;
+  public Organization creditedToOrganization;
 
   /**
    * The group the release is credited to if different than the byArtist. For example, Red and Blue is credited to "Stefani Germanotta Band", but by Lady Gaga.
    */
-  public Organization creditedToOrganization;
+  public Person creditedTo;
 
   /**
    * The duration of the item (movie, audio recording, event, etc.) in <a href="http://en.wikipedia.org/wiki/ISO_8601">ISO 8601 date format</a>.
@@ -54,5 +49,10 @@ public class MusicRelease extends MusicPlaylist {
    * The album this is a release of.
    */
   public MusicAlbum releaseOf;
+
+  /**
+   * Where to find the definition of the OWL Class used to generate this Java class.
+   */
+  public String isDefinedBy = "https://schema.org/MusicRelease";
 }
 

@@ -18,11 +18,6 @@ import java.math.BigInteger;
  */
 public class Clip extends CreativeWork {
   /**
-   * Where to find the definition of the OWL Class used to generate this Java class.
-   */
-  public String isDefinedBy = "https://schema.org/Clip";
-
-  /**
    * An actor, e.g. in tv, radio, movie, video games etc., or in an event. Actors can be associated with individual items or with a series, episode, clip.
    */
   public Person actor;
@@ -40,22 +35,22 @@ public class Clip extends CreativeWork {
   /**
    * The end time of the clip expressed as the number of seconds from the beginning of the work.
    */
-  public HyperTocEntry endOffset;
+  public BigDecimal endOffsetBigDecimal;
 
   /**
    * The end time of the clip expressed as the number of seconds from the beginning of the work.
    */
-  public BigDecimal endOffsetBigDecimal;
-
-  /**
-   * The composer of the soundtrack.
-   */
-  public Person musicBy;
+  public HyperTocEntry endOffset;
 
   /**
    * The composer of the soundtrack.
    */
   public MusicGroup musicByMusicGroup;
+
+  /**
+   * The composer of the soundtrack.
+   */
+  public Person musicBy;
 
   /**
    * The episode to which this clip belongs.
@@ -75,11 +70,16 @@ public class Clip extends CreativeWork {
   /**
    * The start time of the clip expressed as the number of seconds from the beginning of the work.
    */
-  public HyperTocEntry startOffset;
+  public BigDecimal startOffsetBigDecimal;
 
   /**
    * The start time of the clip expressed as the number of seconds from the beginning of the work.
    */
-  public BigDecimal startOffsetBigDecimal;
+  public HyperTocEntry startOffset;
+
+  /**
+   * Where to find the definition of the OWL Class used to generate this Java class.
+   */
+  public String isDefinedBy = "https://schema.org/Clip";
 }
 

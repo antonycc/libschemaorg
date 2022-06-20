@@ -16,11 +16,6 @@ import java.lang.String;
  */
 public class Substance extends MedicalEntity {
   /**
-   * Where to find the definition of the OWL Class used to generate this Java class.
-   */
-  public String isDefinedBy = "https://health-lifesci.schema.org/Substance";
-
-  /**
    * An active ingredient, typically chemical compounds and/or biologic substances.
    */
   public String activeIngredient;
@@ -29,5 +24,10 @@ public class Substance extends MedicalEntity {
    * Recommended intake of this supplement for a given population as defined by a specific recommending authority.
    */
   public MaximumDoseSchedule maximumIntake;
+
+  /**
+   * Where to find the definition of the OWL Class used to generate this Java class.
+   */
+  public String isDefinedBy = "https://health-lifesci.schema.org/Substance";
 }
 

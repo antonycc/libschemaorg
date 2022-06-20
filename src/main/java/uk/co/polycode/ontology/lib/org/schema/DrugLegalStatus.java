@@ -16,13 +16,13 @@ import java.lang.String;
  */
 public class DrugLegalStatus extends MedicalIntangible {
   /**
-   * Where to find the definition of the OWL Class used to generate this Java class.
-   */
-  public String isDefinedBy = "https://health-lifesci.schema.org/DrugLegalStatus";
-
-  /**
    * The location in which the status applies.
    */
   public AdministrativeArea applicableLocation;
+
+  /**
+   * Where to find the definition of the OWL Class used to generate this Java class.
+   */
+  public String isDefinedBy = "https://health-lifesci.schema.org/DrugLegalStatus";
 }
 

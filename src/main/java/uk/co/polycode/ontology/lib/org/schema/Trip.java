@@ -17,9 +17,9 @@ import java.time.ZonedDateTime;
  */
 public class Trip extends Intangible {
   /**
-   * Where to find the definition of the OWL Class used to generate this Java class.
+   * Destination(s) ( <a class="localLink" href="https://schema.org/Place">Place</a> ) that make up a trip. For a trip where destination order is important use <a class="localLink" href="https://schema.org/ItemList">ItemList</a> to specify that order (see examples).
    */
-  public String isDefinedBy = "https://schema.org/Trip";
+  public Place itineraryPlace;
 
   /**
    * Destination(s) ( <a class="localLink" href="https://schema.org/Place">Place</a> ) that make up a trip. For a trip where destination order is important use <a class="localLink" href="https://schema.org/ItemList">ItemList</a> to specify that order (see examples).
@@ -27,19 +27,14 @@ public class Trip extends Intangible {
   public ItemList itinerary;
 
   /**
-   * Destination(s) ( <a class="localLink" href="https://schema.org/Place">Place</a> ) that make up a trip. For a trip where destination order is important use <a class="localLink" href="https://schema.org/ItemList">ItemList</a> to specify that order (see examples).
+   * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use <a class="localLink" href="https://schema.org/businessFunction">businessFunction</a> to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a <a class="localLink" href="https://schema.org/Demand">Demand</a>. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
    */
-  public Place itineraryPlace;
+  public Demand offersDemand;
 
   /**
    * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use <a class="localLink" href="https://schema.org/businessFunction">businessFunction</a> to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a <a class="localLink" href="https://schema.org/Demand">Demand</a>. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
    */
   public Offer offers;
-
-  /**
-   * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use <a class="localLink" href="https://schema.org/businessFunction">businessFunction</a> to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a <a class="localLink" href="https://schema.org/Demand">Demand</a>. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
-   */
-  public Demand offersDemand;
 
   /**
    * Identifies that this <a class="localLink" href="https://schema.org/Trip">Trip</a> is a subTrip of another Trip.  For example Day 1, Day 2, etc. of a multi-day trip.
@@ -49,12 +44,12 @@ public class Trip extends Intangible {
   /**
    * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
    */
-  public Person provider;
+  public Organization providerOrganization;
 
   /**
    * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
    */
-  public Organization providerOrganization;
+  public Person provider;
 
   /**
    * Identifies a <a class="localLink" href="https://schema.org/Trip">Trip</a> that is a subTrip of this Trip.  For example Day 1, Day 2, etc. of a multi-day trip.
@@ -64,12 +59,17 @@ public class Trip extends Intangible {
   /**
    * The expected arrival time.
    */
-  public ZonedDateTime arrivalTime;
+  public ZonedDateTime arrivalTimeZonedDateTime;
 
   /**
    * The expected arrival time.
    */
-  public ZonedDateTime arrivalTimeZonedDateTime;
+  public ZonedDateTime arrivalTime;
+
+  /**
+   * The expected departure time.
+   */
+  public ZonedDateTime departureTimeZonedDateTime;
 
   /**
    * The expected departure time.
@@ -77,8 +77,8 @@ public class Trip extends Intangible {
   public ZonedDateTime departureTime;
 
   /**
-   * The expected departure time.
+   * Where to find the definition of the OWL Class used to generate this Java class.
    */
-  public ZonedDateTime departureTimeZonedDateTime;
+  public String isDefinedBy = "https://schema.org/Trip";
 }
 

@@ -16,9 +16,9 @@ import java.lang.String;
  */
 public class PublicationEvent extends Event {
   /**
-   * Where to find the definition of the OWL Class used to generate this Java class.
+   * An agent associated with the publication event.
    */
-  public String isDefinedBy = "https://schema.org/PublicationEvent";
+  public Organization publishedByOrganization;
 
   /**
    * An agent associated with the publication event.
@@ -26,13 +26,13 @@ public class PublicationEvent extends Event {
   public Person publishedBy;
 
   /**
-   * An agent associated with the publication event.
-   */
-  public Organization publishedByOrganization;
-
-  /**
    * A broadcast service associated with the publication event.
    */
   public BroadcastService publishedOn;
+
+  /**
+   * Where to find the definition of the OWL Class used to generate this Java class.
+   */
+  public String isDefinedBy = "https://schema.org/PublicationEvent";
 }
 

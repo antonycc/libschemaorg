@@ -17,11 +17,6 @@ import java.time.ZonedDateTime;
  */
 public class DataFeedItem extends Intangible {
   /**
-   * Where to find the definition of the OWL Class used to generate this Java class.
-   */
-  public String isDefinedBy = "https://schema.org/DataFeedItem";
-
-  /**
    * An entity represented by an entry in a list or data feed (e.g. an 'artist' in a list of 'artists')’.
    */
   public Thing item;
@@ -29,17 +24,12 @@ public class DataFeedItem extends Intangible {
   /**
    * The date on which the CreativeWork was created or the item was added to a DataFeed.
    */
-  public ZonedDateTime dateCreated;
+  public ZonedDateTime dateCreatedZonedDateTime;
 
   /**
    * The date on which the CreativeWork was created or the item was added to a DataFeed.
    */
-  public ZonedDateTime dateCreatedZonedDateTime;
-
-  /**
-   * The datetime the item was removed from the DataFeed.
-   */
-  public ZonedDateTime dateDeleted;
+  public ZonedDateTime dateCreated;
 
   /**
    * The datetime the item was removed from the DataFeed.
@@ -47,13 +37,23 @@ public class DataFeedItem extends Intangible {
   public ZonedDateTime dateDeletedZonedDateTime;
 
   /**
-   * The date on which the CreativeWork was most recently modified or when the item's entry was modified within a DataFeed.
+   * The datetime the item was removed from the DataFeed.
    */
-  public ZonedDateTime dateModified;
+  public ZonedDateTime dateDeleted;
 
   /**
    * The date on which the CreativeWork was most recently modified or when the item's entry was modified within a DataFeed.
    */
   public ZonedDateTime dateModifiedZonedDateTime;
+
+  /**
+   * The date on which the CreativeWork was most recently modified or when the item's entry was modified within a DataFeed.
+   */
+  public ZonedDateTime dateModified;
+
+  /**
+   * Where to find the definition of the OWL Class used to generate this Java class.
+   */
+  public String isDefinedBy = "https://schema.org/DataFeedItem";
 }
 

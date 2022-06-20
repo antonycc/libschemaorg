@@ -17,9 +17,9 @@ import java.time.ZonedDateTime;
  */
 public class OwnershipInfo extends StructuredValue {
   /**
-   * Where to find the definition of the OWL Class used to generate this Java class.
+   * The organization or person from which the product was acquired.
    */
-  public String isDefinedBy = "https://schema.org/OwnershipInfo";
+  public Organization acquiredFromOrganization;
 
   /**
    * The organization or person from which the product was acquired.
@@ -27,19 +27,14 @@ public class OwnershipInfo extends StructuredValue {
   public Person acquiredFrom;
 
   /**
-   * The organization or person from which the product was acquired.
+   * The product that this structured value is referring to.
    */
-  public Organization acquiredFromOrganization;
+  public Service typeOfGoodService;
 
   /**
    * The product that this structured value is referring to.
    */
   public Product typeOfGood;
-
-  /**
-   * The product that this structured value is referring to.
-   */
-  public Service typeOfGoodService;
 
   /**
    * The date and time of obtaining the product.
@@ -50,5 +45,10 @@ public class OwnershipInfo extends StructuredValue {
    * The date and time of giving up ownership on the product.
    */
   public ZonedDateTime ownedThrough;
+
+  /**
+   * Where to find the definition of the OWL Class used to generate this Java class.
+   */
+  public String isDefinedBy = "https://schema.org/OwnershipInfo";
 }
 

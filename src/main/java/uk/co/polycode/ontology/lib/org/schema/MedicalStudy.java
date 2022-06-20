@@ -16,11 +16,6 @@ import java.lang.String;
  */
 public class MedicalStudy extends MedicalEntity {
   /**
-   * Where to find the definition of the OWL Class used to generate this Java class.
-   */
-  public String isDefinedBy = "https://health-lifesci.schema.org/MedicalStudy";
-
-  /**
    * Specifying the health condition(s) of a patient, medical study, or other target audience.
    */
   public MedicalCondition healthCondition;
@@ -28,22 +23,22 @@ public class MedicalStudy extends MedicalEntity {
   /**
    * A person or organization that supports a thing through a pledge, promise, or financial contribution. e.g. a sponsor of a Medical Study or a corporate sponsor of an event.
    */
-  public Person sponsor;
+  public Organization sponsorOrganization;
 
   /**
    * A person or organization that supports a thing through a pledge, promise, or financial contribution. e.g. a sponsor of a Medical Study or a corporate sponsor of an event.
    */
-  public Organization sponsorOrganization;
-
-  /**
-   * The status of the study (enumerated).
-   */
-  public MedicalStudyStatus status;
+  public Person sponsor;
 
   /**
    * The status of the study (enumerated).
    */
   public EventStatusType statusEventStatusType;
+
+  /**
+   * The status of the study (enumerated).
+   */
+  public MedicalStudyStatus status;
 
   /**
    * The location in which the study is taking/took place.
@@ -54,5 +49,10 @@ public class MedicalStudy extends MedicalEntity {
    * A subject of the study, i.e. one of the medical conditions, therapies, devices, drugs, etc. investigated by the study.
    */
   public MedicalEntity studySubject;
+
+  /**
+   * Where to find the definition of the OWL Class used to generate this Java class.
+   */
+  public String isDefinedBy = "https://health-lifesci.schema.org/MedicalStudy";
 }
 

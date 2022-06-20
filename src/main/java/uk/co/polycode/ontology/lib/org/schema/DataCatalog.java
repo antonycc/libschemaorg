@@ -16,11 +16,6 @@ import java.lang.String;
  */
 public class DataCatalog extends CreativeWork {
   /**
-   * Where to find the definition of the OWL Class used to generate this Java class.
-   */
-  public String isDefinedBy = "https://schema.org/DataCatalog";
-
-  /**
    * A dataset contained in this catalog.
    */
   public Dataset dataset;
@@ -36,5 +31,10 @@ public class DataCatalog extends CreativeWork {
    * If there are several <a class="localLink" href="https://schema.org/variableMeasured">variableMeasured</a> properties recorded for some given data object, use a <a class="localLink" href="https://schema.org/PropertyValue">PropertyValue</a> for each <a class="localLink" href="https://schema.org/variableMeasured">variableMeasured</a> and attach the corresponding <a class="localLink" href="https://schema.org/measurementTechnique">measurementTechnique</a>.
    */
   public String measurementTechnique;
+
+  /**
+   * Where to find the definition of the OWL Class used to generate this Java class.
+   */
+  public String isDefinedBy = "https://schema.org/DataCatalog";
 }
 

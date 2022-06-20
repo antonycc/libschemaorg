@@ -17,11 +17,6 @@ import java.lang.String;
  */
 public class HealthPlanFormulary extends Intangible {
   /**
-   * Where to find the definition of the OWL Class used to generate this Java class.
-   */
-  public String isDefinedBy = "https://pending.schema.org/HealthPlanFormulary";
-
-  /**
    * The tier(s) of drugs offered by this formulary or insurance plan.
    */
   public String healthPlanDrugTier;
@@ -35,5 +30,10 @@ public class HealthPlanFormulary extends Intangible {
    * Whether prescriptions can be delivered by mail.
    */
   public Boolean offersPrescriptionByMail;
+
+  /**
+   * Where to find the definition of the OWL Class used to generate this Java class.
+   */
+  public String isDefinedBy = "https://pending.schema.org/HealthPlanFormulary";
 }
 

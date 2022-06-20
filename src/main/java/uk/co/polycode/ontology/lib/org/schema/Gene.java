@@ -16,11 +16,6 @@ import java.lang.String;
  */
 public class Gene extends BioChemEntity {
   /**
-   * Where to find the definition of the OWL Class used to generate this Java class.
-   */
-  public String isDefinedBy = "https://pending.schema.org/Gene";
-
-  /**
    * Another gene which is a variation of this one.
    */
   public Gene alternativeOf;
@@ -29,11 +24,6 @@ public class Gene extends BioChemEntity {
    * Another BioChemEntity encoded by this one.
    */
   public BioChemEntity encodesBioChemEntity;
-
-  /**
-   * Tissue, organ, biological sample, etc in which activity of this gene has been observed experimentally. For example brain, digestive system.
-   */
-  public DefinedTerm expressedIn;
 
   /**
    * Tissue, organ, biological sample, etc in which activity of this gene has been observed experimentally. For example brain, digestive system.
@@ -51,8 +41,18 @@ public class Gene extends BioChemEntity {
   public BioChemEntity expressedInBioChemEntity;
 
   /**
+   * Tissue, organ, biological sample, etc in which activity of this gene has been observed experimentally. For example brain, digestive system.
+   */
+  public DefinedTerm expressedIn;
+
+  /**
    * A symbolic representation of a BioChemEnity. For example, a nucleotide sequence of a Gene or an amino acid sequence of a Protein.
    */
   public String hasBioPolymerSequence;
+
+  /**
+   * Where to find the definition of the OWL Class used to generate this Java class.
+   */
+  public String isDefinedBy = "https://pending.schema.org/Gene";
 }
 

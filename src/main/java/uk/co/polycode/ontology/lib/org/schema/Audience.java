@@ -16,11 +16,6 @@ import java.lang.String;
  */
 public class Audience extends Intangible {
   /**
-   * Where to find the definition of the OWL Class used to generate this Java class.
-   */
-  public String isDefinedBy = "https://schema.org/Audience";
-
-  /**
    * The target group associated with a given audience (e.g. veterans, car owners, musicians, etc.).
    */
   public String audienceType;
@@ -29,5 +24,10 @@ public class Audience extends Intangible {
    * The geographic area associated with the audience.
    */
   public AdministrativeArea geographicArea;
+
+  /**
+   * Where to find the definition of the OWL Class used to generate this Java class.
+   */
+  public String isDefinedBy = "https://schema.org/Audience";
 }
 

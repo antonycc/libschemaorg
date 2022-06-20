@@ -19,11 +19,6 @@ import java.time.ZonedDateTime;
  */
 public class PriceSpecification extends StructuredValue {
   /**
-   * Where to find the definition of the OWL Class used to generate this Java class.
-   */
-  public String isDefinedBy = "https://schema.org/PriceSpecification";
-
-  /**
    * The interval and unit of measurement of ordering quantities for which the offer or price specification is valid. This allows e.g. specifying that a certain freight charge is valid only for a certain quantity.
    */
   public QuantitativeValue eligibleQuantity;
@@ -39,7 +34,7 @@ public class PriceSpecification extends StructuredValue {
    * Usage guidelines:<br/><br/>
    *
    * <ul>
-   * <li>Use the <a class="localLink" href="https://schema.org/priceCurrency">priceCurrency</a> property (with standard formats: <a href="http://en.wikipedia.org/wiki/ISO_4217">ISO 4217 currency format</a> e.g. "USD"; <a href="https://en.wikipedia.org/wiki/List_of_cryptocurrencies">Ticker symbol</a> for cryptocurrencies e.g. "BTC"; well known names for <a href="https://en.wikipedia.org/wiki/Local_exchange_trading_system">Local Exchange Tradings Systems</a> (LETS) and other currency types e.g. "Ithaca HOUR") instead of including <a href="http://en.wikipedia.org/wiki/Dollar_sign#Currencies_that_use_the_dollar_or_peso_sign">ambiguous symbols</a> such as 'DOLLAR' in the value.</li>
+   * <li>Use the <a class="localLink" href="https://schema.org/priceCurrency">priceCurrency</a> property (with standard formats: <a href="http://en.wikipedia.org/wiki/ISO_4217">ISO 4217 currency format</a> e.g. "USD"; <a href="https://en.wikipedia.org/wiki/List_of_cryptocurrencies">Ticker symbol</a> for cryptocurrencies e.g. "BTC"; well known names for <a href="https://en.wikipedia.org/wiki/Local_exchange_trading_system">Local Exchange Tradings Systems</a> (LETS) and other currency types e.g. "Ithaca HOUR") instead of including <a href="http://en.wikipedia.org/wiki/Dollar_sign#Currencies_that_use_the_dollar_or_peso_sign">ambiguous symbols</a> such as 'USD' in the value.</li>
    * <li>Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.</li>
    * <li>Note that both <a href="http://www.w3.org/TR/xhtml-rdfa-primer/#using-the-content-attribute">RDFa</a> and Microdata syntax allow the use of a "content=" attribute for publishing simple machine-readable values alongside more human-friendly formatting.</li>
    * <li>Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.</li>
@@ -67,17 +62,12 @@ public class PriceSpecification extends StructuredValue {
   /**
    * The date when the item becomes valid.
    */
-  public ZonedDateTime validFrom;
+  public ZonedDateTime validFromZonedDateTime;
 
   /**
    * The date when the item becomes valid.
    */
-  public ZonedDateTime validFromZonedDateTime;
-
-  /**
-   * The date after when the item is not valid. For example the end of an offer, salary period, or a period of opening hours.
-   */
-  public ZonedDateTime validThrough;
+  public ZonedDateTime validFrom;
 
   /**
    * The date after when the item is not valid. For example the end of an offer, salary period, or a period of opening hours.
@@ -85,8 +75,18 @@ public class PriceSpecification extends StructuredValue {
   public ZonedDateTime validThroughZonedDateTime;
 
   /**
+   * The date after when the item is not valid. For example the end of an offer, salary period, or a period of opening hours.
+   */
+  public ZonedDateTime validThrough;
+
+  /**
    * Specifies whether the applicable value-added tax (VAT) is included in the price specification or not.
    */
   public Boolean valueAddedTaxIncluded;
+
+  /**
+   * Where to find the definition of the OWL Class used to generate this Java class.
+   */
+  public String isDefinedBy = "https://schema.org/PriceSpecification";
 }
 

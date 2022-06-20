@@ -17,19 +17,9 @@ import java.math.BigDecimal;
  */
 public class Occupation extends Intangible {
   /**
-   * Where to find the definition of the OWL Class used to generate this Java class.
-   */
-  public String isDefinedBy = "https://schema.org/Occupation";
-
-  /**
    * Educational background needed for the position or Occupation.
    */
   public EducationalOccupationalCredential educationRequirements;
-
-  /**
-   * An estimated salary for a job posting or occupation, based on a variety of variables including, but not limited to industry, job title, and location. Estimated salaries  are often computed by outside organizations rather than the hiring organization, who may not have committed to the estimated value.
-   */
-  public MonetaryAmountDistribution estimatedSalary;
 
   /**
    * An estimated salary for a job posting or occupation, based on a variety of variables including, but not limited to industry, job title, and location. Estimated salaries  are often computed by outside organizations rather than the hiring organization, who may not have committed to the estimated value.
@@ -40,6 +30,11 @@ public class Occupation extends Intangible {
    * An estimated salary for a job posting or occupation, based on a variety of variables including, but not limited to industry, job title, and location. Estimated salaries  are often computed by outside organizations rather than the hiring organization, who may not have committed to the estimated value.
    */
   public BigDecimal estimatedSalaryBigDecimal;
+
+  /**
+   * An estimated salary for a job posting or occupation, based on a variety of variables including, but not limited to industry, job title, and location. Estimated salaries  are often computed by outside organizations rather than the hiring organization, who may not have committed to the estimated value.
+   */
+  public MonetaryAmountDistribution estimatedSalary;
 
   /**
    * Description of skills and experience needed for the position or Occupation.
@@ -72,5 +67,10 @@ public class Occupation extends Intangible {
    * A statement of knowledge, skill, ability, task or any other assertion expressing a competency that is desired or required to fulfill this role or to work in this occupation.
    */
   public DefinedTerm skills;
+
+  /**
+   * Where to find the definition of the OWL Class used to generate this Java class.
+   */
+  public String isDefinedBy = "https://schema.org/Occupation";
 }
 

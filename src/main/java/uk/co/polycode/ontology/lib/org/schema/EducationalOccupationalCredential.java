@@ -16,11 +16,6 @@ import java.lang.String;
  */
 public class EducationalOccupationalCredential extends CreativeWork {
   /**
-   * Where to find the definition of the OWL Class used to generate this Java class.
-   */
-  public String isDefinedBy = "https://pending.schema.org/EducationalOccupationalCredential";
-
-  /**
    * Knowledge, skill, ability or personal attribute that must be demonstrated by a person or other entity in order to do something such as earn an Educational Occupational Credential or understand a LearningResource.
    */
   public DefinedTerm competencyRequired;
@@ -49,5 +44,10 @@ public class EducationalOccupationalCredential extends CreativeWork {
    * The geographic area where a permit or similar thing is valid.
    */
   public AdministrativeArea validIn;
+
+  /**
+   * Where to find the definition of the OWL Class used to generate this Java class.
+   */
+  public String isDefinedBy = "https://pending.schema.org/EducationalOccupationalCredential";
 }
 

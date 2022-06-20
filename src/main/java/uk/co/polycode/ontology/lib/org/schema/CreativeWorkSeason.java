@@ -18,11 +18,6 @@ import java.time.ZonedDateTime;
  */
 public class CreativeWorkSeason extends CreativeWork {
   /**
-   * Where to find the definition of the OWL Class used to generate this Java class.
-   */
-  public String isDefinedBy = "https://schema.org/CreativeWorkSeason";
-
-  /**
    * An actor, e.g. in tv, radio, movie, video games etc., or in an event. Actors can be associated with individual items or with a series, episode, clip.
    */
   public Person actor;
@@ -60,12 +55,12 @@ public class CreativeWorkSeason extends CreativeWork {
   /**
    * The end date and time of the item (in <a href="http://en.wikipedia.org/wiki/ISO_8601">ISO 8601 date format</a>).
    */
-  public ZonedDateTime endDate;
+  public ZonedDateTime endDateZonedDateTime;
 
   /**
    * The end date and time of the item (in <a href="http://en.wikipedia.org/wiki/ISO_8601">ISO 8601 date format</a>).
    */
-  public ZonedDateTime endDateZonedDateTime;
+  public ZonedDateTime endDate;
 
   /**
    * The number of episodes in this season or series.
@@ -75,11 +70,16 @@ public class CreativeWorkSeason extends CreativeWork {
   /**
    * The start date and time of the item (in <a href="http://en.wikipedia.org/wiki/ISO_8601">ISO 8601 date format</a>).
    */
-  public ZonedDateTime startDate;
+  public ZonedDateTime startDateZonedDateTime;
 
   /**
    * The start date and time of the item (in <a href="http://en.wikipedia.org/wiki/ISO_8601">ISO 8601 date format</a>).
    */
-  public ZonedDateTime startDateZonedDateTime;
+  public ZonedDateTime startDate;
+
+  /**
+   * Where to find the definition of the OWL Class used to generate this Java class.
+   */
+  public String isDefinedBy = "https://schema.org/CreativeWorkSeason";
 }
 

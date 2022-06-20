@@ -17,19 +17,14 @@ import java.math.BigDecimal;
  */
 public class Rating extends Intangible {
   /**
-   * Where to find the definition of the OWL Class used to generate this Java class.
+   * The author of this content or rating. Please note that author is special in that HTML 5 provides a special mechanism for indicating authorship via the rel tag. That is equivalent to this and may be used interchangeably.
    */
-  public String isDefinedBy = "https://schema.org/Rating";
+  public Organization authorOrganization;
 
   /**
    * The author of this content or rating. Please note that author is special in that HTML 5 provides a special mechanism for indicating authorship via the rel tag. That is equivalent to this and may be used interchangeably.
    */
   public Person author;
-
-  /**
-   * The author of this content or rating. Please note that author is special in that HTML 5 provides a special mechanism for indicating authorship via the rel tag. That is equivalent to this and may be used interchangeably.
-   */
-  public Organization authorOrganization;
 
   /**
    * The highest value allowed in this rating system. If bestRating is omitted, 5 is assumed.
@@ -62,5 +57,10 @@ public class Rating extends Intangible {
    * The lowest value allowed in this rating system. If worstRating is omitted, 1 is assumed.
    */
   public BigDecimal worstRating;
+
+  /**
+   * Where to find the definition of the OWL Class used to generate this Java class.
+   */
+  public String isDefinedBy = "https://schema.org/Rating";
 }
 

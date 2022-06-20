@@ -17,9 +17,9 @@ import java.time.ZonedDateTime;
  */
 public class Demand extends Intangible {
   /**
-   * Where to find the definition of the OWL Class used to generate this Java class.
+   * The payment method(s) accepted by seller for this offer.
    */
-  public String isDefinedBy = "https://schema.org/Demand";
+  public PaymentMethod acceptedPaymentMethodPaymentMethod;
 
   /**
    * The payment method(s) accepted by seller for this offer.
@@ -27,19 +27,9 @@ public class Demand extends Intangible {
   public LoanOrCredit acceptedPaymentMethod;
 
   /**
-   * The payment method(s) accepted by seller for this offer.
-   */
-  public PaymentMethod acceptedPaymentMethodPaymentMethod;
-
-  /**
    * The amount of time that is required between accepting the offer and the actual usage of the resource or service.
    */
   public QuantitativeValue advanceBookingRequirement;
-
-  /**
-   * The geographic area where a service or offered item is provided.
-   */
-  public AdministrativeArea areaServed;
 
   /**
    * The geographic area where a service or offered item is provided.
@@ -50,6 +40,11 @@ public class Demand extends Intangible {
    * The geographic area where a service or offered item is provided.
    */
   public Place areaServedPlace;
+
+  /**
+   * The geographic area where a service or offered item is provided.
+   */
+  public AdministrativeArea areaServed;
 
   /**
    * The availability of this item&#x2014;for example In stock, Out of stock, Pre-order, etc.
@@ -96,14 +91,14 @@ public class Demand extends Intangible {
    *
    * See also <a class="localLink" href="https://schema.org/ineligibleRegion">ineligibleRegion</a>.
    */
-  public GeoShape eligibleRegion;
+  public Place eligibleRegionPlace;
 
   /**
    * The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is valid.<br/><br/>
    *
    * See also <a class="localLink" href="https://schema.org/ineligibleRegion">ineligibleRegion</a>.
    */
-  public Place eligibleRegionPlace;
+  public GeoShape eligibleRegion;
 
   /**
    * The transaction volume, in a monetary unit, for which the offer or price specification is valid, e.g. for indicating a minimal purchasing volume, to express free shipping above a certain order volume, or to limit the acceptance of credit cards to purchases to a certain minimal amount.
@@ -145,14 +140,14 @@ public class Demand extends Intangible {
    *
    * See also <a class="localLink" href="https://schema.org/eligibleRegion">eligibleRegion</a>.
    */
-  public Place ineligibleRegion;
+  public GeoShape ineligibleRegionGeoShape;
 
   /**
    * The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is not valid, e.g. a region where the transaction is not allowed.<br/><br/>
    *
    * See also <a class="localLink" href="https://schema.org/eligibleRegion">eligibleRegion</a>.
    */
-  public GeoShape ineligibleRegionGeoShape;
+  public Place ineligibleRegion;
 
   /**
    * The current approximate inventory level for the item or items.
@@ -163,11 +158,6 @@ public class Demand extends Intangible {
    * A predefined value from OfferItemCondition specifying the condition of the product or service, or the products or services included in the offer. Also used for product return policies to specify the condition of products accepted for returns.
    */
   public OfferItemCondition itemCondition;
-
-  /**
-   * An item being offered (or demanded). The transactional nature of the offer or demand is documented using <a class="localLink" href="https://schema.org/businessFunction">businessFunction</a>, e.g. sell, lease etc. While several common expected types are listed explicitly in this definition, others can be used. Using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
-   */
-  public Trip itemOffered;
 
   /**
    * An item being offered (or demanded). The transactional nature of the offer or demand is documented using <a class="localLink" href="https://schema.org/businessFunction">businessFunction</a>, e.g. sell, lease etc. While several common expected types are listed explicitly in this definition, others can be used. Using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
@@ -200,6 +190,11 @@ public class Demand extends Intangible {
   public Service itemOfferedService;
 
   /**
+   * An item being offered (or demanded). The transactional nature of the offer or demand is documented using <a class="localLink" href="https://schema.org/businessFunction">businessFunction</a>, e.g. sell, lease etc. While several common expected types are listed explicitly in this definition, others can be used. Using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+   */
+  public Trip itemOffered;
+
+  /**
    * The Manufacturer Part Number (MPN) of the product, or the product to which the offer refers.
    */
   public String mpn;
@@ -212,12 +207,12 @@ public class Demand extends Intangible {
   /**
    * An entity which offers (sells / leases / lends / loans) the services / goods.  A seller may also be a provider.
    */
-  public Person seller;
+  public Organization sellerOrganization;
 
   /**
    * An entity which offers (sells / leases / lends / loans) the services / goods.  A seller may also be a provider.
    */
-  public Organization sellerOrganization;
+  public Person seller;
 
   /**
    * The serial number or any alphanumeric identifier of a particular product. When attached to an offer, it is a shortcut for the serial number of the product included in the offer.
@@ -237,17 +232,12 @@ public class Demand extends Intangible {
   /**
    * The end of the availability of the product or service included in the offer.
    */
-  public ZonedDateTime availabilityEnds;
+  public ZonedDateTime availabilityEndsZonedDateTime;
 
   /**
    * The end of the availability of the product or service included in the offer.
    */
-  public ZonedDateTime availabilityEndsZonedDateTime;
-
-  /**
-   * The beginning of the availability of the product or service included in the offer.
-   */
-  public ZonedDateTime availabilityStarts;
+  public ZonedDateTime availabilityEnds;
 
   /**
    * The beginning of the availability of the product or service included in the offer.
@@ -255,9 +245,9 @@ public class Demand extends Intangible {
   public ZonedDateTime availabilityStartsZonedDateTime;
 
   /**
-   * The date when the item becomes valid.
+   * The beginning of the availability of the product or service included in the offer.
    */
-  public ZonedDateTime validFrom;
+  public ZonedDateTime availabilityStarts;
 
   /**
    * The date when the item becomes valid.
@@ -265,13 +255,23 @@ public class Demand extends Intangible {
   public ZonedDateTime validFromZonedDateTime;
 
   /**
-   * The date after when the item is not valid. For example the end of an offer, salary period, or a period of opening hours.
+   * The date when the item becomes valid.
    */
-  public ZonedDateTime validThrough;
+  public ZonedDateTime validFrom;
 
   /**
    * The date after when the item is not valid. For example the end of an offer, salary period, or a period of opening hours.
    */
   public ZonedDateTime validThroughZonedDateTime;
+
+  /**
+   * The date after when the item is not valid. For example the end of an offer, salary period, or a period of opening hours.
+   */
+  public ZonedDateTime validThrough;
+
+  /**
+   * Where to find the definition of the OWL Class used to generate this Java class.
+   */
+  public String isDefinedBy = "https://schema.org/Demand";
 }
 

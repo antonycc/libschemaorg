@@ -15,11 +15,11 @@ import java.lang.String;
  *             
  */
 public class MedicalSpecialty extends MedicalEnumeration {
-  public Specialty specialty;
-
   /**
    * Where to find the definition of the OWL Class used to generate this Java class.
    */
   public String isDefinedBy = "https://health-lifesci.schema.org/MedicalSpecialty";
+
+  public Specialty specialty;
 }
 

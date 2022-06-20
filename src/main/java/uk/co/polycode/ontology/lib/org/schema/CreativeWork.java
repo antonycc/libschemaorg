@@ -21,11 +21,6 @@ import java.time.ZonedDateTime;
  */
 public class CreativeWork extends Thing {
   /**
-   * Where to find the definition of the OWL Class used to generate this Java class.
-   */
-  public String isDefinedBy = "https://schema.org/CreativeWork";
-
-  /**
    * The subject matter of the content.
    */
   public Thing about;
@@ -113,11 +108,6 @@ public class CreativeWork extends Thing {
   /**
    * An embedded audio object.
    */
-  public AudioObject audio;
-
-  /**
-   * An embedded audio object.
-   */
   public Clip audioClip;
 
   /**
@@ -126,14 +116,19 @@ public class CreativeWork extends Thing {
   public MusicRecording audioMusicRecording;
 
   /**
-   * The author of this content or rating. Please note that author is special in that HTML 5 provides a special mechanism for indicating authorship via the rel tag. That is equivalent to this and may be used interchangeably.
+   * An embedded audio object.
    */
-  public Person author;
+  public AudioObject audio;
 
   /**
    * The author of this content or rating. Please note that author is special in that HTML 5 provides a special mechanism for indicating authorship via the rel tag. That is equivalent to this and may be used interchangeably.
    */
   public Organization authorOrganization;
+
+  /**
+   * The author of this content or rating. Please note that author is special in that HTML 5 provides a special mechanism for indicating authorship via the rel tag. That is equivalent to this and may be used interchangeably.
+   */
+  public Person author;
 
   /**
    * An award won by or for this item.
@@ -175,22 +170,22 @@ public class CreativeWork extends Thing {
   /**
    * A secondary contributor to the CreativeWork or Event.
    */
-  public Person contributor;
+  public Organization contributorOrganization;
 
   /**
    * A secondary contributor to the CreativeWork or Event.
    */
-  public Organization contributorOrganization;
-
-  /**
-   * The party holding the legal copyright to the CreativeWork.
-   */
-  public Person copyrightHolder;
+  public Person contributor;
 
   /**
    * The party holding the legal copyright to the CreativeWork.
    */
   public Organization copyrightHolderOrganization;
+
+  /**
+   * The party holding the legal copyright to the CreativeWork.
+   */
+  public Person copyrightHolder;
 
   /**
    * Text of a notice appropriate for describing the copyright aspects of this Creative Work, ideally indicating the owner of the copyright for the Work.
@@ -219,12 +214,12 @@ public class CreativeWork extends Thing {
   /**
    * The creator/author of this CreativeWork. This is the same as the Author property for CreativeWork.
    */
-  public Person creator;
+  public Organization creatorOrganization;
 
   /**
    * The creator/author of this CreativeWork. This is the same as the Author property for CreativeWork.
    */
-  public Organization creatorOrganization;
+  public Person creator;
 
   /**
    * Text that can be used to credit person(s) and/or organization(s) associated with a published Creative Work.
@@ -289,12 +284,12 @@ public class CreativeWork extends Thing {
   /**
    * A person or organization that supports (sponsors) something through some kind of financial contribution.
    */
-  public Person funder;
+  public Organization funderOrganization;
 
   /**
    * A person or organization that supports (sponsors) something through some kind of financial contribution.
    */
-  public Organization funderOrganization;
+  public Person funder;
 
   /**
    * A <a class="localLink" href="https://schema.org/Grant">Grant</a> that directly or indirectly provide funding or sponsorship for this item. See also <a class="localLink" href="https://schema.org/ownershipFundingInfo">ownershipFundingInfo</a>.
@@ -339,12 +334,12 @@ public class CreativeWork extends Thing {
   /**
    * A resource from which this work is derived or from which it is a modification or adaption.
    */
-  public CreativeWork isBasedOn;
+  public Product isBasedOnProduct;
 
   /**
    * A resource from which this work is derived or from which it is a modification or adaption.
    */
-  public Product isBasedOnProduct;
+  public CreativeWork isBasedOn;
 
   /**
    * Indicates an item or CreativeWork that this item, or CreativeWork (in some sense), is part of.
@@ -379,12 +374,12 @@ public class CreativeWork extends Thing {
   /**
    * A maintainer of a <a class="localLink" href="https://schema.org/Dataset">Dataset</a>, software package (<a class="localLink" href="https://schema.org/SoftwareApplication">SoftwareApplication</a>), or other <a class="localLink" href="https://schema.org/Project">Project</a>. A maintainer is a <a class="localLink" href="https://schema.org/Person">Person</a> or <a class="localLink" href="https://schema.org/Organization">Organization</a> that manages contributions to, and/or publication of, some (typically complex) artifact. It is common for distributions of software and data to be based on "upstream" sources. When <a class="localLink" href="https://schema.org/maintainer">maintainer</a> is applied to a specific version of something e.g. a particular version or packaging of a <a class="localLink" href="https://schema.org/Dataset">Dataset</a>, it is always  possible that the upstream source has a different maintainer. The <a class="localLink" href="https://schema.org/isBasedOn">isBasedOn</a> property can be used to indicate such relationships between datasets to make the different maintenance roles clear. Similarly in the case of software, a package may have dedicated maintainers working on integration into software distributions such as Ubuntu, as well as upstream maintainers of the underlying work.
    */
-  public Person maintainer;
+  public Organization maintainerOrganization;
 
   /**
    * A maintainer of a <a class="localLink" href="https://schema.org/Dataset">Dataset</a>, software package (<a class="localLink" href="https://schema.org/SoftwareApplication">SoftwareApplication</a>), or other <a class="localLink" href="https://schema.org/Project">Project</a>. A maintainer is a <a class="localLink" href="https://schema.org/Person">Person</a> or <a class="localLink" href="https://schema.org/Organization">Organization</a> that manages contributions to, and/or publication of, some (typically complex) artifact. It is common for distributions of software and data to be based on "upstream" sources. When <a class="localLink" href="https://schema.org/maintainer">maintainer</a> is applied to a specific version of something e.g. a particular version or packaging of a <a class="localLink" href="https://schema.org/Dataset">Dataset</a>, it is always  possible that the upstream source has a different maintainer. The <a class="localLink" href="https://schema.org/isBasedOn">isBasedOn</a> property can be used to indicate such relationships between datasets to make the different maintenance roles clear. Similarly in the case of software, a package may have dedicated maintainers working on integration into software distributions such as Ubuntu, as well as upstream maintainers of the underlying work.
    */
-  public Organization maintainerOrganization;
+  public Person maintainer;
 
   /**
    * A material that something is made from, e.g. leather, wool, cotton, paper.
@@ -404,12 +399,12 @@ public class CreativeWork extends Thing {
   /**
    * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use <a class="localLink" href="https://schema.org/businessFunction">businessFunction</a> to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a <a class="localLink" href="https://schema.org/Demand">Demand</a>. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
    */
-  public Offer offers;
+  public Demand offersDemand;
 
   /**
    * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use <a class="localLink" href="https://schema.org/businessFunction">businessFunction</a> to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a <a class="localLink" href="https://schema.org/Demand">Demand</a>. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
    */
-  public Demand offersDemand;
+  public Offer offers;
 
   /**
    * A pattern that something has, for example 'polka dot', 'striped', 'Canadian flag'. Values are typically expressed as text, although links to controlled value schemes are also supported.
@@ -424,22 +419,22 @@ public class CreativeWork extends Thing {
   /**
    * The person or organization who produced the work (e.g. music album, movie, tv/radio series etc.).
    */
-  public Person producer;
+  public Organization producerOrganization;
 
   /**
    * The person or organization who produced the work (e.g. music album, movie, tv/radio series etc.).
    */
-  public Organization producerOrganization;
-
-  /**
-   * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
-   */
-  public Person provider;
+  public Person producer;
 
   /**
    * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
    */
   public Organization providerOrganization;
+
+  /**
+   * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
+   */
+  public Person provider;
 
   /**
    * A publication event associated with the item.
@@ -449,12 +444,12 @@ public class CreativeWork extends Thing {
   /**
    * The publisher of the creative work.
    */
-  public Person publisher;
+  public Organization publisherOrganization;
 
   /**
    * The publisher of the creative work.
    */
-  public Organization publisherOrganization;
+  public Person publisher;
 
   /**
    * The publishing division which published the comic.
@@ -498,18 +493,13 @@ public class CreativeWork extends Thing {
    * Indicates the party responsible for generating and publishing the current structured data markup, typically in cases where the structured data is derived automatically from existing published content but published on a different site. For example, student projects and open data initiatives often re-publish existing content with more explicitly structured metadata. The
    * <a class="localLink" href="https://schema.org/sdPublisher">sdPublisher</a> property helps make such practices more explicit.
    */
-  public Person sdPublisher;
+  public Organization sdPublisherOrganization;
 
   /**
    * Indicates the party responsible for generating and publishing the current structured data markup, typically in cases where the structured data is derived automatically from existing published content but published on a different site. For example, student projects and open data initiatives often re-publish existing content with more explicitly structured metadata. The
    * <a class="localLink" href="https://schema.org/sdPublisher">sdPublisher</a> property helps make such practices more explicit.
    */
-  public Organization sdPublisherOrganization;
-
-  /**
-   * A standardized size of a product or creative work, specified either through a simple textual string (for example 'XL', '32Wx34L'), a  QuantitativeValue with a unitCode, or a comprehensive and structured <a class="localLink" href="https://schema.org/SizeSpecification">SizeSpecification</a>; in other cases, the <a class="localLink" href="https://schema.org/width">width</a>, <a class="localLink" href="https://schema.org/height">height</a>, <a class="localLink" href="https://schema.org/depth">depth</a> and <a class="localLink" href="https://schema.org/weight">weight</a> properties may be more applicable.
-   */
-  public SizeSpecification size;
+  public Person sdPublisher;
 
   /**
    * A standardized size of a product or creative work, specified either through a simple textual string (for example 'XL', '32Wx34L'), a  QuantitativeValue with a unitCode, or a comprehensive and structured <a class="localLink" href="https://schema.org/SizeSpecification">SizeSpecification</a>; in other cases, the <a class="localLink" href="https://schema.org/width">width</a>, <a class="localLink" href="https://schema.org/height">height</a>, <a class="localLink" href="https://schema.org/depth">depth</a> and <a class="localLink" href="https://schema.org/weight">weight</a> properties may be more applicable.
@@ -520,6 +510,11 @@ public class CreativeWork extends Thing {
    * A standardized size of a product or creative work, specified either through a simple textual string (for example 'XL', '32Wx34L'), a  QuantitativeValue with a unitCode, or a comprehensive and structured <a class="localLink" href="https://schema.org/SizeSpecification">SizeSpecification</a>; in other cases, the <a class="localLink" href="https://schema.org/width">width</a>, <a class="localLink" href="https://schema.org/height">height</a>, <a class="localLink" href="https://schema.org/depth">depth</a> and <a class="localLink" href="https://schema.org/weight">weight</a> properties may be more applicable.
    */
   public DefinedTerm sizeDefinedTerm;
+
+  /**
+   * A standardized size of a product or creative work, specified either through a simple textual string (for example 'XL', '32Wx34L'), a  QuantitativeValue with a unitCode, or a comprehensive and structured <a class="localLink" href="https://schema.org/SizeSpecification">SizeSpecification</a>; in other cases, the <a class="localLink" href="https://schema.org/width">width</a>, <a class="localLink" href="https://schema.org/height">height</a>, <a class="localLink" href="https://schema.org/depth">depth</a> and <a class="localLink" href="https://schema.org/weight">weight</a> properties may be more applicable.
+   */
+  public SizeSpecification size;
 
   /**
    * The Organization on whose behalf the creator was working.
@@ -542,12 +537,12 @@ public class CreativeWork extends Thing {
   /**
    * A person or organization that supports a thing through a pledge, promise, or financial contribution. e.g. a sponsor of a Medical Study or a corporate sponsor of an event.
    */
-  public Person sponsor;
+  public Organization sponsorOrganization;
 
   /**
    * A person or organization that supports a thing through a pledge, promise, or financial contribution. e.g. a sponsor of a Medical Study or a corporate sponsor of an event.
    */
-  public Organization sponsorOrganization;
+  public Person sponsor;
 
   /**
    * The item being described is intended to help a person learn the competency or learning outcome defined by the referenced term.
@@ -592,12 +587,12 @@ public class CreativeWork extends Thing {
   /**
    * Organization or person who adapts a creative work to different languages, regional differences and technical requirements of a target market, or that translates during some event.
    */
-  public Person translator;
+  public Organization translatorOrganization;
 
   /**
    * Organization or person who adapts a creative work to different languages, regional differences and technical requirements of a target market, or that translates during some event.
    */
-  public Organization translatorOrganization;
+  public Person translator;
 
   /**
    * The typical expected age range, e.g. '7-9', '11-'.
@@ -619,12 +614,12 @@ public class CreativeWork extends Thing {
   /**
    * An embedded video object.
    */
-  public Clip video;
+  public VideoObject videoVideoObject;
 
   /**
    * An embedded video object.
    */
-  public VideoObject videoVideoObject;
+  public Clip video;
 
   /**
    * Example/instance/realization/derivation of the concept of this creative work. eg. The paperback edition, first edition, or eBook.
@@ -654,17 +649,12 @@ public class CreativeWork extends Thing {
   /**
    * The date on which the CreativeWork was created or the item was added to a DataFeed.
    */
-  public ZonedDateTime dateCreated;
+  public ZonedDateTime dateCreatedZonedDateTime;
 
   /**
    * The date on which the CreativeWork was created or the item was added to a DataFeed.
    */
-  public ZonedDateTime dateCreatedZonedDateTime;
-
-  /**
-   * The date on which the CreativeWork was most recently modified or when the item's entry was modified within a DataFeed.
-   */
-  public ZonedDateTime dateModified;
+  public ZonedDateTime dateCreated;
 
   /**
    * The date on which the CreativeWork was most recently modified or when the item's entry was modified within a DataFeed.
@@ -672,14 +662,19 @@ public class CreativeWork extends Thing {
   public ZonedDateTime dateModifiedZonedDateTime;
 
   /**
-   * Date of first broadcast/publication.
+   * The date on which the CreativeWork was most recently modified or when the item's entry was modified within a DataFeed.
    */
-  public ZonedDateTime datePublished;
+  public ZonedDateTime dateModified;
 
   /**
    * Date of first broadcast/publication.
    */
   public ZonedDateTime datePublishedZonedDateTime;
+
+  /**
+   * Date of first broadcast/publication.
+   */
+  public ZonedDateTime datePublished;
 
   /**
    * Date the content expires and is no longer useful or available. For example a <a class="localLink" href="https://schema.org/VideoObject">VideoObject</a> or <a class="localLink" href="https://schema.org/NewsArticle">NewsArticle</a> whose availability or relevance is time-limited, or a <a class="localLink" href="https://schema.org/ClaimReview">ClaimReview</a> fact check whose publisher wants to indicate that it may no longer be relevant (or helpful to highlight) after some date.
@@ -700,5 +695,10 @@ public class CreativeWork extends Thing {
    * Indicates the date on which the current structured data was generated / published. Typically used alongside <a class="localLink" href="https://schema.org/sdPublisher">sdPublisher</a>
    */
   public ZonedDateTime sdDatePublished;
+
+  /**
+   * Where to find the definition of the OWL Class used to generate this Java class.
+   */
+  public String isDefinedBy = "https://schema.org/CreativeWork";
 }
 

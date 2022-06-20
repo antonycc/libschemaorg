@@ -17,19 +17,14 @@ import java.math.BigDecimal;
  */
 public class BroadcastFrequencySpecification extends Intangible {
   /**
-   * Where to find the definition of the OWL Class used to generate this Java class.
+   * The frequency in MHz for a particular broadcast.
    */
-  public String isDefinedBy = "https://schema.org/BroadcastFrequencySpecification";
+  public QuantitativeValue broadcastFrequencyValueQuantitativeValue;
 
   /**
    * The frequency in MHz for a particular broadcast.
    */
   public BigDecimal broadcastFrequencyValue;
-
-  /**
-   * The frequency in MHz for a particular broadcast.
-   */
-  public QuantitativeValue broadcastFrequencyValueQuantitativeValue;
 
   /**
    * The modulation (e.g. FM, AM, etc) used by a particular broadcast service.
@@ -40,5 +35,10 @@ public class BroadcastFrequencySpecification extends Intangible {
    * The subchannel used for the broadcast.
    */
   public String broadcastSubChannel;
+
+  /**
+   * Where to find the definition of the OWL Class used to generate this Java class.
+   */
+  public String isDefinedBy = "https://schema.org/BroadcastFrequencySpecification";
 }
 

@@ -16,11 +16,6 @@ import java.lang.String;
  */
 public class CivicStructure extends Place {
   /**
-   * Where to find the definition of the OWL Class used to generate this Java class.
-   */
-  public String isDefinedBy = "https://schema.org/CivicStructure";
-
-  /**
    * The general opening hours for a business. Opening hours can be specified as a weekly time range, starting with days, then times per day. Multiple days can be listed with commas ',' separating each day. Day or time ranges are specified using a hyphen '-'.<br/><br/>
    *
    * <ul>
@@ -31,5 +26,10 @@ public class CivicStructure extends Place {
    * </ul>
    */
   public String openingHours;
+
+  /**
+   * Where to find the definition of the OWL Class used to generate this Java class.
+   */
+  public String isDefinedBy = "https://schema.org/CivicStructure";
 }
 

@@ -16,11 +16,6 @@ import java.lang.String;
  */
 public class PostalCodeRangeSpecification extends StructuredValue {
   /**
-   * Where to find the definition of the OWL Class used to generate this Java class.
-   */
-  public String isDefinedBy = "https://pending.schema.org/PostalCodeRangeSpecification";
-
-  /**
    * First postal code in a range (included).
    */
   public String postalCodeBegin;
@@ -29,5 +24,10 @@ public class PostalCodeRangeSpecification extends StructuredValue {
    * Last postal code in the range (included). Needs to be after <a class="localLink" href="https://schema.org/postalCodeBegin">postalCodeBegin</a>.
    */
   public String postalCodeEnd;
+
+  /**
+   * Where to find the definition of the OWL Class used to generate this Java class.
+   */
+  public String isDefinedBy = "https://pending.schema.org/PostalCodeRangeSpecification";
 }
 

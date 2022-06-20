@@ -17,11 +17,6 @@ import java.math.BigInteger;
  */
 public class Comment extends CreativeWork {
   /**
-   * Where to find the definition of the OWL Class used to generate this Java class.
-   */
-  public String isDefinedBy = "https://schema.org/Comment";
-
-  /**
    * The parent of a question, answer or item in general.
    */
   public Comment parentItem;
@@ -35,5 +30,10 @@ public class Comment extends CreativeWork {
    * The number of upvotes this question, answer or comment has received from the community.
    */
   public BigInteger upvoteCount;
+
+  /**
+   * Where to find the definition of the OWL Class used to generate this Java class.
+   */
+  public String isDefinedBy = "https://schema.org/Comment";
 }
 

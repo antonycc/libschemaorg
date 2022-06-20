@@ -16,16 +16,6 @@ import java.lang.String;
  */
 public class Class extends Intangible {
   /**
-   * Where to find the definition of the OWL Class used to generate this Java class.
-   */
-  public String isDefinedBy = "https://meta.schema.org/Class";
-
-  /**
-   * Relates a term (i.e. a property, class or enumeration) to one that supersedes it.
-   */
-  public Class supersededBy;
-
-  /**
    * Relates a term (i.e. a property, class or enumeration) to one that supersedes it.
    */
   public Enumeration supersededByEnumeration;
@@ -34,5 +24,15 @@ public class Class extends Intangible {
    * Relates a term (i.e. a property, class or enumeration) to one that supersedes it.
    */
   public Property supersededByProperty;
+
+  /**
+   * Relates a term (i.e. a property, class or enumeration) to one that supersedes it.
+   */
+  public Class supersededBy;
+
+  /**
+   * Where to find the definition of the OWL Class used to generate this Java class.
+   */
+  public String isDefinedBy = "https://meta.schema.org/Class";
 }
 

@@ -17,11 +17,6 @@ import java.time.ZonedDateTime;
  */
 public class MedicalGuideline extends MedicalEntity {
   /**
-   * Where to find the definition of the OWL Class used to generate this Java class.
-   */
-  public String isDefinedBy = "https://health-lifesci.schema.org/MedicalGuideline";
-
-  /**
    * Strength of evidence of the data used to formulate the guideline (enumerated).
    */
   public MedicalEvidenceLevel evidenceLevel;
@@ -40,5 +35,10 @@ public class MedicalGuideline extends MedicalEntity {
    * Date on which this guideline's recommendation was made.
    */
   public ZonedDateTime guidelineDate;
+
+  /**
+   * Where to find the definition of the OWL Class used to generate this Java class.
+   */
+  public String isDefinedBy = "https://health-lifesci.schema.org/MedicalGuideline";
 }
 

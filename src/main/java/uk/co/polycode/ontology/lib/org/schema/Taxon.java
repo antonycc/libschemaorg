@@ -16,11 +16,6 @@ import java.lang.String;
  */
 public class Taxon extends Thing {
   /**
-   * Where to find the definition of the OWL Class used to generate this Java class.
-   */
-  public String isDefinedBy = "https://pending.schema.org/Taxon";
-
-  /**
    * Closest child taxa of the taxon in question.
    */
   public Taxon childTaxon;
@@ -39,5 +34,10 @@ public class Taxon extends Thing {
    * The taxonomic rank of this taxon given preferably as a URI from a controlled vocabulary – (typically the ranks from TDWG TaxonRank ontology or equivalent Wikidata URIs).
    */
   public PropertyValue taxonRank;
+
+  /**
+   * Where to find the definition of the OWL Class used to generate this Java class.
+   */
+  public String isDefinedBy = "https://pending.schema.org/Taxon";
 }
 

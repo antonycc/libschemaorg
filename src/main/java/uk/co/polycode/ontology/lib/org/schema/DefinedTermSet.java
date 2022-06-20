@@ -16,13 +16,13 @@ import java.lang.String;
  */
 public class DefinedTermSet extends CreativeWork {
   /**
-   * Where to find the definition of the OWL Class used to generate this Java class.
-   */
-  public String isDefinedBy = "https://pending.schema.org/DefinedTermSet";
-
-  /**
    * A Defined Term contained in this term set.
    */
   public DefinedTerm hasDefinedTerm;
+
+  /**
+   * Where to find the definition of the OWL Class used to generate this Java class.
+   */
+  public String isDefinedBy = "https://pending.schema.org/DefinedTermSet";
 }
 

@@ -62,7 +62,6 @@ Regenerate sources then build
  ...truncated...
  % find ./build -name 'Person.*'
 ./build/classes/java/main/uk/co/polycode/ontology/lib/org/schema/Person.class
-./src/main/java/uk/co/polycode/ontology/lib/org/schema/Person.java
  %
  ```
 

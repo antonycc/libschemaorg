@@ -18,19 +18,14 @@ import java.math.BigDecimal;
  */
 public class LoanOrCredit extends FinancialProduct {
   /**
-   * Where to find the definition of the OWL Class used to generate this Java class.
+   * The amount of money.
    */
-  public String isDefinedBy = "https://schema.org/LoanOrCredit";
+  public MonetaryAmount amountMonetaryAmount;
 
   /**
    * The amount of money.
    */
   public BigDecimal amount;
-
-  /**
-   * The amount of money.
-   */
-  public MonetaryAmount amountMonetaryAmount;
 
   /**
    * The currency in which the monetary amount is expressed.<br/><br/>
@@ -73,5 +68,10 @@ public class LoanOrCredit extends FinancialProduct {
    * Whether the terms for payment of interest can be renegotiated during the life of the loan.
    */
   public Boolean renegotiableLoan;
+
+  /**
+   * Where to find the definition of the OWL Class used to generate this Java class.
+   */
+  public String isDefinedBy = "https://schema.org/LoanOrCredit";
 }
 

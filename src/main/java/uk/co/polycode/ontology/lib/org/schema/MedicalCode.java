@@ -15,13 +15,6 @@ import java.lang.String;
  *             
  */
 public class MedicalCode extends MedicalIntangible {
-  public CategoryCode categoryCode;
-
-  /**
-   * Where to find the definition of the OWL Class used to generate this Java class.
-   */
-  public String isDefinedBy = "https://health-lifesci.schema.org/MedicalCode";
-
   /**
    * A short textual code that uniquely identifies the value.
    */
@@ -31,5 +24,12 @@ public class MedicalCode extends MedicalIntangible {
    * The coding system, e.g. 'ICD-10'.
    */
   public String codingSystem;
+
+  /**
+   * Where to find the definition of the OWL Class used to generate this Java class.
+   */
+  public String isDefinedBy = "https://health-lifesci.schema.org/MedicalCode";
+
+  public CategoryCode categoryCode;
 }
 

@@ -19,11 +19,6 @@ import java.math.BigInteger;
  */
 public class Article extends CreativeWork {
   /**
-   * Where to find the definition of the OWL Class used to generate this Java class.
-   */
-  public String isDefinedBy = "https://schema.org/Article";
-
-  /**
    * The actual body of the article.
    */
   public String articleBody;
@@ -73,5 +68,10 @@ public class Article extends CreativeWork {
    * The number of words in the text of the Article.
    */
   public BigInteger wordCount;
+
+  /**
+   * Where to find the definition of the OWL Class used to generate this Java class.
+   */
+  public String isDefinedBy = "https://schema.org/Article";
 }
 

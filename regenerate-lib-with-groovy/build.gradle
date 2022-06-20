@@ -18,10 +18,10 @@ buildscript {
         mavenCentral()
         maven {
             url = "https://maven.pkg.github.com/antonycc/owl-to-java"
-            credentials {
-                username = System.getenv("GITHUB_ACTOR")
-                password = System.getenv("GITHUB_TOKEN")
-            }
+            //credentials {
+            //    username = System.getenv("GITHUB_ACTOR")
+            //    password = System.getenv("GITHUB_TOKEN")
+            //}
         }
     }
     dependencies {

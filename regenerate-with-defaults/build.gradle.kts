@@ -15,12 +15,12 @@ import java.nio.file.Paths
 buildscript {
     repositories {
         mavenLocal() // OWL to Java Task would be in local
-        maven("https://maven.pkg.github.com/antonycc/owl-to-java") {
-            credentials {
-                username = System.getenv("GITHUB_ACTOR")
-                password = System.getenv("GITHUB_TOKEN")
-            }
-        }
+        maven("https://maven.pkg.github.com/antonycc/owl-to-java") //{
+            //credentials {
+            //    username = System.getenv("GITHUB_ACTOR")
+            //    password = System.getenv("GITHUB_TOKEN")
+            //}
+       // }
     }
     dependencies {
         classpath("co.uk.polycode:owl-to-java:0.0.9-SNAPSHOT")

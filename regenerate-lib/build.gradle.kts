@@ -17,6 +17,8 @@ import java.time.ZonedDateTime
 buildscript {
     repositories {
         mavenLocal() // OWL to Java Task would be in local
+        // https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-gradle-registry
+        //maven("https://github.com/antonycc/owl-to-java") //{
         maven("https://maven.pkg.github.com/antonycc/owl-to-java") {
             credentials {
                 username = System.getenv("GITHUB_ACTOR")

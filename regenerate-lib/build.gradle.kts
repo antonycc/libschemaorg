@@ -19,7 +19,8 @@ buildscript {
         mavenLocal() // OWL to Java Task would be in local
         // https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-gradle-registry
         //maven("https://github.com/antonycc/owl-to-java") //{
-        maven("https://maven.pkg.github.com/antonycc/owl-to-java") {
+        maven(url = "https://maven.pkg.github.com/antonycc/owl-to-java") {
+            name = "GitHubPackages"
             credentials {
                 username = System.getenv("GITHUB_ACTOR")
                 password = System.getenv("GITHUB_TOKEN")

@@ -26,15 +26,17 @@ buildscript {
         //    }
         //}
         // https://tech.europace.de/post/working-with-gradle-and-github-packages/
-        listOf("/antonycc/owl-to-java").forEach { path ->
+        listOf("/antonycc/*").forEach { path ->
             maven {
                 setUrl("https://maven.pkg.github.com${path}")
                 content {
                     includeGroup("co.uk.polycode")
                 }
                 credentials {
-                    username = findProperty("github.packages.username").toString()
-                    password = findProperty("github.packages.password").toString()
+                    //username = project.findProperty("gpr.user").toString()
+                    //password = project.findProperty("gpr.token").toString()
+                    username = System.getenv("GITHUB_ACTOR")
+                    password = System.getenv("GITHUB_TOKEN")
                 }
             }
         }

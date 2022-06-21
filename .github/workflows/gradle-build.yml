@@ -19,7 +19,7 @@ jobs:
     - name: Build with Gradle
       uses: gradle/gradle-build-action@0d13054264b0bb894ded474f08ebb30921341cee
       with:
-        arguments: build --info --debug --stacktrace
+        arguments: build --info
         
     # Steps represent a sequence of tasks that will be executed as part of the job
     #steps:

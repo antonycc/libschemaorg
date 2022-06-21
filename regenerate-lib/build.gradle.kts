@@ -35,8 +35,8 @@ buildscript {
                     includeGroup("co.uk.polycode")
                 }
                 credentials {
-                    username = project.findProperty("gpr.user") as String? ?: System.getenv("GITHUB_ACTOR") ?: "X"
-                    password = project.findProperty("gpr.key") as String? ?: System.getenv("GITHUB_TOKEN") ?: "Y"
+                    username = project.findProperty("GITHUB_ACTOR") as String? ?: System.getenv("GITHUB_ACTOR") ?: "X"
+                    password = project.findProperty("GITHUB_TOKEN") as String? ?: System.getenv("GITHUB_TOKEN") ?: "Y"
                 }
             }
         }

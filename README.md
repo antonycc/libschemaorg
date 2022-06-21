@@ -79,6 +79,29 @@ Regenerate sources then build
  % gradle clean build
 ```
 
+Access secrets (See https://github.com/antonycc/openssl-keypair-encryption):
+```shell
+ % ls -l gradle.properties
+ls: gradle.properties: No such file or directory
+ % ./open-ssl-pk-enc.sh list-recipients                                           
+[recipients/] antonycc@libschemaorg (PEM is available locally in /Users/antony/.ssh)
+ % ./open-ssl-pk-enc.sh decrypt
+ <passphase for your key>
+ recipient_key_encrypted = "antonycc@libschemaorg.key.bin.enc"
+Decrypting "antonycc@libschemaorg.archive.tar.enc" with public key "/Users/antony/.ssh/antonycc@libschemaorg.pem"
+x antonycc@libschemaorg.key.bin.enc
+x antonycc@libschemaorg.archive.tar.enc
+Enter pass phrase for /Users/antony/.ssh/antonycc@libschemaorg.pem:
+bufsize=8192
+*** WARNING : deprecated key derivation used.
+Using -iter or -pbkdf2 would be better.
+bytes read   :     2080
+bytes written:     2048
+x gradle.properties
+ % ls -l gradle.properties
+ -rw-r--r--  1 antony  staff  80 Jun 21 18:50 gradle.properties
+ % 
+ ```
 
 The first 20 lines of Person Java object generated from a Parsed Schema.org OWL Schema describing humanity:
 ```shell
@@ -191,3 +214,11 @@ Java objects generated from these files are referenced in libschemaorg source co
 ## Licence - OWL to Java
 
 libschemaorg uses OWL to Java which released under the Mozilla Public License, v. 2.0. If a copy of the MPL was not distributed with this file, You can obtain one at https://mozilla.org/MPL/2.0/.
+
+## Licence - Oké: Openssl public-private Keypair Encryption wrapper
+
+Oké: Openssl public-private Keypair Encryption wrapper is released under The Unlicense.
+The following file is copied from Oké:
+```bash
+open-ssl-pk-enc.sh
+```

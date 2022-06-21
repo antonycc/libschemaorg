@@ -16,7 +16,7 @@ import java.time.ZonedDateTime
 
 buildscript {
     repositories {
-        //mavenLocal() // OWL to Java Task would be in local
+        mavenLocal() // OWL to Java Task would be in local
         // https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-gradle-registry
         //maven(url = "https://maven.pkg.github.com/antonycc/owl-to-java") {
         //    name = "GitHubPackages"
@@ -35,8 +35,8 @@ buildscript {
                     includeGroup("co.uk.polycode")
                 }
                 credentials {
-                    username = project.findProperty("gpr.user") as String? ?: System.getenv("USERNAME")
-                    password = project.findProperty("gpr.key") as String? ?: System.getenv("TOKEN")
+                    username = project.findProperty("gpr.user") as String? ?: System.getenv("GITHUB_ACTOR") ?: "X"
+                    password = project.findProperty("gpr.key") as String? ?: System.getenv("GITHUB_TOKEN") ?: "Y"
                 }
             }
         }

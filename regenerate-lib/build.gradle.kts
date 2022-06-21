@@ -26,7 +26,7 @@ buildscript {
         //    }
         //}
         // https://tech.europace.de/post/working-with-gradle-and-github-packages/
-        listOf("/antonycc/*").forEach { path ->
+        listOf("/antonycc/owl-to-java").forEach { path ->
             maven {
                 setUrl("https://maven.pkg.github.com${path}")
                 content {

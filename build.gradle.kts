@@ -42,6 +42,9 @@ afterEvaluate {
             languageVersion = "1.6"
         }
     }
+    //tasks.withType<JavaCompile>().configureEach {
+    //    options.incremental = false
+    //}
 }
 
 group = "co.uk.polycode"
@@ -90,8 +93,14 @@ tasks.register("regenerate") {
 
 tasks {
     compileJava {
+        options.isIncremental = false
         dependsOn("regenerate")  // (1)
     }
+}
+
+tasks.withType<JavaCompile>().configureEach {
+    options.isIncremental = false
+    dependsOn("regenerate")
 }
 
 tasks.test {

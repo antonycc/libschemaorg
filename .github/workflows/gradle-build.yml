@@ -19,7 +19,7 @@ jobs:
     - name: Build with Gradle
       uses: gradle/gradle-build-action@0d13054264b0bb894ded474f08ebb30921341cee
       with:
-        arguments: build --info
+        arguments: build --info -Porg.gradle.workers.max=1 -Porg.gradle.daemon=false -Porg.gradle.parallel=false
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 

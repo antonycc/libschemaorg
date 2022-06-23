@@ -58,7 +58,7 @@ buildscript {
         }
     }
     dependencies {
-        classpath("co.uk.polycode:owl-to-java:0.0.9-SNAPSHOT")
+        classpath("co.uk.polycode:owl-to-java:0.0.10-SNAPSHOT")
     }
 }
 

@@ -20,3 +20,5 @@ jobs:
         uses: gradle/gradle-build-action@0d13054264b0bb894ded474f08ebb30921341cee
         with:
           arguments: clean check -PsafeBuildMode=false --info
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

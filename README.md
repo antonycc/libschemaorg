@@ -1,4 +1,8 @@
 # libschemaorg
+![build](https://github.com/antonycc/libschemaorg/workflows/Build/badge.svg?branch=main)
+![checks](https://github.com/antonycc/libschemaorg/workflows/Quality%20report/badge.svg?branch=main)
+![commit activity](https://img.shields.io/github/commit-activity/m/antonycc/libschemaorg)
+![last commit](https://img.shields.io/github/last-commit/antonycc/libschemaorg)
 
 A Java library of the Schema.org ontology built using OWL to Java and the OWL definition from Schema.org.
 

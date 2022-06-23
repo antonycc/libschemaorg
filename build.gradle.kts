@@ -93,15 +93,15 @@ tasks.register("regenerate") {
 
 tasks {
     compileJava {
-        options.isIncremental = false
+        //options.isIncremental = false
         dependsOn("regenerate")  // (1)
     }
 }
 
-tasks.withType<JavaCompile>().configureEach {
-    options.isIncremental = false
-    dependsOn("regenerate")
-}
+//tasks.withType<JavaCompile>().configureEach {
+//    options.isIncremental = false
+//    dependsOn("regenerate")
+//}
 
 tasks.test {
     useJUnitPlatform()

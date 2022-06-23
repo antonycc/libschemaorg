@@ -14,12 +14,21 @@ import java.time.ZonedDateTime
 // MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 // Mozilla Public License, v. 2.0 for more details.
 
+
+
 buildscript {
     repositories {
         //mavenLocal() // Use when OWL to Java Task is built on the same workstation
         // https://tech.europace.de/post/working-with-gradle-and-github-packages/
         // https://docs.github.com/en/packages/working-with-a-github-packages-registry/
         //   working-with-the-gradle-registry#using-a-published-package
+        //fun isPresent(s:Any?): String = isPresent(s as String?)
+        //fun isPresent(s:String?): String = if( s == null )
+        //    "is null"
+        //else if ( s.isBlank() ?: false)
+        //    "is blank"
+        //else
+        //    "is present"
         listOf("/antonycc/owl-to-java").forEach { path ->
             maven {
                 setUrl("https://maven.pkg.github.com${path}")
@@ -29,9 +38,12 @@ buildscript {
                 // LOCAL_ - Environment variables configured on a local machine or CI not connected to the origin repo.
                 // project.findProperty - Sourced from gradle.properties
                 // GITHUB_ - Environment variables injected by GitHub
-                logger.info("Local \"${System.getenv("LOCAL_GITHUB_ACTOR") ?: "null"}\"")
-                logger.info("Properties \"${project.findProperty("GITHUB_TOKEN") as String? ?: "null"}\"")
-                logger.info("GitHub \"${System.getenv("GITHUB_ACTOR") ?: "null"}\"")
+                logger.info("Local actor != null:      \"${System.getenv("LOCAL_GITHUB_ACTOR") != null}\"")
+                logger.info("Properties actor != null: \"${project.findProperty("GITHUB_ACTOR") != null}\"")
+                logger.info("GitHub actor != null:     \"${System.getenv("GITHUB_ACTOR") != null}\"")
+                logger.info("Local token != null:      \"${System.getenv("LOCAL_GITHUB_TOKEN") != null}\"")
+                logger.info("Properties token != null: \"${project.findProperty("GITHUB_TOKEN") != null}\"")
+                logger.info("GitHub token != null:     \"${System.getenv("GITHUB_TOKEN") != null}\"")
                 credentials {
                     username =
                         System.getenv("LOCAL_GITHUB_ACTOR")

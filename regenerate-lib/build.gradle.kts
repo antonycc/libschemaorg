@@ -49,10 +49,12 @@ buildscript {
                         System.getenv("LOCAL_GITHUB_ACTOR")
                             ?: project.findProperty("GITHUB_ACTOR") as String?
                                 ?: System.getenv("GITHUB_ACTOR")
+                                    ?: "antonycc"
                     password =
                         System.getenv("LOCAL_GITHUB_TOKEN")
                             ?: project.findProperty("GITHUB_TOKEN") as String?
                                     ?: System.getenv("GITHUB_TOKEN")
+                                        ?: "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"
                 }
             }
         }

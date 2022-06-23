@@ -29,6 +29,9 @@ buildscript {
                 // LOCAL_ - Environment variables configured on a local machine or CI not connected to the origin repo.
                 // project.findProperty - Sourced from gradle.properties
                 // GITHUB_ - Environment variables injected by GitHub
+                logger.info("Local \"${System.getenv("LOCAL_GITHUB_ACTOR") ?: "null"}\"")
+                logger.info("Properties \"${project.findProperty("GITHUB_TOKEN") as String? ?: "null"}\"")
+                logger.info("GitHub \"${System.getenv("GITHUB_ACTOR") ?: "null"}\"")
                 credentials {
                     username =
                         System.getenv("LOCAL_GITHUB_ACTOR")

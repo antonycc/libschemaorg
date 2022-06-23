@@ -26,9 +26,18 @@ buildscript {
                 content {
                     includeGroup("co.uk.polycode")
                 }
+                // LOCAL_ - Environment variables configured on a local machine or CI not connected to the origin repo.
+                // project.findProperty - Sourced from gradle.properties
+                // GITHUB_ - Environment variables injected by GitHub
                 credentials {
-                    username = project.findProperty("GITHUB_ACTOR") as String? ?: System.getenv("GITHUB_ACTOR")
-                    password = project.findProperty("GITHUB_TOKEN") as String? ?: System.getenv("GITHUB_TOKEN")
+                    username =
+                        System.getenv("LOCAL_GITHUB_ACTOR")
+                            ?: project.findProperty("GITHUB_ACTOR") as String?
+                                ?: System.getenv("GITHUB_ACTOR")
+                    password =
+                        System.getenv("LOCAL_GITHUB_TOKEN")
+                            ?: project.findProperty("GITHUB_TOKEN") as String?
+                                    ?: System.getenv("GITHUB_TOKEN")
                 }
             }
         }

@@ -19,40 +19,23 @@ import java.time.ZonedDateTime
 buildscript {
     repositories {
         //mavenLocal() // Use when OWL to Java Task is built on the same workstation
-        // https://tech.europace.de/post/working-with-gradle-and-github-packages/
-        // https://docs.github.com/en/packages/working-with-a-github-packages-registry/
-        //   working-with-the-gradle-registry#using-a-published-package
-        //fun isPresent(s:Any?): String = isPresent(s as String?)
-        //fun isPresent(s:String?): String = if( s == null )
-        //    "is null"
-        //else if ( s.isBlank() ?: false)
-        //    "is blank"
-        //else
-        //    "is present"
         listOf("/antonycc/owl-to-java").forEach { path ->
             maven {
                 setUrl("https://maven.pkg.github.com${path}")
                 content {
                     includeGroup("co.uk.polycode")
                 }
-                // LOCAL_ - Environment variables configured on a local machine or CI not connected to the origin repo.
-                // project.findProperty - Sourced from gradle.properties
-                // GITHUB_ - Environment variables injected by GitHub
-                logger.info("Local actor != null:      \"${System.getenv("LOCAL_GITHUB_ACTOR") != null}\"")
-                logger.info("Properties actor != null: \"${project.findProperty("GITHUB_ACTOR") != null}\"")
-                logger.info("GitHub actor != null:     \"${System.getenv("GITHUB_ACTOR") != null}\"")
-                logger.info("Local token != null:      \"${System.getenv("LOCAL_GITHUB_TOKEN") != null}\"")
-                logger.info("Properties token != null: \"${project.findProperty("GITHUB_TOKEN") != null}\"")
-                logger.info("GitHub token != null:     \"${System.getenv("GITHUB_TOKEN") != null}\"")
                 credentials {
                     username =
                         System.getenv("LOCAL_GITHUB_ACTOR")
                             ?: project.findProperty("GITHUB_ACTOR") as String?
                                 ?: System.getenv("GITHUB_ACTOR")
+                                    ?: "no user"
                     password =
                         System.getenv("LOCAL_GITHUB_TOKEN")
                             ?: project.findProperty("GITHUB_TOKEN") as String?
-                                    ?: System.getenv("GITHUB_TOKEN")
+                                ?: System.getenv("GITHUB_TOKEN")
+                                    ?: "no token"
                 }
             }
         }

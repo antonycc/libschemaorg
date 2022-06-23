@@ -14,8 +14,6 @@ import java.time.ZonedDateTime
 // MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 // Mozilla Public License, v. 2.0 for more details.
 
-
-
 buildscript {
     repositories {
         //mavenLocal() // Use when OWL to Java Task is built on the same workstation
@@ -41,7 +39,7 @@ buildscript {
         }
     }
     dependencies {
-        classpath("co.uk.polycode:owl-to-java:0.0.10-SNAPSHOT")
+        classpath("co.uk.polycode:owl-to-java:0.1.1")
     }
 }
 

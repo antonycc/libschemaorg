@@ -14,18 +14,18 @@ import java.nio.file.Paths
 
 buildscript {
     repositories {
-        mavenLocal() // OWL to Java Task would be in local
+        //mavenLocal() // OWL to Java Task would be in local
         mavenCentral()
         maven {
             url = "https://maven.pkg.github.com/antonycc/owl-to-java"
-            //credentials {
-            //    username = System.getenv("GITHUB_ACTOR")
-            //    password = System.getenv("GITHUB_TOKEN")
-            //}
+            credentials {
+                username = System.getenv("GITHUB_ACTOR") != null ? System.getenv("GITHUB_ACTOR") : project.findProperty("GITHUB_ACTOR")
+                password = System.getenv("GITHUB_TOKEN") != null ? System.getenv("GITHUB_TOKEN") : project.findProperty("GITHUB_TOKEN")
+            }
         }
     }
     dependencies {
-        classpath 'co.uk.polycode:owl-to-java:0.0.9-SNAPSHOT'
+        classpath 'co.uk.polycode:owl-to-java:0.1.1'
     }
 }
 
